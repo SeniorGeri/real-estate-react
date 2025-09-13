@@ -1,0 +1,43 @@
+{
+    "verify_email": "Verify email",
+    "verify_email_desc": "Please verify your email address by clicking on the link we just emailed to you.",
+    "verification_link_sent": "A new verification link has been sent to the email address you provided during registration.",
+    "resend_verification_email": "Resend verification email",
+    "logout": "Log out",
+    "before_proceeding_check_your_email": "Before proceeding, please check your email for a verification link.",
+    "if_you_did_not_receive_the_email": "If you did not receive the email",
+    "click_here_to_request_another": "click here to request another",
+    "or": "or",
+    "click_here_to_login": "click here to login",
+
+    "confirm_password_desc": "Please confirm your password to continue.",
+    "confirm_password": "Confirm password",
+    "forgot_password": "Forgot password",
+    "forgot_password_desc": "Please enter your email address and we will send you a link to reset your password.",
+    "send_reset_link": "Send reset link",
+    "create_an_account": "Create an account",
+    "create_an_account_desc": "Create an account to start using OnlyStudy.",
+    "name": "Name",
+    "your_name": "Your name",
+    "your_email": "Your email address",
+    "subject": "Subject",
+    "what_is_this_regarding": "What is this regarding?",
+    "message": "Message",
+
+    "login": "Login",
+    "login_desc": "Login to start using OnlyStudy.",
+    "email": "Email",
+    "password": "Password",
+    "remember": "Remember me",
+    "dont_have_an_account": "Don't have an account?",
+    "sign_up": "Sign up",
+    "still_not_sure": "Still not sure",
+    "go_back_and": "Go back and",
+    "browse_a_bit_more": "browse a bit more",
+
+    "create_account": "Create an account",
+    "instructor": "Instructor",
+    "already_have_an_account": "Already have an account?",
+    "phone": "Phone"
+
+}
