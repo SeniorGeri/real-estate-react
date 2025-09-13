@@ -68,5 +68,19 @@
     "edit_payment_desc": "Formulari më poshtë ju lejon të përditësoni pagesën e zgjedhur",
     "payment_delete_succ": "Pagesa është fshirë me sukses",
     "delete_payment_desc": "Duke vazhduar, pagesa do të fshihet.",
-    "method": "Metoda"
+    "method": "Metoda",
+
+    "zone": "Zona",
+    "name": "Emri",
+    "select_city": "Zgjidh qytetin",
+    "create_zone": "Krijo zona",
+    "create_zone_desc": "Formulari më poshtë ju lejon të krijoni zonat të reja",
+    "add_zone": "Shto zona",
+    "zone_created_succ": "Zona është krijuar me sukses",
+    "edit_zone": "Edito zona",
+    "delete_zone": "Fshi zona",
+    "zone_edit_succ": "Zona është përditësuar me sukses",
+    "edit_zone_desc": "Formulari më poshtë ju lejon të përditësoni zonën e zgjedhur",
+    "zone_delete_succ": "Zona është fshirë me sukses",
+    "delete_zone_desc": "Duke vazhduar, zona do të fshihet."
 }

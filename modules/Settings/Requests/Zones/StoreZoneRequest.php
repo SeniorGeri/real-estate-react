@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Modules\Settings\Requests\Payments;
+namespace Modules\Settings\Requests\Zones;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-final class StorePaymentRequest extends FormRequest
+final class StoreZoneRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -17,10 +17,8 @@ final class StorePaymentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'method' => ['required', 'string', 'max:100'],
-            'is_primary' => ['required', 'boolean'],
-            'active' => ['required', 'boolean'],
-            'image' =>  ['nullable', 'string'],
+            'name' => ['required', 'string', 'max:100'],
+            'city_id' => ['required', 'integer'],
             'description' =>  ['nullable', 'string'],
         ];
     }

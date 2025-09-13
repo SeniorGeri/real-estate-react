@@ -73,5 +73,20 @@
     "edit_payment_desc": "The form  below allows you to update the selected payment",
     "payment_delete_succ": "The payment has been deleted succesfully",
     "delete_payment_desc": "By proceeding  the payment will be deleted.",
-    "method": "Method"
+    "method": "Method",
+
+    
+    "zone": "Zone",
+    "name": "Name",
+    "select_city": "Select city",
+    "create_zone": "Create zone",
+    "create_zone_desc": "The form below allows you to create new zones",
+    "add_zone": "Add zone",
+    "zone_created_succ": "The zone has been created succesfully",
+    "edit_zone": "Edit zone",
+    "delete_zone": "Delete zone",
+    "zone_edit_succ": "The zone has been updated succesfully",
+    "edit_zone_desc": "The form  below allows you to update the selected zone",
+    "zone_delete_succ": "The zone has been deleted succesfully",
+    "delete_zone_desc": "By proceeding  the zone will be deleted."
 }

@@ -1,26 +1,26 @@
-'use strict';
+'use client';
 
 import {AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,} from '@/components/ui/alert-dialog';
 import {router} from '@inertiajs/react';
 import {toast} from 'sonner';
 import {route} from "ziggy-js";
-import {DeletePaymentProps} from "./data";
+import {DeleteZoneProps} from "./data";
 import { useTranslation } from 'react-i18next';
 
-export function DeletePayment({payment, isOpen, closeModal}: DeletePaymentProps) {
+export function DeleteZone({zone, isOpen, closeModal}: DeleteZoneProps) {
 
     const { t } = useTranslation('Settings');
 
-    const destroyPayment = () => {
-        router.delete(route('payment.destroy', payment.id), {
+    const destroyZone = () => {
+        router.delete(route('zone.destroy', zone.id), {
             preserveScroll: true,
-            onSuccess: () => paymentDeleted(),
+            onSuccess: () => zoneDeleted(),
             onFinish: () => closeModal(),
         });
-    }
+    };
 
-    const paymentDeleted = () => {
-        toast(t('payment_delete_succ'), {position: 'top-right', duration: 2000});
+    const zoneDeleted = () => {
+        toast(t('zone_delete_succ'), {position: 'top-right', duration: 2000});
         closeModal();
     };
 
@@ -28,14 +28,14 @@ export function DeletePayment({payment, isOpen, closeModal}: DeletePaymentProps)
         <AlertDialog open={isOpen}>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>{t('delete_payment')}?</AlertDialogTitle>
+                    <AlertDialogTitle>{t('delete_zone')}?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        {t('delete_payment_desc')}
+                        {t('delete_zone_desc')}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel onClick={closeModal}>{t('close')}</AlertDialogCancel>
-                    <AlertDialogAction onClick={destroyPayment}>{t('delete')}</AlertDialogAction>
+                    <AlertDialogAction onClick={destroyZone}>{t('delete')}</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

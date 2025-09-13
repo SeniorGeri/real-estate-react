@@ -68,5 +68,19 @@
     "edit_payment_desc": "Il modulo sottostante ti permette di aggiornare il pagamento selezionato",
     "payment_delete_succ": "Il pagamento è stato eliminato con successo",
     "delete_payment_desc": "Procedendo, il pagamento verrà eliminato.",
-    "method": "Metodo"
+    "method": "Metodo",
+
+    "zone": "Zona",
+    "name": "Nome",
+    "select_city": "Seleziona città",
+    "create_zone": "Crea zona",
+    "create_zone_desc": "Il modulo sottostante ti permette di creare nuove zone",
+    "add_zone": "Aggiungi zona",
+    "zone_created_succ": "La zona è stata creata con successo",
+    "edit_zone": "Modifica zona",
+    "delete_zone": "Elimina zona",
+    "zone_edit_succ": "La zona è stata aggiornata con successo",
+    "edit_zone_desc": "Il modulo sottostante ti permette di aggiornare la zona selezionata",
+    "zone_delete_succ": "La zona è stata eliminata con successo",
+    "delete_zone_desc": "Procedendo, la zona verrà eliminata."
 }

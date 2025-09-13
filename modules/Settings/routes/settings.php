@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Settings\Controllers\CityController;
 use Modules\Settings\Controllers\CurrencyController;
 use Modules\Settings\Controllers\PaymentController;
+use Modules\Settings\Controllers\ZoneController;
 
 Route::prefix('backoffice/')->group(function () {
     
@@ -47,13 +48,12 @@ Route::prefix('backoffice/')->group(function () {
         Route::delete('/list/{currency}', [CurrencyController::class, 'destroy'])->name('destroy')->permission('currency.delete');
     });
 
-    Route::prefix('payment')->as('payment.')->middleware(['web',  'auth:sanctum'])->group(function () {
+    Route::prefix('zone')->as('zone.')->middleware(['web',  'auth:sanctum'])->group(function () {
 
-        Route::get('/list', [PaymentController::class, 'index'])->name('list')->permission('payment.read');
-        Route::get('load', [PaymentController::class, 'show'])->name('load')->permission('payment.read');
-        Route::post('/list', [PaymentController::class, 'store'])->name('store')->permission('payment.create');
-        Route::put('/list/{payment}', [PaymentController::class, 'update'])->name('update')->permission('payment.update');
-        Route::delete('/list/{payment}', [PaymentController::class, 'destroy'])->name('destroy')->permission('payment.delete');
+        Route::get('/list', [ZoneController::class, 'index'])->name('list')->permission('zone.read');
+        Route::get('load', [ZoneController::class, 'show'])->name('load')->permission('zone.read');
+        Route::post('/list', [ZoneController::class, 'store'])->name('store')->permission('zone.create');
+        Route::put('/list/{zone}', [ZoneController::class, 'update'])->name('update')->permission('zone.update');
+        Route::delete('/list/{zone}', [ZoneController::class, 'destroy'])->name('destroy')->permission('zone.delete');
     });
-
 });

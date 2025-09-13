@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Modules\Settings\Requests\Payments;
+namespace Modules\Settings\Requests\Zones;
 
 use App\Traits\HasTranslationRulesTrait;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-final class UpdatePaymentRequest extends FormRequest
+final class UpdateZoneRequest extends FormRequest
 {
     use HasTranslationRulesTrait;
 
@@ -20,9 +20,7 @@ final class UpdatePaymentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'is_primary' => ['required', 'boolean'],
-            'active' => ['required', 'boolean'],
-            'image' =>  ['nullable', 'string'],
+            'city_id' => ['required', 'integer'],
             'description' =>  ['nullable', 'string'],
             'locale' => ['required', 'string']
         ];
@@ -36,7 +34,7 @@ final class UpdatePaymentRequest extends FormRequest
     public function translationsRules(): array
     {
         return [
-            'method' => ['required', 'string', 'max:100'],
+            'name' => ['required', 'string', 'max:100'],
         ];
     }
 }

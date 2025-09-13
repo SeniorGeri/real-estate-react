@@ -34,10 +34,10 @@ final class PermissionsSeeder extends Seeder
         Permission::create(["name" => "currency.update"]);
         Permission::create(["name" => "currency.delete"]);
 
-        Permission::create(["name" => "payment.create"]);
-        Permission::create(["name" => "payment.read"]);
-        Permission::create(["name" => "payment.update"]);
-        Permission::create(["name" => "payment.delete"]);
+        Permission::create(["name" => "zone.create"]);
+        Permission::create(["name" => "zone.read"]);
+        Permission::create(["name" => "zone.update"]);
+        Permission::create(["name" => "zone.delete"]);
 
     }
 }

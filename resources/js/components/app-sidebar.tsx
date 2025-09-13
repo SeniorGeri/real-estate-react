@@ -74,7 +74,7 @@ const mainNavItems: NavItem[] = [
         href: 'settings',
         icon: Cog,
         type: 'dropdown',
-        permissions: ['country.read', 'city.read', 'language.read','method.read', 'currency.read'],
+        permissions: ['country.read', 'city.read', 'language.read','method.read', 'currency.read','zone.read'],
         subItems: [
             {
                 title: 'Country',
@@ -91,6 +91,13 @@ const mainNavItems: NavItem[] = [
                 permission: 'city.read',
             },
             {
+                title: 'Zone',
+                href: route('zone.list'),
+                icon: Map,
+                type: 'standalone',
+                permission: 'zone.read',
+            },
+            {
                 title: 'Language',
                 href: route('language.list'),
                 icon: Languages,
@@ -104,14 +111,7 @@ const mainNavItems: NavItem[] = [
                 type: 'standalone',
                 permission: 'currency.read',
             }
-            ,
-            {
-                title: 'Payment Method',
-                href: route('payment.list'),
-                icon: ReceiptEuro,
-                type: 'standalone',
-                permission: 'payment.read',
-            }
+        
         ]
     }
 

@@ -37,9 +37,9 @@ final class AdminPermissionsSeeder extends Seeder
         $role->givePermissionTo("currency.update");
         $role->givePermissionTo("currency.delete");
 
-        $role->givePermissionTo("payment.create");
-        $role->givePermissionTo("payment.read");
-        $role->givePermissionTo("payment.update");
-        $role->givePermissionTo("payment.delete");
+        $role->givePermissionTo("zone.create");
+        $role->givePermissionTo("zone.read");
+        $role->givePermissionTo("zone.update");
+        $role->givePermissionTo("zone.delete");
     }
 }

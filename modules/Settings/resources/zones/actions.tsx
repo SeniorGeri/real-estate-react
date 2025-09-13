@@ -4,34 +4,34 @@ import {Button} from '@/components/ui/button';
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger} from '@/components/ui/dropdown-menu';
 import {MoreHorizontal} from 'lucide-react';
 import {useCallback, useState} from 'react';
-import {Payment, PaymentActionsProps} from "./data.js";
-import {EditPayment} from "./edit.js";
-import {DeletePayment} from "./delete.js";
+import {Zone, ZoneActionsProps} from "./data.js";
+import {EditZone} from "./edit.js";
+import {DeleteZone} from "./delete.js";
 import { useTranslation } from 'react-i18next';
-import { usePermissions } from '@/hooks/use-permissions.js';
+import { usePermissions } from '@/hooks/use-permissions';
 
-export function PaymentActions({payment}: PaymentActionsProps) {
+export function ZoneActions({zone}: ZoneActionsProps) {
 
     const { t } = useTranslation('Settings');
 
     const { hasPermission, hasAnyPermission} = usePermissions();
 
-    const [selectedPayment, setSelectedPayment] = useState<Payment| undefined>(undefined);
+    const [selectedZone, setSelectedZone] = useState<Zone| undefined>(undefined);
 
     const [selectedAction, setSelectedAction] = useState<'edit' | 'delete' | null>(null);
 
-    const handleAction = useCallback((payment: Payment, action: 'edit' | 'delete') => {
+    const handleAction = useCallback((zone: Zone, action: 'edit' | 'delete') => {
         setTimeout(() => {
-            setSelectedPayment(payment);
+            setSelectedZone(zone);
             setSelectedAction(action);
         }, 10)
     }, []);
 
-    if (!hasAnyPermission(['payment.update', 'payment.delete'])) {
+    if (!hasAnyPermission(['zone.update', 'zone.delete'])) {
         return null;
     }
-
     return (
+        
         <>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -41,26 +41,27 @@ export function PaymentActions({payment}: PaymentActionsProps) {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-[160px]">
-                    {hasPermission('payment.update') && (
+                    {hasPermission('zone.update') && (
                         <>
-                            <DropdownMenuItem onClick={() => handleAction(payment.original, 'edit')}>{t('edit_payment')}</DropdownMenuItem>
-                            <DropdownMenuSeparator/>
+                        <DropdownMenuItem onClick={() => handleAction(zone.original, 'edit')}>{t('edit_zone')}</DropdownMenuItem>
+                        <DropdownMenuSeparator/>
                         </>
                     )}
-                    {hasPermission('payment.delete') && (
-                        <DropdownMenuItem className="text-red-500" onClick={() => handleAction(payment.original, 'delete')}>
-                            {t('delete_payment')}
+
+                    {hasPermission('zone.delete') && (
+                        <DropdownMenuItem className="text-red-500" onClick={() => handleAction(zone.original, 'delete')}>
+                            {t('delete_zone')}
                             <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
                         </DropdownMenuItem>
                     )}
                 </DropdownMenuContent>
             </DropdownMenu>
             <div className="flex items-center justify-end">
-                {selectedPayment && selectedAction === 'edit' && (
-                    <EditPayment payment={selectedPayment} isOpen={true} closeModal={() => setSelectedPayment(undefined)}/>
+                {selectedZone && selectedAction === 'edit' && (
+                    <EditZone zone={selectedZone} isOpen={true} closeModal={() => setSelectedZone(undefined)}/>
                 )}
-                {selectedPayment && selectedAction === 'delete' && (
-                    <DeletePayment payment={selectedPayment} isOpen={true} closeModal={() => setSelectedPayment(undefined)}/>
+                {selectedZone && selectedAction === 'delete' && (
+                    <DeleteZone zone={selectedZone} isOpen={true} closeModal={() => setSelectedZone(undefined)}/>
                 )}
             </div>
         </>

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payment_methods', function (Blueprint $table) {
+        Schema::create('zones', function (Blueprint $table) {
             $table->id();
-            $table->string('method');
-            $table->boolean('is_primary')->default(false);
-            $table->boolean('active')->default(false);
-            $table->string('image')->nullable();
+            $table->foreignId('city_id')->nullable()->constrained('cities')->cascadeOnDelete();
+            $table->string('name');
             $table->string('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payment_methods');
+        Schema::dropIfExists('zones');
     }
 };
