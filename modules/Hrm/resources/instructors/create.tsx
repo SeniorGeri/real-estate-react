@@ -16,12 +16,12 @@ import CustomInput from '@/components/input/custom-input';
 import CustomSelect from '@/components/input/custom-select';
 import CustomSwitch from '@/components/input/custom-switch';
 import CustomTextarea from '@/components/input/custom-textarea';
-import { useInstructorData } from './instructor-data-context';
+import { useAgentData } from './agent-data-context';
 
 
-export function CreateInstructor() {
+export function CreateAgent() {
 
-    const instructorData = useInstructorData(); // Access directly from context
+    const agentData = useAgentData(); // Access directly from context
 
     const { t } = useTranslation('Hrm');
 
@@ -43,11 +43,11 @@ export function CreateInstructor() {
         specialization: '',
     });
 
-    const storeCountCreateInstructor: FormEventHandler = (e) => {
+    const storeCountCreateAgent: FormEventHandler = (e) => {
         e.preventDefault();
-        post(route('instructor.store'), {
+        post(route('agent.store'), {
             preserveScroll: true,
-            onSuccess: () => instructorCreated(),
+            onSuccess: () => agentCreated(),
             // onFinish: () => reset(),
         });
     };
@@ -58,8 +58,8 @@ export function CreateInstructor() {
         setOpen(false);
     };
 
-    const instructorCreated = () => {
-        toast(t('instructor_created_succ'), {position: 'top-right', duration: 2000});
+    const agentCreated = () => {
+        toast(t('agent_created_succ'), {position: 'top-right', duration: 2000});
         closeModal();
     };
 
@@ -67,15 +67,15 @@ export function CreateInstructor() {
         <Dialog open={open} modal={true}>
             <DialogTrigger asChild>
                 <Button variant="default" size="sm" onClick={() => setOpen(true)}>
-                    {t('create_instructor')}
+                    {t('create_agent')}
                 </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-4xl">
-                <DialogTitle>{t('create_instructor')}</DialogTitle>
+                <DialogTitle>{t('create_agent')}</DialogTitle>
                 <DialogDescription>
-                    {t('create_instructor_desc')}
+                    {t('create_agent_desc')}
                 </DialogDescription>
-                <form className="space-y-6" onSubmit={storeCountCreateInstructor}>
+                <form className="space-y-6" onSubmit={storeCountCreateAgent}>
                     <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-3 space-y-3">
 
                         <CustomInput
@@ -123,13 +123,13 @@ export function CreateInstructor() {
                             id="country_id"
                             className='col-span-1'
                             value={data.country_id}
-                            text = {instructorData.countries.find((count: Country) => count.id.toString() === data.country_id)?.country['en'] || t('select_country')}
+                            text = {agentData.countries.find((count: Country) => count.id.toString() === data.country_id)?.country['en'] || t('select_country')}
                             setFormData={setData}
                             placeholder={t('country')}
                             errorMessage={errors.country_id}
                         >   
                             <>
-                                {instructorData.countries.map((country : Country) => (
+                                {agentData.countries.map((country : Country) => (
                                     <SelectItem key={country.id} value={country.id.toString()}>{country.country['en']}</SelectItem>
                                 ))}
                             </>
@@ -139,13 +139,13 @@ export function CreateInstructor() {
                             id="city_id"
                             className='col-span-1'
                             value={data.city_id}
-                            text = {instructorData.cities.find((city: City) => city.id.toString() === data.city_id)?.city['en'] || t('select_city')}
+                            text = {agentData.cities.find((city: City) => city.id.toString() === data.city_id)?.city['en'] || t('select_city')}
                             setFormData={setData}
                             placeholder={t('city')}
                             errorMessage={errors.city_id}
                         >   
                             <>
-                                {instructorData.cities.map((city : City) => (
+                                {agentData.cities.map((city : City) => (
                                     <SelectItem key={city.id} value={city.id.toString()}>{city.city['en']}</SelectItem>
                                 ))}
                             </>
@@ -155,13 +155,13 @@ export function CreateInstructor() {
                             id="gender_id"
                             className='col-span-1'
                             value={data.gender_id}
-                            text = {instructorData.genders.find((gender: Gender) => gender.id.toString() === data.gender_id)?.gender['en'] || t('select_gender')}
+                            text = {agentData.genders.find((gender: Gender) => gender.id.toString() === data.gender_id)?.gender['en'] || t('select_gender')}
                             setFormData={setData}
                             placeholder={t('gender')}
                             errorMessage={errors.gender_id}
                         >   
                             <>
-                                {instructorData.genders.map((gender : Gender) => (
+                                {agentData.genders.map((gender : Gender) => (
                                     <SelectItem key={gender.id} value={gender.id.toString()}>{gender.gender['en']}</SelectItem>
                                 ))}
                             </>
@@ -221,7 +221,7 @@ export function CreateInstructor() {
                         </DialogClose>
 
                         <Button variant="default" disabled={processing} asChild>
-                            <button type="submit">{t('add_instructor')}</button>
+                            <button type="submit">{t('add_agent')}</button>
                         </Button>
                     </DialogFooter>
                 </form>

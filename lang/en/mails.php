@@ -18,7 +18,7 @@ return [
     'login' => 'Login',
     'new_order' => 'Course request',
     'new_order_message' => 'Thank you for trusting us. The course request has been received successfully and will be processed as soon as possible. Hang tight! The team is working on it.',
-    'instructor' => 'Instructor',
+    'agent' => 'Agent',
     'order_update' => 'Course request updated',
     'order_update_message' => 'We got news for you. The course request has been updated successfully.',
     'status' => 'Status',

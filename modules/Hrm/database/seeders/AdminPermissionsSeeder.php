@@ -15,11 +15,11 @@ class AdminPermissionsSeeder extends Seeder
     {
         $role = Role::findByName(RolesEnum::ADMIN->value);
 
-        $role->givePermissionTo("instructor.create");
-        $role->givePermissionTo("instructor.read");
-        $role->givePermissionTo("instructor.profile");
-        $role->givePermissionTo("instructor.update");
-        $role->givePermissionTo("instructor.delete");
+        $role->givePermissionTo("agent.create");
+        $role->givePermissionTo("agent.read");
+        $role->givePermissionTo("agent.profile");
+        $role->givePermissionTo("agent.update");
+        $role->givePermissionTo("agent.delete");
 
         $role->givePermissionTo("student.create");
         $role->givePermissionTo("student.read");

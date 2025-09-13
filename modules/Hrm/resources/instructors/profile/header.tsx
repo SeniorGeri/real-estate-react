@@ -6,10 +6,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Mail, MapPin, Calendar, Edit3 } from "lucide-react"
 import { useTranslation } from "react-i18next";
-import { Instructor } from "./data";
+import { Agent } from "./data";
 import { useLocale } from "@/contexts/locale";
 
-export default function Header({ instructor }: { instructor: Instructor }) {
+export default function Header({ agent }: { agent: Agent }) {
     const {t} = useTranslation('Hrm');
     const { currentLocale } = useLocale();
 
@@ -19,29 +19,29 @@ export default function Header({ instructor }: { instructor: Instructor }) {
             <CardContent className="relative px-8 pb-8">
                 <div className="flex flex-col items-center sm:flex-row sm:items-end sm:space-x-6">
                     <Avatar className="h-28 w-28 -mt-14 border-4 border-white shadow-lg">
-                        <AvatarImage src={instructor.profile_pic || "/placeholder.svg"} alt={instructor.name} />
+                        <AvatarImage src={agent.profile_pic || "/placeholder.svg"} alt={agent.name} />
                         <AvatarFallback className="text-xl font-semibold bg-gray-600 dark:bg-gray-500 text-white">
-                            {instructor.name
+                            {agent.name
                                 .split(" ")
                                 .map((n) => n[0])
                                 .join("")}
                         </AvatarFallback>
                     </Avatar>
                     <div className="flex-1 text-center sm:text-left mt-4 sm:mt-0">
-                        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{instructor.name}</h1>
-                        <p className="text-gray-600 dark:text-gray-300 mt-1">{instructor.bio[currentLocale]}</p>
+                        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{agent.name}</h1>
+                        <p className="text-gray-600 dark:text-gray-300 mt-1">{agent.bio[currentLocale]}</p>
                         <div className="flex flex-wrap justify-center sm:justify-start gap-4 mt-4 text-sm text-gray-500 dark:text-gray-400">
                             <div className="flex items-center gap-1">
                                 <Mail className="h-4 w-4" />
-                                {instructor.email}
+                                {agent.email}
                             </div>
                             <div className="flex items-center gap-1">
                                 <MapPin className="h-4 w-4" />
-                                {instructor.address}
+                                {agent.address}
                             </div>
                             <div className="flex items-center gap-1">
                                 <Calendar className="h-4 w-4" />
-                                {t('joined')} {Date.parse(instructor.created_at)}
+                                {t('joined')} {Date.parse(agent.created_at)}
                             </div>
                         </div>
                     </div>

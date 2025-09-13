@@ -44,7 +44,7 @@ final class OrderUpdateMail extends Mailable
         return new Content(
             view: 'mails.order-update',
             with: [
-                'activeCourse' => $this->activeCourse->load(['courseInstructor.course', 'instructor', 'status'])
+                'activeCourse' => $this->activeCourse->load(['courseAgent.course', 'agent', 'status'])
             ]
         );
     }

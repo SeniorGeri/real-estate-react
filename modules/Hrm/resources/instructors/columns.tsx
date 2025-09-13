@@ -2,13 +2,13 @@
 
 import {DataTableColumnHeader} from '@/components/data-table/data-table-column-header';
 import {ColumnDef} from '@tanstack/react-table';
-import {Instructor} from "./data";
+import {Agent} from "./data";
 import {useTranslation} from 'react-i18next';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 
 
 
-export const InstructorColumns = (): ColumnDef<Instructor>[] => {
+export const AgentColumns = (): ColumnDef<Agent>[] => {
     const { t } = useTranslation('Hrm');
 
 
@@ -43,7 +43,7 @@ export const InstructorColumns = (): ColumnDef<Instructor>[] => {
 
         {
             accessorKey: 'name',
-            header: ({column}) => <DataTableColumnHeader column={column} title={t('instructor')}/>,
+            header: ({column}) => <DataTableColumnHeader column={column} title={t('agent')}/>,
             cell: ({row}) => {
                 return (
                     <div className="flex space-x-2">

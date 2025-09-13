@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { Bell, BellRing, Book, BookOpen, CalendarArrowUp, CircleGauge, Cog, Coins, Euro, Folder, GraduationCap, HandCoins, Handshake, Images, Landmark, Languages, LogOut, Map, Megaphone, PiggyBank, ReceiptEuro, School, ShieldCheck, Sliders, User, UserCheck, UsersRound, } from 'lucide-react';
+import { Bell, BellRing, CircleGauge, Cog, Images, Megaphone, Sliders, User, UserCheck, UsersRound,Languages, Euro, ReceiptEuro, LogOut, Map } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -15,106 +15,18 @@ const mainNavItems: NavItem[] = [
         type: 'standalone'
     },
     {
-        title: 'Operational',
-        href: 'operational',
-        icon: Handshake,
-        type: 'dropdown',
-        permissions: ['active-course.read','course-instructor.read','school.read','subject.read','course.read','grade.read'],
-        subItems: [
-            {
-                title: 'Active course',
-                href: route('active-course.list'),
-                icon: ShieldCheck,
-                type: 'standalone',
-                permission: 'active-course.read',
-            },
-            {
-                title: 'Course Instructor',
-                href: route('course-instructor.list'),
-                icon: HandCoins,
-                type: 'standalone',
-                permission: 'course-instructor.read',
-            },
-            {
-                title: 'Course',
-                href: route('course.list'),
-                icon: GraduationCap,
-                type: 'standalone',
-                permission: 'course.read',
-            },
-            {
-                title: 'School',
-                href: route('school.list'),
-                icon: School,
-                type: 'standalone',
-                permission: 'school.read',
-            },
-            {
-                title: 'Subject',
-                href: route('subject.list'),
-                icon: Book,
-                type: 'standalone',
-                permission: 'subject.read',
-            },
-            {
-                title: 'Grade',
-                href: route('grade.list'),
-                icon: CalendarArrowUp,
-                type: 'standalone',
-                permission: 'grade.read',
-            }
-        ]
-    },
-    {
-        title: 'Finance',
-        href: 'finance',
-        icon: HandCoins,
-        type: 'dropdown',
-        permissions: ['liquidation.read','expense.read','transaction.read'],
-        subItems: [    
-            {
-                title: 'Liquidation',
-                href: route('liquidation.list'),
-                icon: Landmark,
-                type: 'standalone',
-                permission: 'liquidation.read',
-            },
-            {
-                title: 'Expense',
-                href: route('expense.list'),
-                icon: Coins,
-                type: 'standalone',
-                permission: 'expense.read',
-            },
-            {
-                title: 'Transaction',
-                href: route('transaction.list'),
-                icon: PiggyBank,
-                type: 'standalone',
-                permission: 'transaction.read',
-            }
-        ]
-    },
-    {
         title: 'Hrm',
         href: 'hrm',
         icon: UsersRound,
         type: 'dropdown',
-        permissions: ['instructor.read', 'student.read'],
+        permissions: ['agent.read', 'student.read'],
         subItems: [
             {
-                title: 'Instructor',
-                href: route('instructor.list'),
+                title: 'Agent',
+                href: route('agent.list'),
                 icon: UserCheck,
                 type: 'standalone',
-                permission: 'instructor.read',
-            },
-            {
-                title: 'Student',
-                href: route('student.list'),
-                icon: User,
-                type: 'standalone',
-                permission: 'student.read',
+                permission: 'agent.read',
             }
         ]
     },
@@ -208,7 +120,7 @@ const mainNavItems: NavItem[] = [
 const footerNavItems: NavItem[] = [
     {
         title: 'Main page',
-        href: route('frontend.index'),
+        href: route('dashboard'),
         icon: LogOut,
         type: 'standalone',
     }

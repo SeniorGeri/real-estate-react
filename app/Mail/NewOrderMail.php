@@ -43,7 +43,7 @@ final class NewOrderMail extends Mailable
         return new Content(
             view: 'mails.new-order',
             with: [
-                'activeCourse' => $this->activeCourse->load(['courseInstructor.course', 'instructor'])
+                'activeCourse' => $this->activeCourse->load(['courseAgent.course', 'agent'])
             ]
         );
     }

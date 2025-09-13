@@ -4,31 +4,31 @@ import {Button} from '@/components/ui/button';
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger} from '@/components/ui/dropdown-menu';
 import {MoreHorizontal} from 'lucide-react';
 import {useCallback, useState} from 'react';
-import {Instructor, InstructorActionsProps} from "./data.js";
-import {EditInstructor} from "./edit.js";
-import {DeleteInstructor} from "./delete.js";
+import {Agent, AgentActionsProps} from "./data.js";
+import {EditAgent} from "./edit.js";
+import {DeleteAgent} from "./delete.js";
 import { useTranslation } from 'react-i18next';
 import { usePermissions } from '@/hooks/use-permissions.js';
 import { router } from '@inertiajs/react';
 
-export function InstructorActions({instructor}: InstructorActionsProps) {
+export function AgentActions({agent}: AgentActionsProps) {
 
     const { t } = useTranslation('Hrm');
 
     const { hasPermission, hasAnyPermission} = usePermissions();
 
-    const [selectedInstructor, setSelectedInstructor] = useState<Instructor| undefined>(undefined);
+    const [selectedAgent, setSelectedAgent] = useState<Agent| undefined>(undefined);
 
     const [selectedAction, setSelectedAction] = useState<'edit' | 'delete' | null>(null);
 
-    const handleAction = useCallback((Instructor: Instructor, action: 'edit' | 'delete') => {
+    const handleAction = useCallback((Agent: Agent, action: 'edit' | 'delete') => {
         setTimeout(() => {
-            setSelectedInstructor(Instructor);
+            setSelectedAgent(Agent);
             setSelectedAction(action);
         }, 10)
     }, []);
 
-    if (!hasAnyPermission(['instructor.update', 'instructor.delete'])) {
+    if (!hasAnyPermission(['agent.update', 'agent.delete'])) {
         return null;
     }
 
@@ -42,29 +42,29 @@ export function InstructorActions({instructor}: InstructorActionsProps) {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-[160px]">
-                    {hasPermission('instructor.update') && (
+                    {hasPermission('agent.update') && (
                         <>
-                            <DropdownMenuItem onClick={() => handleAction(instructor.original, 'edit')}>{t('edit_instructor')}</DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => handleAction(agent.original, 'edit')}>{t('edit_agent')}</DropdownMenuItem>
                             <DropdownMenuSeparator/>
                         </>
                     )}
-                    <DropdownMenuItem onClick={() =>  router.visit(route('instructor.profile', instructor.original.id))}>{t('profile_instructor')}</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() =>  router.visit(route('agent.profile', agent.original.id))}>{t('profile_agent')}</DropdownMenuItem>
                     <DropdownMenuSeparator/>
                     
-                    {hasPermission('instructor.delete') && (
-                        <DropdownMenuItem className="text-red-500" onClick={() => handleAction(instructor.original, 'delete')}>
-                            {t('delete_instructor')}
+                    {hasPermission('agent.delete') && (
+                        <DropdownMenuItem className="text-red-500" onClick={() => handleAction(agent.original, 'delete')}>
+                            {t('delete_agent')}
                             <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
                         </DropdownMenuItem>
                     )}
                 </DropdownMenuContent>
             </DropdownMenu>
             <div className="flex items-center justify-end">
-                {selectedInstructor && selectedAction === 'edit' && (
-                    <EditInstructor instructor={selectedInstructor} isOpen={true} closeModal={() => setSelectedInstructor(undefined)}/>
+                {selectedAgent && selectedAction === 'edit' && (
+                    <EditAgent agent={selectedAgent} isOpen={true} closeModal={() => setSelectedAgent(undefined)}/>
                 )}
-                {selectedInstructor && selectedAction === 'delete' && (
-                    <DeleteInstructor instructor={selectedInstructor} isOpen={true} closeModal={() => setSelectedInstructor(undefined)}/>
+                {selectedAgent && selectedAction === 'delete' && (
+                    <DeleteAgent agent={selectedAgent} isOpen={true} closeModal={() => setSelectedAgent(undefined)}/>
                 )}
             </div>
         </>

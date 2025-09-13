@@ -15,7 +15,7 @@ export type RegisterForm = {
     password: string;
     password_confirmation: string;
     phone: string;
-    instructor: boolean;
+    agent: boolean;
 };
 
 export interface ResetPasswordProps {

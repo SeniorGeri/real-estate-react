@@ -1,10 +1,10 @@
 import { Liquidation } from "@/modules/Finance/resources/liquidations/data";
 import { Transaction } from "@/modules/Finance/resources/transactions/data";
-import { CourseInstructor } from "@/modules/Frontend/resources/data";
+import { CourseAgent } from "@/modules/Frontend/resources/data";
 import { ActiveCourse } from "@/modules/Operational/resources/active-courses/data";
 import { TranslatableField } from "@/types/helpers";
 
-export type Instructor = {
+export type Agent = {
     active: boolean;
     active_courses: ActiveCourse[];
     address: string;
@@ -13,7 +13,7 @@ export type Instructor = {
     city_id: number;
     country: string;
     country_id: number;
-    courses: CourseInstructor[];
+    courses: CourseAgent[];
     created_at: string;
     deleted_at: string;
     email: string;

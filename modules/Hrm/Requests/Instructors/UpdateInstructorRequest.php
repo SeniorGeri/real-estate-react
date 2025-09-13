@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Modules\Hrm\Requests\Instructors;
+namespace Modules\Hrm\Requests\Agents;
 
 use App\Traits\HasTranslationRulesTrait;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-final class UpdateInstructorRequest extends FormRequest
+final class UpdateAgentRequest extends FormRequest
 {
     use HasTranslationRulesTrait;
 

@@ -4,27 +4,27 @@ import { usePermissions } from '@/hooks/use-permissions';
 import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from '@/components/data-table/data-table';
 import { route } from 'ziggy-js';
-import { CreateInstructor } from './create';
-import { InstructorColumns } from './columns';
-import { Instructor } from './data';
-import { InstructorActions } from './actions';
+import { CreateAgent } from './create';
+import { AgentColumns } from './columns';
+import { Agent } from './data';
+import { AgentActions } from './actions';
 
-export default function InstructorTable() {
+export default function AgentTable() {
 
     const { hasPermission } = usePermissions();
 
-    const columns: ColumnDef<Instructor>[] = [
-        ...InstructorColumns(),
+    const columns: ColumnDef<Agent>[] = [
+        ...AgentColumns(),
         {
             id: 'actions',
-            cell: ({ row }) => <InstructorActions instructor={row} />
+            cell: ({ row }) => <AgentActions agent={row} />
         }
     ];
     return (
 
-        <DataTable urlPath={route('instructor.load')} columns={columns}>
-            {hasPermission('instructor.create') && (
-                <CreateInstructor/>
+        <DataTable urlPath={route('agent.load')} columns={columns}>
+            {hasPermission('agent.create') && (
+                <CreateAgent/>
             )}
 
         </DataTable>

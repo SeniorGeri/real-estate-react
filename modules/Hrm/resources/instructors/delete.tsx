@@ -5,22 +5,22 @@ import {router} from '@inertiajs/react';
 import {toast} from 'sonner';
 import {route} from "ziggy-js";
 import { useTranslation } from 'react-i18next';
-import { DeleteInstructorProps } from './data';
+import { DeleteAgentProps } from './data';
 
-export function DeleteInstructor({instructor, isOpen, closeModal}: DeleteInstructorProps) {
+export function DeleteAgent({agent, isOpen, closeModal}: DeleteAgentProps) {
 
     const { t } = useTranslation('Hrm');
 
-    const destroyInstructor = () => {
-        router.delete(route('instructor.destroy', instructor.id), {
+    const destroyAgent = () => {
+        router.delete(route('agent.destroy', agent.id), {
             preserveScroll: true,
-            onSuccess: () => instructorDeleted(),
+            onSuccess: () => agentDeleted(),
             onFinish: () => closeModal(),
         });
     };
 
-    const instructorDeleted = () => {
-        toast(t('instructor_delete_succ'), {position: 'top-right', duration: 2000});
+    const agentDeleted = () => {
+        toast(t('agent_delete_succ'), {position: 'top-right', duration: 2000});
         closeModal();
     };
 
@@ -28,14 +28,14 @@ export function DeleteInstructor({instructor, isOpen, closeModal}: DeleteInstruc
         <AlertDialog open={isOpen}>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>{t('delete_instructor')}?</AlertDialogTitle>
+                    <AlertDialogTitle>{t('delete_agent')}?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        {t('delete_instructor_desc')}
+                        {t('delete_agent_desc')}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel onClick={closeModal}>{t('close')}</AlertDialogCancel>
-                    <AlertDialogAction onClick={destroyInstructor}>{t('delete')}</AlertDialogAction>
+                    <AlertDialogAction onClick={destroyAgent}>{t('delete')}</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

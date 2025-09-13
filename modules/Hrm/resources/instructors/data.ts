@@ -5,24 +5,24 @@ import { Country } from '@/modules/Settings/resources/countries/data';
 import { City } from '@/modules/Settings/resources/cities/data';
 import { Gender } from '@/modules/Settings/resources/genders/data';
 
-export const instructorBreadcrumbs: BreadcrumbItem[] = [
+export const agentBreadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Dashboard',
         href: route('dashboard'),
     },
     {
-        title: 'Instructors',
-        href: route('instructor.list'),
+        title: 'Agents',
+        href: route('agent.list'),
     },
 ];
 
-export type InstructorData = {
+export type AgentData = {
     countries: Country[];
     cities: City[];
     genders: Gender[];
 };
 
-export type Instructor = {
+export type Agent = {
     id: number;
     name: string;
     email: string;
@@ -41,18 +41,18 @@ export type Instructor = {
     specialization: string;
 };
 
-export type InstructorActionsProps = {
-    instructor: Row<Instructor>;
+export type AgentActionsProps = {
+    agent: Row<Agent>;
 };
 
-export type DeleteInstructorProps = {
-    instructor: Instructor;
+export type DeleteAgentProps = {
+    agent: Agent;
     isOpen: boolean;
     closeModal: () => void;
 };
 
-export type EditInstructorProps = {
-    instructor: Instructor;
+export type EditAgentProps = {
+    agent: Agent;
     isOpen: boolean;
     closeModal: () => void;
 };

@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {  Award } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { CourseInstructor } from "@/modules/Frontend/resources/data";
+import { CourseAgent } from "@/modules/Frontend/resources/data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Link } from "@inertiajs/react";
 
-export default function CourseTab({ completedCourses }: {completedCourses: CourseInstructor[]}) {
+export default function CourseTab({ completedCourses }: {completedCourses: CourseAgent[]}) {
 
     const {t} = useTranslation('Hrm');
 

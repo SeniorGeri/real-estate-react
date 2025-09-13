@@ -3,10 +3,10 @@
 PHASE 1
 SMALL BOOKING SYSTEM
 ROLES
-ADMIN,INSTRUCTOR,STUDENT
+ADMIN,AGENT,STUDENT
 
 FEATURES
-Register and login as a student ('request for instructor')
+Register and login as a student ('request for agent')
 Posting Classes , Articles , Memes
 Filling activities
 Request for booking

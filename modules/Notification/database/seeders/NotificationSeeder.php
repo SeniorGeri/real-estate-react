@@ -14,8 +14,7 @@ class NotificationSeeder extends Seeder
     {
         $this->call(PermissionsSeeder::class);
         $this->call(AdminPermissionsSeeder::class);
-        $this->call(InstrustorPermissionsSeeder::class);
-        $this->call(StudentPermissionsSeeder::class);
+        $this->call(AgentPermissionsSeeder::class);
 
         NotificationType::create([
             'type' => 'contact',
@@ -27,7 +26,7 @@ class NotificationSeeder extends Seeder
             'type' => 'liquidation',
         ]);
         NotificationType::create([
-            'type' => 'instructor',
+            'type' => 'agent',
         ]);
         NotificationType::create([
             'type' => 'order',

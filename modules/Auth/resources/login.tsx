@@ -69,9 +69,9 @@ export default function Login({ status }: LoginProps) {
                     </TextLink>
                     <div className="mx-2">
                         {t('still_not_sure')} ? {t('go_back_and')} {' '}
-                        <TextLink href={route('frontend.index')} tabIndex={5}>
+                        {/* <TextLink href={route('frontend.index')} tabIndex={5}>
                             {t('browse_a_bit_more')}
-                        </TextLink>
+                        </TextLink> */}
                     </div>
 
                   

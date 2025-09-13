@@ -2,23 +2,23 @@
 
 import AppLayout from '@/layouts/app-layout';
 import { Head } from '@inertiajs/react';
-import { instructorBreadcrumbs } from './data';
-import { InstructorData } from './data';
-import { InstructorDataProvider } from './instructor-data-context';
-import InstructorTable from './instructor';
+import { agentBreadcrumbs } from './data';
+import { AgentData } from './data';
+import { AgentDataProvider } from './agent-data-context';
+import AgentTable from './agent';
 
-export default function InstructorIndex({countries, cities, genders }: InstructorData) {
+export default function AgentIndex({countries, cities, genders }: AgentData) {
 
 
 
     return (
-        <InstructorDataProvider instructorData={{countries, cities, genders}}>
-            <AppLayout breadcrumbs={instructorBreadcrumbs}>
-                <Head title="Instructors" />
+        <AgentDataProvider agentData={{countries, cities, genders}}>
+            <AppLayout breadcrumbs={agentBreadcrumbs}>
+                <Head title="Agents" />
                     <div className="flex flex-col gap-2 p-4 ">
-                        <InstructorTable/>
+                        <AgentTable/>
                     </div>
             </AppLayout>
-        </InstructorDataProvider>
+        </AgentDataProvider>
     );
 }

@@ -22,7 +22,7 @@ export default function LanguageIndex() {
 
     return (
             <AppLayout breadcrumbs={contactBreadcrumbs}>
-                <Head title="Instructors" />
+                <Head title="Agents" />
                     <div className="flex flex-col gap-2 p-4 ">
                           <DataTable urlPath={route('contact.load')} columns={columns}>
                                 <></>

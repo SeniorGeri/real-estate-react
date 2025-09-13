@@ -3,22 +3,22 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use Modules\Hrm\Controllers\Instructor\InstructorController;
-use Modules\Hrm\Controllers\Instructor\InstructorProfileController;
+use Modules\Hrm\Controllers\Agent\AgentController;
+use Modules\Hrm\Controllers\Agent\AgentProfileController;
 use Modules\Hrm\Controllers\Student\StudentController;
 use Modules\Hrm\Controllers\Student\StudentProfileController;
 
 Route::prefix('backoffice/')->group(function () {
 
-    Route::prefix('instructor')->as('instructor.')->middleware(['web',  'auth:sanctum'])->group(function () {
+    Route::prefix('agent')->as('agent.')->middleware(['web',  'auth:sanctum'])->group(function () {
 
-        Route::get('/list', [InstructorController::class, 'index'])->name('list')->permission('instructor.read');
-        Route::get('load', [InstructorController::class, 'show'])->name('load')->permission('instructor.read');
-        Route::post('/list', [InstructorController::class, 'store'])->name('store')->permission('instructor.create');
-        Route::put('/list/{instructor}', [InstructorController::class, 'update'])->name('update')->permission('instructor.update');
-        Route::delete('/list/{instructor}', [InstructorController::class, 'destroy'])->name('destroy')->permission('instructor.delete');
+        Route::get('/list', [AgentController::class, 'index'])->name('list')->permission('agent.read');
+        Route::get('load', [AgentController::class, 'show'])->name('load')->permission('agent.read');
+        Route::post('/list', [AgentController::class, 'store'])->name('store')->permission('agent.create');
+        Route::put('/list/{agent}', [AgentController::class, 'update'])->name('update')->permission('agent.update');
+        Route::delete('/list/{agent}', [AgentController::class, 'destroy'])->name('destroy')->permission('agent.delete');
         
-        Route::get('/profile/{instructor}', [InstructorProfileController::class, 'index'])->name('profile')->permission('instructor.read');
+        Route::get('/profile/{agent}', [AgentProfileController::class, 'index'])->name('profile')->permission('agent.read');
 
     });
 

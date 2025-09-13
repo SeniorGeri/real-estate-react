@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Modules\Hrm\Requests\Instructors;
+namespace Modules\Hrm\Requests\Agents;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-final class StoreInstructorRequest extends FormRequest
+final class StoreAgentRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.

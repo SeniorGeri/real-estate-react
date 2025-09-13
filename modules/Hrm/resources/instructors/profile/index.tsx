@@ -2,8 +2,8 @@
 
 import AppLayout from '@/layouts/app-layout';
 import { Head } from '@inertiajs/react';
-import { instructorBreadcrumbs } from '../data';
-import { Instructor } from './data';
+import { agentBreadcrumbs } from '../data';
+import { Agent } from './data';
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
@@ -19,22 +19,22 @@ import MainTab from './main-tab';
 import CourseTab from './course-tab';
 import OngoingTab from './ongoing-tab';import { useTranslation } from 'react-i18next';
 
-export default function InstructorProfile({ instructor }:   { instructor: Instructor }) {
+export default function AgentProfile({ agent }:   { agent: Agent }) {
 
   const {t} = useTranslation('Hrm');
 
-  console.log(instructor);
+  console.log(agent);
   return (
-    <AppLayout breadcrumbs={instructorBreadcrumbs}>
-      <Head title="Instructors" />
+    <AppLayout breadcrumbs={agentBreadcrumbs}>
+      <Head title="Agents" />
       <div className="gap-2 p-4 ">
         <div className="min-h-screen bg-gray-50 dark:bg-stone-950 p-4">
           <div className="mx-auto max-w-6xl">
             {/* Profile Header */}
-            <Header instructor={instructor} />
+            <Header agent={agent} />
 
             {/* Cards Section */}
-            <DataCards totalCourses={instructor.active_courses.length} totalOngoingCourses={instructor.active_courses.length} totalLiquidations={instructor.liquidations.length} />
+            <DataCards totalCourses={agent.active_courses.length} totalOngoingCourses={agent.active_courses.length} totalLiquidations={agent.liquidations.length} />
 
             {/* Tabs Section */}
             <Card className="border shadow-sm dark:bg-stone-950 dark:border-green-900">
@@ -61,13 +61,13 @@ export default function InstructorProfile({ instructor }:   { instructor: Instru
                 </CardHeader>
 
                 <CardContent className="pt-0">
-                  <MainTab instructor={instructor} />
+                  <MainTab agent={agent} />
 
-                  {/* <TransactionTab transactions={instructor.transactions} /> */}
+                  {/* <TransactionTab transactions={agent.transactions} /> */}
 
-                  <CourseTab completedCourses={instructor.courses} />
+                  <CourseTab completedCourses={agent.courses} />
 
-                  <OngoingTab ongoingCourses={instructor.active_courses} />
+                  <OngoingTab ongoingCourses={agent.active_courses} />
                 </CardContent>
               </Tabs>
             </Card>

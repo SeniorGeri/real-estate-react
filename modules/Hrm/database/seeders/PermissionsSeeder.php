@@ -12,11 +12,11 @@ class PermissionsSeeder extends Seeder
      */
     public function run(): void
     {
-        Permission::create(["name" => "instructor.create"]);
-        Permission::create(["name" => "instructor.read"]);
-        Permission::create(["name" => "instructor.profile"]);
-        Permission::create(["name" => "instructor.update"]);
-        Permission::create(["name" => "instructor.delete"]);
+        Permission::create(["name" => "agent.create"]);
+        Permission::create(["name" => "agent.read"]);
+        Permission::create(["name" => "agent.profile"]);
+        Permission::create(["name" => "agent.update"]);
+        Permission::create(["name" => "agent.delete"]);
 
         Permission::create(["name" => "student.create"]);
         Permission::create(["name" => "student.read"]);

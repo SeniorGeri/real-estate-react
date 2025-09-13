@@ -18,7 +18,7 @@ return [
     'login' => 'Accedi',
     'new_order' => 'Richiesta corso',
     'new_order_message' => 'Grazie per averci dato fiducia. La richiesta del corso è stata ricevuta con successo e sarà elaborata il prima possibile. Attendi! Il team ci sta lavorando.',
-    'instructor' => 'Istruttore',
+    'agent' => 'Istruttore',
     'order_update' => 'Richiesta corso aggiornata',
     'order_update_message' => 'Abbiamo novità per te. La richiesta del corso è stata aggiornata con successo.',
     'status' => 'Stato',

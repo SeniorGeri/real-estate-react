@@ -8,7 +8,6 @@ enum RolesEnum: string
 {
     case ADMIN = 'admin';
 
-    case INSTRUCTOR = 'instructor';
+    case AGENT = 'agent';
 
-    case STUDENT = 'student';
 }

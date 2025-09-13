@@ -44,7 +44,7 @@ final class LiquidationRequestMail extends Mailable
         return new Content(
             view: 'mails.liquidation-request',
             with: [
-                'liquidation' => $this->liquidation->load(['activeCourse.courseInstructor.course', 'activeCourse.student'])
+                'liquidation' => $this->liquidation->load(['activeCourse.courseAgent.course', 'activeCourse.student'])
             ]
         );
     }

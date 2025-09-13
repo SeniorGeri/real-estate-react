@@ -33,16 +33,16 @@
     "delete_student_desc": "By proceeding  the student will be deleted.",
 
 
-    "create_instructor": "Create instructor",
-    "create_instructor_desc": "The form below allows you to create new instructors",
-    "add_instructor": "Add instructor",
-    "instructor_created_succ": "The instructor has been created succesfully",
-    "edit_instructor": "Edit instructor",
-    "delete_instructor": "Delete instructor",
-    "instructor_edit_succ": "The instructor has been updated succesfully",
-    "edit_instructor_desc": "The form  below allows you to update the selected instructor",
-    "instructor_delete_succ": "The instructor has been deleted succesfully",
-    "delete_instructor_desc": "By proceeding  the instructor will be deleted.",
+    "create_agent": "Create agent",
+    "create_agent_desc": "The form below allows you to create new agents",
+    "add_agent": "Add agent",
+    "agent_created_succ": "The agent has been created succesfully",
+    "edit_agent": "Edit agent",
+    "delete_agent": "Delete agent",
+    "agent_edit_succ": "The agent has been updated succesfully",
+    "edit_agent_desc": "The form  below allows you to update the selected agent",
+    "agent_delete_succ": "The agent has been deleted succesfully",
+    "delete_agent_desc": "By proceeding  the agent will be deleted.",
    
 
     "mainData": "Main Data",
@@ -87,6 +87,6 @@
     "title": "Title",
     "lessonsLeft": "Lessons Left",
     "ongoingCourses": "Ongoing Courses",
-    "profile_instructor": "Instructor Profile",
+    "profile_agent": "Agent Profile",
     "profile_student": "Student Profile"
 }

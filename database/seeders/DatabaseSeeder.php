@@ -5,11 +5,9 @@ namespace Database\Seeders;
 use App\Enums\RolesEnum;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Modules\Finance\database\seeders\FinanceSeeder;
 use Modules\Settings\database\seeders\SettingsSeeder;
 use Modules\Hrm\database\seeders\HrmSeeder;
 use Modules\Notification\database\seeders\NotificationSeeder;
-use Modules\Operational\database\seeders\OperationalSeeder;
 use Modules\Storage\database\seeders\StorageSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,7 +22,7 @@ class DatabaseSeeder extends Seeder
      
             $user = User::create([
                 'name' => 'admin',
-                'email' => 'admin@only-study.com',
+                'email' => 'admin@real-estate.com',
                 'password' => '12345678',
             ]);
 
@@ -32,8 +30,6 @@ class DatabaseSeeder extends Seeder
 
             $this->call(SettingsSeeder::class);
             $this->call(HrmSeeder::class);
-            $this->call(OperationalSeeder::class);
-            $this->call(FinanceSeeder::class);
             $this->call(NotificationSeeder::class);
             $this->call(StorageSeeder::class);
 

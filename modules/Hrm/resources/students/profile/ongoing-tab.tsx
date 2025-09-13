@@ -32,8 +32,8 @@ export default function OngoingTab({ ongoingCourses }: {ongoingCourses: ActiveCo
                         <TableHead key={'status'}>
                            {t('status')}
                         </TableHead>
-                        <TableHead key={'instructor'}>
-                           {t('instructor')}
+                        <TableHead key={'agent'}>
+                           {t('agent')}
                         </TableHead>
                         <TableHead key={'lessons_left'}>
                            {t('lessonsLeft')}
@@ -50,17 +50,17 @@ export default function OngoingTab({ ongoingCourses }: {ongoingCourses: ActiveCo
                         <TableCell key={cell.id}>
                             {cell.id}
                         </TableCell>
-                        <TableCell key={cell.course_instructor.image}>
-                            <img src={cell.course_instructor.image} alt={cell.course_instructor.description} className="w-16 h-16 object-cover rounded" />
+                        <TableCell key={cell.course_agent.image}>
+                            <img src={cell.course_agent.image} alt={cell.course_agent.description} className="w-16 h-16 object-cover rounded" />
                         </TableCell>
-                        <TableCell key={cell.course_instructor.description}>
-                            {cell.course_instructor.description}
+                        <TableCell key={cell.course_agent.description}>
+                            {cell.course_agent.description}
                         </TableCell>
                         <TableCell key={cell.status.status[currentLocale]}>
                             <Badge variant="secondary">{cell.status.status[currentLocale]}</Badge>
                         </TableCell>
-                        <TableCell key={cell.instructor.name}>
-                            {cell.instructor.name}
+                        <TableCell key={cell.agent.name}>
+                            {cell.agent.name}
                         </TableCell>
                         <TableCell key={cell.left}>
                             {cell.left}

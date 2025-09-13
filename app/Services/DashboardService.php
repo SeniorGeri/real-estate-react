@@ -6,18 +6,18 @@ use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Inertia\Response;
 use Modules\Finance\Models\Liquidation;
-use Modules\Hrm\Models\Instructor;
+use Modules\Hrm\Models\Agent;
 use Modules\Hrm\Models\Student;
 use Modules\Operational\Models\ActiveCourse;
 use Modules\Operational\Models\Course;
 use Modules\Operational\Enums\CourseStatusEnum;
-use Modules\Operational\Models\CourseInstructor;
+use Modules\Operational\Models\CourseAgent;
 
 class DashboardService
 {       
     public function getAdminView() : Response
     {
-        $instructors = Instructor::select([DB::raw('COUNT(*) as total'), DB::raw('SUM(CASE WHEN active = 1 THEN 1 ELSE 0 END) as total_active')])->first();
+        $agents = Agent::select([DB::raw('COUNT(*) as total'), DB::raw('SUM(CASE WHEN active = 1 THEN 1 ELSE 0 END) as total_active')])->first();
         $students = Student::select([DB::raw('COUNT(*) as total'), DB::raw('SUM(CASE WHEN active = 1 THEN 1 ELSE 0 END) as total_active')])->first();
         $courses = Course::count();
         $activeCourses = ActiveCourse::select([
@@ -29,7 +29,7 @@ class DashboardService
             DB::raw('SUM(CASE WHEN status_id = ' . CourseStatusEnum::APPROVED->value . ' THEN 1 ELSE 0 END) as total_approved'),
         ])->first();
 
-        $instructorList = Instructor::withCount('activeCourses')
+        $agentList = Agent::withCount('activeCourses')
         ->orderBy('active_courses_count', 'desc')
         ->take(3)
         ->get();
@@ -40,21 +40,21 @@ class DashboardService
         ->get();
             
         return Inertia::render('dashboards/admin', [
-            'instructors' => $instructors,
+            'agents' => $agents,
             'students' => $students,
             'courses' => $courses,
             'activeCourses' => $activeCourses,
-            'instructorList' => $instructorList,
+            'agentList' => $agentList,
             'studentList' => $studentList,
         ]);
     }
 
-    public function getInstructorView($user) : Response
+    public function getAgentView($user) : Response
     {
 
-        $courses = CourseInstructor::whereInstructorId($user->id)->count();
+        $courses = CourseAgent::whereAgentId($user->id)->count();
 
-        $activeCourses = ActiveCourse::whereInstructorId($user->id)->select([
+        $activeCourses = ActiveCourse::whereAgentId($user->id)->select([
             DB::raw('COUNT(*) as total'),
             DB::raw('SUM(CASE WHEN status_id = ' . CourseStatusEnum::FINISHED->value . ' THEN 1 ELSE 0 END) as total_finished'),
             DB::raw('SUM(CASE WHEN status_id = ' . CourseStatusEnum::ACTIVE->value . ' THEN 1 ELSE 0 END) as total_active'),
@@ -63,13 +63,13 @@ class DashboardService
             DB::raw('SUM(CASE WHEN status_id = ' . CourseStatusEnum::APPROVED->value . ' THEN 1 ELSE 0 END) as total_approved'),
         ])->first();
 
-        $activeCoursesList = ActiveCourse::whereCourseInstructorId($user->id)
+        $activeCoursesList = ActiveCourse::whereCourseAgentId($user->id)
         ->whereIn('status_id', [CourseStatusEnum::ACTIVE->value, CourseStatusEnum::APPROVED->value])
         ->get();
         
         $liquidations = Liquidation::whereWinnerId($user->id)->get();
 
-        return Inertia::render('dashboards/instructor', [
+        return Inertia::render('dashboards/agent', [
             'user' => $user,
             'courses' => $courses,
             'activeCourses' => $activeCourses,

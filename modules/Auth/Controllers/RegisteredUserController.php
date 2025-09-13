@@ -45,7 +45,7 @@ final class RegisteredUserController
             'phone' => $request->phone,
         ]);
         
-        $request->instructor ? $user->assignRole(RolesEnum::INSTRUCTOR->value) : $user->assignRole(RolesEnum::STUDENT->value);
+        $user->assignRole(RolesEnum::AGENT->value);
         
         event(new Registered($user));
 

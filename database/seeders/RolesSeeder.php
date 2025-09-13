@@ -14,7 +14,6 @@ class RolesSeeder extends Seeder
     public function run(): void
     {
         Role::create(["name" => RolesEnum::ADMIN->value]);
-        Role::create(["name" => RolesEnum::INSTRUCTOR->value]);
-        Role::create(["name" => RolesEnum::STUDENT->value]);
+        Role::create(["name" => RolesEnum::AGENT->value]);
     }
 }

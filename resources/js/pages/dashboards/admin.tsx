@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { AvatarImage } from '@radix-ui/react-avatar';
 import { Avatar } from '@/components/ui/avatar';
-import { Instructor } from '@/modules/Hrm/resources/instructors/data';
+import { Agent } from '@/modules/Hrm/resources/agents/data';
 import { Student } from '@/modules/Hrm/resources/students/profile/data';
 import { useTranslation } from 'react-i18next';
 const breadcrumbs: BreadcrumbItem[] = [
@@ -17,7 +17,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Dashboard({ instructors, students, courses, activeCourses, instructorList   , studentList }: { instructors: UserDashboardData, students: UserDashboardData, courses: number, activeCourses: ActiveCourseDashboardData, instructorList: Instructor[], studentList: Student[] }) {
+export default function Dashboard({ agents, students, courses, activeCourses, agentList   , studentList }: { agents: UserDashboardData, students: UserDashboardData, courses: number, activeCourses: ActiveCourseDashboardData, agentList: Agent[], studentList: Student[] }) {
     const {t} = useTranslation('Main');
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -28,9 +28,9 @@ export default function Dashboard({ instructors, students, courses, activeCourse
                         <div className="flex h-full items-center justify-around gap-4">
                             <ContactRound className="h-20 w-20" />
                             <div className="flex flex-col gap-2">
-                                <p className="text-center text-lg font-semibold">{t('instructors')}</p>
-                                <p className="text-center text-lg">{t('total')}: {instructors.total}</p>
-                                <p className="text-center text-lg">{t('active')}: {instructors.total_active}</p>
+                                <p className="text-center text-lg font-semibold">{t('agents')}</p>
+                                <p className="text-center text-lg">{t('total')}: {agents.total}</p>
+                                <p className="text-center text-lg">{t('active')}: {agents.total_active}</p>
                             </div>
                         </div>
                     </div>
@@ -72,36 +72,36 @@ export default function Dashboard({ instructors, students, courses, activeCourse
                         <CardHeader className="text-center">
                             <div className="flex items-center justify-center gap-1">
                                 <Award className="h-6 w-6 text-yellow-500" />
-                                <CardTitle className="text-2xl font-bold">{t('top_5_instructors')}</CardTitle>
+                                <CardTitle className="text-2xl font-bold">{t('top_5_agents')}</CardTitle>
                             </div>
                         </CardHeader>
                         <CardContent className="space-y-2">
-                            {instructorList.map((instructor, index) => (
+                            {agentList.map((agent, index) => (
                                 <div
-                                    key={instructor.id}
+                                    key={agent.id}
                                     className="flex items-center gap-4 p-1 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
                                 >
                                     <div className="flex items-center gap-3 flex-1">
                                         <div className="relative">
                                             <Avatar className="h-12 w-12">
-                                                <AvatarImage src={instructor.profile_pic || "/placeholder.svg"} alt={instructor.name} />
+                                                <AvatarImage src={agent.profile_pic || "/placeholder.svg"} alt={agent.name} />
                                             </Avatar>
                                         </div>
 
                                         <div className="flex-1 min-w-0">
                                             <div className="flex items-center gap-2">
-                                                <h3 className="font-semibold text-lg truncate">{instructor.name}</h3>
+                                                <h3 className="font-semibold text-lg truncate">{agent.name}</h3>
                                                 <Badge variant="secondary" className="text-xs">
-                                                    {instructor.specialization}
+                                                    {agent.specialization}
                                                 </Badge>
                                             </div>
                                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                                 <div className="flex items-center gap-1">
                                                     <Users className="h-4 w-4" />
-                                                    <span>{instructor.active_courses_count} {t('courses')}</span>
+                                                    <span>{agent.active_courses_count} {t('courses')}</span>
                                                 </div>
                                                 <div className="hidden sm:block">
-                                                    <span> {t('joined')} {new Date(instructor.created_at).toLocaleDateString()}</span>
+                                                    <span> {t('joined')} {new Date(agent.created_at).toLocaleDateString()}</span>
                                                 </div>
                                             </div>
                                         </div>

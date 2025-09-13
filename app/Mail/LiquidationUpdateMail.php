@@ -44,7 +44,7 @@ final class LiquidationUpdateMail extends Mailable
         return new Content(
             view: 'mails.liquidation-update',
             with: [
-                'liquidation' => $this->liquidation->load(['activeCourse.courseInstructor.course', 'winner','activeCourse.student'])
+                'liquidation' => $this->liquidation->load(['activeCourse.courseAgent.course', 'winner','activeCourse.student'])
             ]
         );
     }

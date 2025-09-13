@@ -3,7 +3,7 @@ import {Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, Dia
 import {useForm} from '@inertiajs/react';
 import {FormEventHandler} from 'react';
 import {toast} from 'sonner';
-import {EditInstructorProps} from "./data";
+import {EditAgentProps} from "./data";
 import {route} from "ziggy-js";
 import { useTranslation } from 'react-i18next';
 import {SelectItem} from '@/components/ui/select';
@@ -15,40 +15,40 @@ import CustomInput from '@/components/input/custom-input';
 import FileInput from '@/modules/Media/resources/js/file-input';
 import { City } from '@/modules/Settings/resources/cities/data';
 import { Gender } from '@/modules/Settings/resources/genders/data';
-import { useInstructorData } from './instructor-data-context';
+import { useAgentData } from './agent-data-context';
 
-export function EditInstructor({instructor, isOpen, closeModal}: EditInstructorProps) {
+export function EditAgent({agent, isOpen, closeModal}: EditAgentProps) {
 
     const { t } = useTranslation('Hrm');
-    const instructorData = useInstructorData(); // Access directly from context
+    const agentData = useAgentData(); // Access directly from context
 
     const {data, setData, put, processing, reset, errors, clearErrors} = useForm({
-        id: instructor?.id,
-        name: instructor?.name ,
-        email: instructor?.email,
-        country_id: instructor?.country_id,
-        city_id: instructor?.city_id,
-        gender_id: instructor?.gender_id,
-        active: instructor?.active,
-        address: instructor?.address,
-        bio: instructor?.bio,
-        profile_pic: instructor?.profile_pic,
-        description: instructor?.description,
-        specialization: instructor?.specialization,
+        id: agent?.id,
+        name: agent?.name ,
+        email: agent?.email,
+        country_id: agent?.country_id,
+        city_id: agent?.city_id,
+        gender_id: agent?.gender_id,
+        active: agent?.active,
+        address: agent?.address,
+        bio: agent?.bio,
+        profile_pic: agent?.profile_pic,
+        description: agent?.description,
+        specialization: agent?.specialization,
     });
 
-    const updateInstructor: FormEventHandler = (e) => {
+    const updateAgent: FormEventHandler = (e) => {
         e.preventDefault();
-        put(route('instructor.update', instructor.id), {
+        put(route('agent.update', agent.id), {
             preserveScroll: true,
-            onSuccess: () => updatedInstructor(),
+            onSuccess: () => updatedAgent(),
             onError: (error) => toast(error.description, {position: 'top-right', duration: 2000}),
             onFinish: () => reset(),
         });
     };
 
-    const updatedInstructor = () => {
-        toast(t('instructor_edit_succ'), {position: 'top-right', duration: 2000});
+    const updatedAgent = () => {
+        toast(t('agent_edit_succ'), {position: 'top-right', duration: 2000});
         clearErrors();
         reset();
         closeModal();
@@ -58,12 +58,12 @@ export function EditInstructor({instructor, isOpen, closeModal}: EditInstructorP
     return (
         <Dialog open={isOpen} modal={true}>
             <DialogContent className="sm:max-w-4xl">
-            <DialogTitle>{t('edit_instructor')}</DialogTitle>
+            <DialogTitle>{t('edit_agent')}</DialogTitle>
                 <DialogDescription>
-                    {t('edit_instructor_desc')}
+                    {t('edit_agent_desc')}
                 </DialogDescription>
 
-                <form className="space-y-6" onSubmit={updateInstructor}>
+                <form className="space-y-6" onSubmit={updateAgent}>
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-3">
 
                     <CustomInput
@@ -101,13 +101,13 @@ export function EditInstructor({instructor, isOpen, closeModal}: EditInstructorP
                         id="country_id"
                         className='col-span-1'
                         value={data.country_id}
-                        text = {instructorData.countries.find((count: Country) => count.id === data.country_id)?.country['en'] || t('select_country')}
+                        text = {agentData.countries.find((count: Country) => count.id === data.country_id)?.country['en'] || t('select_country')}
                         setFormData={setData}
                         placeholder={t('country')}
                         errorMessage={errors.country_id}
                     >   
                         <>
-                            {instructorData.countries.map((country : Country) => (
+                            {agentData.countries.map((country : Country) => (
                                 <SelectItem key={country.id} value={country.id.toString()}>{country.country['en']}</SelectItem>
                             ))}
                         </>
@@ -117,13 +117,13 @@ export function EditInstructor({instructor, isOpen, closeModal}: EditInstructorP
                         id="city_id"
                         className='col-span-1'
                         value={data.city_id}
-                        text = {instructorData.cities.find((city: City) => city.id === data.city_id)?.city['en'] || t('select_city')}
+                        text = {agentData.cities.find((city: City) => city.id === data.city_id)?.city['en'] || t('select_city')}
                         setFormData={setData}
                         placeholder={t('city')}
                         errorMessage={errors.city_id}
                     >   
                         <>
-                            {instructorData.cities.map((city : City) => (
+                            {agentData.cities.map((city : City) => (
                                 <SelectItem key={city.id} value={city.id.toString()}>{city.city['en']}</SelectItem>
                             ))}
                         </>
@@ -133,13 +133,13 @@ export function EditInstructor({instructor, isOpen, closeModal}: EditInstructorP
                         id="gender_id"
                         className='col-span-1'
                         value={data.gender_id}
-                        text = {instructorData.genders.find((gender: Gender) => gender.id.toString() === data.gender_id?.toString())?.gender['en'] || t('select_gender')}
+                        text = {agentData.genders.find((gender: Gender) => gender.id.toString() === data.gender_id?.toString())?.gender['en'] || t('select_gender')}
                         setFormData={setData}
                         placeholder={t('gender')}
                         errorMessage={errors.gender_id}
                     >   
                         <>
-                            {instructorData.genders.map((gender : Gender) => (
+                            {agentData.genders.map((gender : Gender) => (
                                 <SelectItem key={gender.id} value={gender.id.toString()}>{gender.gender['en']}</SelectItem>
                             ))}
                         </>
@@ -199,7 +199,7 @@ export function EditInstructor({instructor, isOpen, closeModal}: EditInstructorP
                         </DialogClose>
 
                         <Button variant="default" disabled={processing} asChild>
-                            <button type="submit">{t('edit_instructor')}</button>
+                            <button type="submit">{t('edit_agent')}</button>
                         </Button>
                     </DialogFooter>
                 </form>

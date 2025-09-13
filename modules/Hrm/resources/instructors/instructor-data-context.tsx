@@ -1,14 +1,14 @@
 import { createContext, useContext } from "react";
-import { InstructorData } from "./data";
+import { AgentData } from "./data";
 
-const InstructorDataContext = createContext<InstructorData>({} as InstructorData);
+const AgentDataContext = createContext<AgentData>({} as AgentData);
 
-export const InstructorDataProvider = ({ children, instructorData }: { children: React.ReactNode, instructorData: InstructorData  }) => {
+export const AgentDataProvider = ({ children, agentData }: { children: React.ReactNode, agentData: AgentData  }) => {
     return (
-        <InstructorDataContext.Provider value={instructorData}>
+        <AgentDataContext.Provider value={agentData}>
             {children}
-        </InstructorDataContext.Provider>
+        </AgentDataContext.Provider>
     );
 };  
 
-export const useInstructorData = () => useContext(InstructorDataContext);
+export const useAgentData = () => useContext(AgentDataContext);

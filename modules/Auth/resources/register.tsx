@@ -19,7 +19,7 @@ export default function Register() {
         password: '',
         password_confirmation: '',
         phone: '',
-        instructor: false,
+        agent: false,
     });
 
     const submit: FormEventHandler = (e) => {
@@ -76,10 +76,10 @@ export default function Register() {
                     />
 
                     <CustomSwitch
-                        id="instructor"
-                        is_checked={data.instructor}
+                        id="agent"
+                        is_checked={data.agent}
                         setFormData={setData}
-                        placeholder={t('instructor')}
+                        placeholder={t('agent')}
                     />
 
                     <Button type="submit" className="mt-2 w-full" tabIndex={5} disabled={processing}>

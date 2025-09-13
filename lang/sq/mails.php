@@ -18,7 +18,7 @@ return [
     'login' => 'Hyrja',
     'new_order' => 'Kërkesë kursi',
     'new_order_message' => 'Faleminderit për besimin tuaj. Kërkesa e kursit është marrë me sukses dhe do të përpunohet sa më shpejt të jetë e mundur. Prisni pak! Ekipi po punon.',
-    'instructor' => 'Instruktor',
+    'agent' => 'Instruktor',
     'order_update' => 'Kërkesa e kursit u përditësua',
     'order_update_message' => 'Kemi lajme për ju. Kërkesa e kursit është përditësuar me sukses.',
     'status' => 'Statusi'

@@ -5,9 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { useTranslation } from "react-i18next";
-import { Instructor } from "./data";
+import { Agent } from "./data";
 
-export default function MainTab({ instructor }: { instructor: Instructor }) {
+export default function MainTab({ agent }: { agent: Agent }) {
     const {t} = useTranslation('Hrm');
 
     return (
@@ -18,19 +18,19 @@ export default function MainTab({ instructor }: { instructor: Instructor }) {
                     <div className="space-y-3">
                         <div>
                             <Label htmlFor="fullName">{t('fullName')}</Label>
-                            <Input id="fullName" value={instructor.name} disabled={true} />
+                            <Input id="fullName" value={agent.name} disabled={true} />
                         </div>
                         <div>
                             <Label htmlFor="email">{t('emailAddress')}</Label>
-                            <Input id="email" value={instructor.email} disabled={true} />
+                            <Input id="email" value={agent.email} disabled={true} />
                         </div>
                         <div>
                             <Label htmlFor="phone">{t('phoneNumber')}</Label>
-                            <Input id="phone" value={instructor.phone} disabled={true} />
+                            <Input id="phone" value={agent.phone} disabled={true} />
                         </div>
                         <div>
                             <Label htmlFor="location">{t('location')}</Label>
-                            <Input id="location" value={instructor.address} disabled={true} />
+                            <Input id="location" value={agent.address} disabled={true} />
                         </div>
                     </div>
                 </div>
