@@ -17,10 +17,8 @@ final class StoreSliderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'max:100'],
-            'subtitle' => ['required', 'string', 'max:100'],
-            'button_text' => ['required', 'string', 'max:100'],
-            'button_url' => ['required', 'string', 'max:100'],
+            'title' => ['nullable', 'string', 'max:100'],
+            'subtitle' => ['nullable', 'string', 'max:100'],
             'image' => ['required', 'string', 'max:100'],
             'active' => ['required', 'boolean'],
         ];

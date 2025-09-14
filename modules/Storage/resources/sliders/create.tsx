@@ -23,8 +23,6 @@ export function CreateSlider() {
     const {data, setData, post, processing, reset, errors, clearErrors} = useForm({
         title: '',
         subtitle: '',
-        button_text: '',
-        button_url: '',
         active: false,
         description: '',
         image: ''
@@ -78,22 +76,6 @@ export function CreateSlider() {
                         setFormData={setData}
                         placeholder={t('subtitle')}
                         errorMessage={errors.subtitle}
-                    />
-
-                    <CustomInput
-                        id="button_text"
-                        value={data.button_text}
-                        setFormData={setData}
-                        placeholder={t('button_text')}
-                        errorMessage={errors.button_text}
-                    />
-
-                    <CustomInput
-                        id="button_url"
-                        value={data.button_url}
-                        setFormData={setData}
-                        placeholder={t('button_url')}
-                        errorMessage={errors.button_url}
                     />
 
                     <FileInput inputName='image' setFormData={setData} />

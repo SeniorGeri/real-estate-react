@@ -14,7 +14,7 @@ class Slider extends Model
     use HasTableFilterTrait;
     use HasTranslationsTrait;
 
-    protected $fillable = ['title', 'subtitle', 'button_text', 'button_url', 'image', 'active'];
+    protected $fillable = ['title', 'subtitle', 'image', 'active'];
 
-    protected $translatable = ['title', 'subtitle', 'button_text'];
+    protected $translatable = ['title', 'subtitle'];
 }

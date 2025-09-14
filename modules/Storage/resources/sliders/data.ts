@@ -18,8 +18,6 @@ export type Slider = {
     id: number;
     title: TranslatableField;
     subtitle: TranslatableField;
-    button_text: TranslatableField;
-    button_url: string;
     active: boolean;
     description: string;
     image: string;
