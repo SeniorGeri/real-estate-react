@@ -1,0 +1,38 @@
+{
+    "nr": "NR",
+    "description": "Përshkrimi",
+    "yes": "Po",
+    "no": "Jo",
+    "close": "Mbyll",
+    "image": "Imazhi",
+    "delete": "Fshi",
+
+    "type": "Tipi prones",
+    "name": "Emri",
+    "select_city": "Zgjidh qytetin",
+    "create_type": "Krijo tip",
+    "create_type_desc": "Formulari më poshtë ju lejon të krijoni tipet të reja për pronë",
+    "add_type": "Shto tip",
+    "type_created_succ": "Tip është krijuar me sukses",
+    "edit_type": "Edito tip",
+    "delete_type": "Fshi tip",
+    "type_edit_succ": "Tip është përditësuar me sukses",
+    "edit_type_desc": "Formulari më poshtë ju lejon të përditësoni tipin e zgjedhur",
+    "type_delete_succ": "Tip është fshirë me sukses",
+    "delete_type_desc": "Duke vazhduar, tipi do të fshihet.",
+
+
+    
+    "status": "Statusi",
+    "select_status": "Zgjidh statusin",
+    "create_status": "Krijo status",
+    "create_status_desc": "Formulari më poshtë ju lejon të krijoni statuset të reja për pronë",
+    "add_status": "Shto status",
+    "status_created_succ": "Status është krijuar me sukses",
+    "edit_status": "Edito status",
+    "delete_status": "Fshi status",
+    "status_edit_succ": "Status është përditësuar me sukses",
+    "edit_status_desc": "Formulari më poshtë ju lejon të përditësoni statusin e zgjedhur",
+    "status_delete_succ": "Status është fshirë me sukses",
+    "delete_status_desc": "Duke vazhduar, statusi do të fshihet."
+}

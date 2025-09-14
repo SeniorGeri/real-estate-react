@@ -8,4 +8,5 @@ return [
     Modules\Notification\NotificationServiceProvider::class,
     Modules\Auth\AuthServiceProvider::class,
     Modules\Storage\StorageServiceProvider::class,
+    Modules\Property\PropertyServiceProvider::class,
 ];

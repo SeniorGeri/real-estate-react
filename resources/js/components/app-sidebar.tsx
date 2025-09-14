@@ -15,6 +15,30 @@ const mainNavItems: NavItem[] = [
         type: 'standalone'
     },
     {
+        title: 'Property',
+        href: 'property',
+        icon: UsersRound,
+        type: 'dropdown',
+        permissions: ['property_type.read', 'property_status.read', 'property.read'],
+        subItems: [
+            {
+                title: 'Type',
+                href: route('property.type.list'),
+                icon: UserCheck,
+                type: 'standalone',
+                permission: 'property_type.read',
+            },
+            {
+                title: 'Status',
+                href: route('property.status.list'),
+                icon: UserCheck,
+                type: 'standalone',
+                permission: 'property_status.read',
+            }
+        ]
+    },
+
+    {
         title: 'Hrm',
         href: 'hrm',
         icon: UsersRound,
