@@ -42,9 +42,8 @@ final class Agent extends User
         "bio",
         "phone",
         "country_id",
-        "specialization"
     ];
 
-    protected $translatable = ['bio'];
+    protected $translatable = ['bio', 'description'];
 
 }

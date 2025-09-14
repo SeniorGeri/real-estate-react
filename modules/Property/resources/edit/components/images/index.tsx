@@ -21,24 +21,34 @@ export default function Images({ images, setData }: ImagesProps) {
         );
     };
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>{t('images')}</CardTitle>
-                <CardDescription>{t('images_desc')}</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-                    <DraggableList
-                        items={images}
-                        onReorder={(newImages: string[]) => setData('gallery', newImages)}
-                        getKey={(image: string, index: number) => `${image}-${index}`}
-                        renderItem={(image: string, index: number) => (
-                            <ImageCard image={image} index={index} onRemove={() => removeImage(image)} />
-                        )}
-                    />
-                    <FileInput inputName="gallery" setFormData={setImage} />
-                </div>
-            </CardContent>
-        </Card>
+        <>
+
+            <Card>
+                <CardContent>
+                    <div className="grid grid-cols-1">
+                        <FileInput inputName="gallery" setFormData={setImage} />
+                    </div>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle>{t('images')}</CardTitle>
+                    <CardDescription>{t('images_desc')}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-4 xl:grid-cols-6">
+                        <DraggableList
+                            items={images}
+                            onReorder={(newImages: string[]) => setData('gallery', newImages)}
+                            getKey={(image: string, index: number) => `${image}-${index}`}
+                            renderItem={(image: string, index: number) => (
+                                <ImageCard image={image} index={index} onRemove={() => removeImage(image)} />
+                            )}
+                        />
+                    </div>
+                </CardContent>
+            </Card>
+        </>
+
     );
 }

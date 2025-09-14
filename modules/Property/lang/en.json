@@ -81,5 +81,37 @@
     "price": "Price",
     "price_per_month": "Price per month",
     "currency": "Currency",
-    "select_currency": "Select currency"
+    "select_currency": "Select currency",
+
+    "interior_desc": "The form below allows you to update the selected property interior",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "floor": "Floor",
+    "garages": "Garages",
+    "area": "Area",
+    "net_area": "Net area",
+    "elevator": "Elevator",
+    "elevator_desc": "If open shows that the property has an elevator",
+
+    "attributes": "Attributes",
+    "attributes_desc": "The form below allows you to update the selected property attributes",
+    "attributes_table": "Attributes table",
+    "add_attribute": "Add attribute",
+    "remove_attribute": "Remove attribute",
+    "attribute": "Attribute",
+    "value": "Value",
+
+    "location_desc": "The form below allows you to update the selected property location",
+    "map": "Map",
+    "map_desc": "The form below allows you to update the selected property map",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "city": "City",
+    "select_city": "Select city",
+    "zone": "Zone",
+    "select_zone": "Select zone",
+    "address": "Address",
+    "property_updated_successfully": "Property updated successfully",
+    "agent_desc": "The form below allows you to update the selected property agent"
+
 }

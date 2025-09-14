@@ -2,7 +2,6 @@
 
 import CustomSelect from '@/components/input/custom-select';
 import CustomSwitch from '@/components/input/custom-switch';
-import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { SelectItem } from '@/components/ui/select';

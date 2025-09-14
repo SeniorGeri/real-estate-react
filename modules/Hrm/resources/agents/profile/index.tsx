@@ -8,22 +8,17 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   User,
-  // CreditCard,
-  BookOpen,
-  Clock,
+  Building,
 } from "lucide-react"
-import DataCards from './data-cards';
 import Header from './header';
 import MainTab from './main-tab';
-// import TransactionTab from './transaction-tab';
-import CourseTab from './course-tab';
-import OngoingTab from './ongoing-tab';import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import PropertiesTab from './properties-tab';
 
 export default function AgentProfile({ agent }:   { agent: Agent }) {
 
   const {t} = useTranslation('Hrm');
 
-  console.log(agent);
   return (
     <AppLayout breadcrumbs={agentBreadcrumbs}>
       <Head title="Agents" />
@@ -33,41 +28,27 @@ export default function AgentProfile({ agent }:   { agent: Agent }) {
             {/* Profile Header */}
             <Header agent={agent} />
 
-            {/* Cards Section */}
-            <DataCards totalCourses={agent.active_courses.length} totalOngoingCourses={agent.active_courses.length} totalLiquidations={agent.liquidations.length} />
-
             {/* Tabs Section */}
             <Card className="border shadow-sm dark:bg-stone-950 dark:border-green-900">
               <Tabs defaultValue="main" className="w-full">
                 <CardHeader className="pb-4">
-                  <TabsList className="grid w-full grid-cols-3 bg-gray-50 dark:bg-green-900">
+                  <TabsList className="grid w-full grid-cols-2 bg-gray-50 dark:bg-green-900">
                     <TabsTrigger value="main" className="flex items-center gap-2">
                       <User className="h-4 w-4" />
                       {t('mainData')}
                     </TabsTrigger>
-                    {/* <TabsTrigger value="transactions" className="flex items-center gap-2">
-                      <CreditCard className="h-4 w-4" />
-                      {t('transactions')}
-                    </TabsTrigger> */}
-                    <TabsTrigger value="courses" className="flex items-center gap-2">
-                      <BookOpen className="h-4 w-4" />
-                      {t('courses')}
+           
+                    <TabsTrigger value="properties" className="flex items-center gap-2">
+                      <Building className="h-4 w-4" />
+                      {t('properties')}
                     </TabsTrigger>
-                    <TabsTrigger value="ongoing" className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      {t('ongoing')}
-                    </TabsTrigger>
+                    
                   </TabsList>
                 </CardHeader>
 
                 <CardContent className="pt-0">
                   <MainTab agent={agent} />
-
-                  {/* <TransactionTab transactions={agent.transactions} /> */}
-
-                  <CourseTab completedCourses={agent.courses} />
-
-                  <OngoingTab ongoingCourses={agent.active_courses} />
+                  <PropertiesTab agent={agent} />
                 </CardContent>
               </Tabs>
             </Card>

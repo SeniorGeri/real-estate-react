@@ -7,6 +7,7 @@ import { AgentData } from './data';
 import { AgentDataProvider } from './agent-data-context';
 import AgentTable from './agent';
 
+
 export default function AgentIndex({countries, cities, genders }: AgentData) {
 
 

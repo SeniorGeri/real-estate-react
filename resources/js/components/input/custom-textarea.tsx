@@ -16,7 +16,9 @@ export default function CustomTextarea({
 }: TextareaInterface) {
     return (
         <div className={cn('grid gap-2', className)}>
-            <Label htmlFor={id}>{placeholder}</Label>
+            {placeholder && (
+                <Label htmlFor={id}>{placeholder}</Label>
+            )}
                 <Textarea
                     id={id}
                     name={id}

@@ -3,19 +3,27 @@
 import { Button } from '@/components/ui/button';
 import { useLocale } from '@/contexts/locale';
 import { router, useForm } from '@inertiajs/react';
-import { ArrowLeft, DollarSign, Eye, ImageIcon, Info, List, Map, Plus } from 'lucide-react';
+import { ArrowLeft, DollarSign, Eye, ImageIcon, Info, List, Map, Plus, User } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
 import { route } from 'ziggy-js';
-import { PropertyFormProps } from './props';
+import { PropertyAttribute, PropertyFormProps, InertiaPageProps } from './props';
 import General from './components/general';
 import Images from './components/images';
 import Pricing from './components/pricing';
+import Interior from './components/interior';
+import Extra from './components/extra';
+import Location from './components/location';
+import { usePage } from '@inertiajs/react';
+import AgentComponent from './components/agent-component';
 
 
 export default function PropertyForm(props: PropertyFormProps) {
 
+    const { auth } = usePage<InertiaPageProps>().props;
+
+    console.log(auth.user.id);
     const { t } = useTranslation('Property');
     const { currentLocale } = useLocale();
 
@@ -50,12 +58,15 @@ export default function PropertyForm(props: PropertyFormProps) {
         logo: props.property.logo,
         hover_image: props.property.hover_image,
         gallery: props.property.gallery,
-        user: props.property.user,
-        propertyType: props.property.propertyType,
-        propertyStatus: props.property.propertyStatus,
-        zone: props.property.zone,
-        city: props.property.city,
         updated_at: props.property.updated_at,
+        propertyAttributes: props.property.property_attributes?.map((attribute: PropertyAttribute) => {
+            return {
+                id: attribute.id.toString(),
+                attribute: attribute.attribute['en'],
+                value: attribute.value['en'],
+                image: attribute.image,
+            };
+        }),
     });
 
     const [isLoading, setIsLoading] = useState(false);
@@ -120,7 +131,7 @@ export default function PropertyForm(props: PropertyFormProps) {
                             <ImageIcon className="mr-2 h-4 w-4" />
                             {t('images')}
                         </Button>
-                        
+
                         <Button
                             type="button"
                             variant={activeTab === 'pricing' ? 'default' : 'ghost'}
@@ -161,6 +172,19 @@ export default function PropertyForm(props: PropertyFormProps) {
                             {t('extra')}
                         </Button>
 
+                        {
+                            auth.user.id === 1 && (
+                                <Button
+                                    type="button"
+                                    variant={activeTab === 'agent' ? 'default' : 'ghost'}
+                                    className="w-full justify-start"
+                                    onClick={() => setActiveTab('agent')}
+                                >
+                                    <User className="mr-2 h-4 w-4" />
+                                    {t('agent')}
+                                </Button>
+                            )
+                        }
                     </div>
                 </div>
 
@@ -171,6 +195,10 @@ export default function PropertyForm(props: PropertyFormProps) {
                         )}
                         {activeTab === 'images' && <Images images={data.gallery} setData={setData} />}
                         {activeTab === 'pricing' && <Pricing setData={setData} propertyData={data} currencies={props.currencies} errors={errors} />}
+                        {activeTab === 'interior' && <Interior setData={setData} propertyData={data} errors={errors} />}
+                        {activeTab === 'extra' && <Extra setData={setData} propertyAttributes={data.propertyAttributes} />}
+                        {activeTab === 'location' && <Location setData={setData} propertyData={data} errors={errors} cities={props.cities} zones={props.zones} />}
+                        {activeTab === 'agent' && auth.user.id === 1 && <AgentComponent setData={setData} propertyData={data} errors={errors} agents={props.agents} />}
                     </div>
                 </div>
             </div>

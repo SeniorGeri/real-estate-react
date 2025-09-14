@@ -16,7 +16,6 @@ import { Type } from '../../type/data';
 
 export default function General({ propertyData, setData, statuses, types, errors }: GeneralProps) {
     const { t } = useTranslation('Property');
-    console.log(propertyData);
  
     return (
         <>

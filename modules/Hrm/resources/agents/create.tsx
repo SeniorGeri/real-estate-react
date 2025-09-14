@@ -75,8 +75,8 @@ export function CreateAgent() {
                 <DialogDescription>
                     {t('create_agent_desc')}
                 </DialogDescription>
-                <form className="space-y-6" onSubmit={storeCountCreateAgent}>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-3 space-y-3">
+                <form className="space-y-3" onSubmit={storeCountCreateAgent}>
+                    <div className="grid grid-cols-1 sm:grid-cols-4 md:gap-3 space-y-3">
 
                         <CustomInput
                             id="name"
@@ -107,17 +107,16 @@ export function CreateAgent() {
                             className='col-span-1'
                         />    
 
-                        <CustomInput 
-                            id="specialization"
-                            value={data.specialization}
-                            setFormData={setData}
-                            placeholder={t('specialization')}
-                            errorMessage={errors.specialization}
-                            className='col-span-1'
-                        />    
+                        <CustomInput   
+                                id="address"
+                                value={data.address}
+                                setFormData={setData}
+                                placeholder={t('address')}
+                                errorMessage={errors.address}
+                            />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-3 space-y-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-4 md:gap-3 space-y-3">
 
                         <CustomSelect
                             id="country_id"
@@ -166,43 +165,19 @@ export function CreateAgent() {
                                 ))}
                             </>
                         </CustomSelect>
-                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-3 gap-1">
-                        <div className="grid col-span-2">
- 
-                     
-                        <FileInput inputName='profile_pic' setFormData={setData} />
-
-                        </div>
-
-                        <div className="grid col-span-1 gap-2">
-                            <CustomInput   
-                                id="address"
-                                value={data.address}
-                                setFormData={setData}
-                                placeholder={t('address')}
-                                errorMessage={errors.address}
-                            />
-                            
-                            <CustomSwitch
+                        <CustomSwitch
                                 id="active"
                                 is_checked={data.active}
                                 setFormData={setData}
                                 placeholder={t('active')}
                             />
-                        </div>
 
+                      
                     </div>
-
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-3 gap-1">
-                        <CustomTextarea 
-                            id="description"
-                            value={data.description}
-                            setFormData={setData}
-                            placeholder={t('description')}
-                            errorMessage={errors.description}
-                        />
+                    <FileInput inputName='profile_pic' setFormData={setData} />
+
                         
                         <CustomTextarea 
                             id="bio"

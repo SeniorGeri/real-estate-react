@@ -22,12 +22,15 @@ use Modules\Settings\Models\Gender;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
 use App\Traits\HasTableFilterTrait;
+use Modules\Property\Models\Property;
+use App\Traits\HasTranslationsTrait;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasRoles, HasPermissions, SoftDeletes;
     use HasTableFilterTrait;
+    use HasTranslationsTrait;
 
 
     /**
@@ -45,9 +48,10 @@ class User extends Authenticatable
         'city_id',
         'gender_id',
         'profile_pic',
-        "specialization"
+        'bio'
     ];
 
+    protected $translatable = ['bio'];
 
     protected function password(): Attribute
     {
@@ -95,8 +99,8 @@ class User extends Authenticatable
         return $this->belongsTo(Gender::class);
     }
 
-    public function transactions(): HasMany
+    public function properties(): HasMany
     {
-        return $this->hasMany(Transaction::class, 'user_id');
+        return $this->hasMany(Property::class);
     }
 }

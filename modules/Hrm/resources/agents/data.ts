@@ -4,6 +4,7 @@ import {route} from "ziggy-js";
 import { Country } from '@/modules/Settings/resources/countries/data';
 import { City } from '@/modules/Settings/resources/cities/data';
 import { Gender } from '@/modules/Settings/resources/genders/data';
+import {TranslatableField} from '@/types/helpers';
 
 export const agentBreadcrumbs: BreadcrumbItem[] = [
     {
@@ -32,13 +33,12 @@ export type Agent = {
     gender_id: number;
     active: boolean;
     address: string;
-    bio: string;
+    bio: TranslatableField;
     profile_pic: string;
-    description: string;
+    description: TranslatableField;
     country: Country;
     city: City;
     gender: Gender;
-    specialization: string;
 };
 
 export type AgentActionsProps = {

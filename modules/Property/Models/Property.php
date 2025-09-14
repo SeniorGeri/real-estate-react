@@ -95,7 +95,7 @@ final class Property extends Model
 
     public function propertyAttributes(): HasMany
     {
-        return $this->hasMany(PropertyAttribute::class);
+        return $this->hasMany(PropertyAttribute::class, 'property_id');
     }
 
     public function currency(): BelongsTo

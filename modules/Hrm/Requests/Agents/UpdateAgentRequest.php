@@ -30,8 +30,7 @@ final class UpdateAgentRequest extends FormRequest
             'gender_id' => ['nullable', 'integer', 'exists:genders,id'],
             'address' => ['nullable','string'],
             'bio' =>  ['nullable', 'string'],
-            'specialization' =>  ['nullable', 'string'],
-            'description' =>  ['nullable', 'string'],
+            'locale' => ['required','string'],
         ];
     }
 
@@ -44,6 +43,7 @@ final class UpdateAgentRequest extends FormRequest
     {
         return [
             'bio' =>  ['nullable', 'string'],
+            'description' =>  ['nullable', 'string'],
         ];
     }
 }

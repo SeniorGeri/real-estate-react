@@ -12,6 +12,13 @@ final class UpdatePropertyRequest extends FormRequest
 {
     use HasTranslationRulesTrait;
 
+    public function prepareForValidation(): void
+    {
+        $this->merge([
+            'image' => $this->input('gallery')[0] ?? null,
+            'hover_image' => $this->input('gallery')[1] ?? $this->input('gallery')[0] ?? null,
+        ]);
+    }
     /**
      * Get the validation rules that apply to the request.
      *
@@ -20,14 +27,14 @@ final class UpdatePropertyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'property_type_id' => ['required', 'integer'],
-            'property_status_id' => ['required', 'integer'],
-            'zone_id' => ['required', 'integer'],
-            'city_id' => ['required', 'integer'],
-            'user_id' => ['required', 'integer'],
-            'longitude' => ['required', 'string'],
-            'latitude' => ['required', 'string'],
-            'address' => ['required', 'string'],
+            'property_type_id' => ['nullable', 'integer'],
+            'property_status_id' => ['nullable', 'integer'],
+            'zone_id' => ['nullable', 'integer'],
+            'city_id' => ['nullable', 'integer'],
+            'user_id' => ['nullable', 'integer'],
+            'longitude' => ['nullable', 'numeric'],
+            'latitude' => ['nullable', 'numeric'],
+            'address' => ['nullable', 'string'],
             'for_sale' => ['required', 'boolean'],
             'price' => ['required', 'numeric'],
             'price_per_month' => ['required', 'numeric'],
@@ -47,6 +54,7 @@ final class UpdatePropertyRequest extends FormRequest
             'image' => ['nullable', 'string'],
             'hover_image' => ['nullable', 'string'],
             'gallery' => ['nullable', 'array'],
+            'propertyAttributes' => ['nullable', 'array'],
         ];
     }
 

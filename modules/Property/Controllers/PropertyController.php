@@ -10,11 +10,13 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Modules\Property\Models\Property;
 use Modules\Property\Requests\Property\StorePropertyRequest;
 use Modules\Property\Requests\Property\UpdatePropertyRequest;
 use Inertia\Inertia;
 use Inertia\Response;
+use Modules\Property\Helpers\PropertyAttributesService;
 use Modules\Property\Models\PropertyStatus;
 use Modules\Property\Models\PropertyType;
 use Modules\Settings\Models\City;
@@ -82,22 +84,24 @@ final class PropertyController
         $zones = Zone::all();
         $cities = City::all();
         $currencies = Currency::all();
-        
+        $agents = User::role(RolesEnum::AGENT->value)->get();
+     
         return Inertia::render('Property::edit/index', [
             'property' => $property->load([
-                'user: id,name',
-                'propertyType: id,type,image',
-                'propertyStatus: id,status,image',
-                'zone: id,name',
-                'city: id,city',
-                'currency: id,currency',
-                'propertyAttributes: id,property_id,attribute,value,logo,image,description',
+                'user:id,name',
+                'propertyType:id,type,image',
+                'propertyStatus:id,status,image',
+                'zone:id,name',
+                'city:id,city',
+                'currency:id,currency',
+                'propertyAttributes:id,property_id,attribute,value,logo,image,description',
             ]),
             'propertyTypes' => $propertyTypes,
             'propertyStatuses' => $propertyStatuses,
             'zones' => $zones,
             'cities' => $cities,
             'currencies' => $currencies,
+            'agents' => $agents,
         ]);
     }
     /**
@@ -109,10 +113,16 @@ final class PropertyController
      */
     public function update(UpdatePropertyRequest $request, Property $property): RedirectResponse
     {
+        
+        DB::beginTransaction();
+        
+        PropertyAttributesService::storePropertyAttributes($property, $request->propertyAttributes);
+
         $property->fill($request->validated())
-        ->setMultipleTranslations($request->translated(), $request->locale)
+        ->setMultipleTranslations($request->translated(), config('app.locale'))
         ->save();
 
+        DB::commit();
         return to_route('property.edit', $property);
     }
 

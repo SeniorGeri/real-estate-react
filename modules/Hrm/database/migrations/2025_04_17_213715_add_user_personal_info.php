@@ -19,8 +19,7 @@ return new class extends Migration
             $table->boolean('active')->default(true)->after('email');
             $table->string('phone')->nullable()->after('active');
             $table->string('address')->nullable()->after('phone');
-            $table->text('specialization')->nullable()->after('address');
-            $table->text('bio')->nullable()->after('specialization');
+            $table->text('bio')->nullable()->after('address');
             $table->string('profile_pic')->nullable()->after('bio');
 
         });
@@ -38,7 +37,6 @@ return new class extends Migration
             $table->dropColumn('country_id');
             $table->dropColumn('city_id');
             $table->dropColumn('gender_id');
-            $table->dropColumn('specialization');
             $table->dropColumn('bio');
             $table->dropColumn('profile_pic');
         });

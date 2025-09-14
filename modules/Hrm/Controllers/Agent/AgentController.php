@@ -76,7 +76,7 @@ final class AgentController
     public function update(UpdateAgentRequest $request, Agent $agent): RedirectResponse
     {
         $agent->fill($request->validated())
-        // ->setMultipleTranslations($request->translated(), $request->locale)
+        ->setMultipleTranslations($request->translated(), $request->locale)
         ->save();
 
         return to_route('agent.list');

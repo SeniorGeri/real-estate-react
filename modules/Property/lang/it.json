@@ -78,6 +78,37 @@
     "price": "Prezzo",
     "price_per_month": "Prezzo al mese",
     "currency": "Valuta",
-    "select_currency": "Seleziona valuta"
+    "select_currency": "Seleziona valuta",
+
+    "interior_desc": "Il modulo sottostante ti permette di aggiornare l'interno della proprietà selezionata",
+    "bedrooms": "Camere da letto",
+    "bathrooms": "Bagni",
+    "floor": "Piano",
+    "garages": "Garage",
+    "area": "Area",
+    "net_area": "Area netta",
+    "elevator": "Ascensore",
+    "elevator_desc": "Se aperto, indica che la proprietà ha un ascensore",
+
+    "attributes": "Attributi",
+    "attributes_desc": "Il modulo sottostante ti permette di aggiornare gli attributi della proprietà selezionata",
+    "attributes_table": "Tabella degli attributi",
+    "add_attribute": "Aggiungi attributo",
+    "remove_attribute": "Rimuovi attributo",
+    "attribute": "Attributo",
+    "value": "Valore",
+
+
+    "location_desc": "Il modulo sottostante ti permette di aggiornare la posizione della proprietà selezionata",
+    "map": "Mappa",
+    "map_desc": "Il modulo sottostante ti permette di aggiornare la mappa della proprietà selezionata",
+    "latitude": "Latitudine",
+    "longitude": "Longitudine",
+    "city": "Città",
+    "zone": "Zona",
+    "select_zone": "Seleziona la zona",
+    "address": "Indirizzo",
+    "property_updated_successfully": "Proprietà aggiornata con successo"
+
     
 }

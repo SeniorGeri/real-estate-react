@@ -82,5 +82,34 @@
     "price": "Cmimi",
     "price_per_month": "Cmimi per mesim",
     "currency": "Monedha",
-    "select_currency": "Zgjidh monedhën"
+    "select_currency": "Zgjidh monedhën",
+
+    "interior_desc": "Formulari më poshtë ju lejon të përditësoni interiorin e pronës së zgjedhur",
+    "bedrooms": "Dhoma",
+    "bathrooms": "Tualete",
+    "floor": "Kati",
+    "garages": "Garazhe",
+    "area": "Siperfaqja",
+    "net_area": "Siperfaqja neto",
+    "elevator": "Ashensor",
+    "elevator_desc": "Nëse po prona përmban ashensor.",
+
+    "attributes": "Atributet",
+    "attributes_desc": "Formulari më poshtë ju lejon të përditësoni atributet e pronës së zgjedhur",
+    "attributes_table": "Tabela e atributeve",
+    "add_attribute": "Shto atributin",
+    "remove_attribute": "Fshi atributin",
+    "attribute": "Atributi",
+    "value": "Vlera",
+
+    "location_desc": "Formulari më poshtë ju lejon të përditësoni lokacionin e pronës së zgjedhur",
+    "map": "Harta",
+    "map_desc": "Formulari më poshtë ju lejon të përditësoni hartën për pronën e zgjedhur",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "city": "Qytet",
+    "zone": "Zona",
+    "select_zone": "Zgjidh zonën",
+    "address": "Adresa",
+    "property_updated_successfully": "Prona u përditësua me sukses"
 }

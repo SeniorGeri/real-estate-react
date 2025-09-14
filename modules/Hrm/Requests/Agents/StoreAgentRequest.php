@@ -28,7 +28,6 @@ final class StoreAgentRequest extends FormRequest
             'gender_id' => ['nullable', 'integer', 'exists:genders,id'],
             'address' => ['nullable','string'],
             'bio' =>  ['nullable', 'string'],
-            'specialization' =>  ['nullable', 'string'],
             'description' =>  ['nullable', 'string'],
         ];
     }

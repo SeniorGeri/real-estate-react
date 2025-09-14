@@ -13,6 +13,7 @@ export type PropertyFormProps = {
    zones: Zone[];
    cities: City[];
    currencies: Currency[];
+   agents: Agent[];
 }
 
 export type PropertyForm = {
@@ -46,6 +47,7 @@ export type PropertyForm = {
     logo: string;
     hover_image: string;
     gallery: string[];
+    PropertyAttributeProps: PropertyAttributeProps[];
     image: string;
     updated_at: string;
 }
@@ -82,13 +84,28 @@ export type Property = {
     gallery: string[];
     image: string;
     user: Agent;
-    propertyType: Type;
-    propertyStatus: Status;
+    property_type: Type;
+    property_status: Status;
     zone: Zone;
     city: City;
     updated_at: string;
+    property_attributes: PropertyAttribute[];
 }
 
+export type PropertyAttribute = {
+    id: number;
+    property_id: number;
+    attribute: TranslatableField;
+    value: TranslatableField;
+    image: string;
+}
+
+export type PropertyAttributeForm = {
+    id: number|string;
+    attribute: string;
+    value: string;
+    image: string;
+}
 
 export type GeneralProps = {
     propertyData: PropertyForm;
@@ -97,6 +114,21 @@ export type GeneralProps = {
     errors: any;
     setData?: (key: string, value: string | number| boolean | object) => void
 }
+export type AgentProps = {
+    propertyData: PropertyForm;
+    agents: Agent[];
+    errors: any;
+    setData?: (key: string, value: string | number| boolean | object) => void
+}
+
+export type LocationProps = {
+    propertyData: PropertyForm;
+    cities: City[];
+    zones: Zone[];
+    errors: any;
+    setData?: (key: string, value: string | number| boolean | object) => void
+}
+
 
 export type PricingProps = {
     propertyData: PropertyForm;
@@ -105,7 +137,29 @@ export type PricingProps = {
     setData?: (key: string, value: string | number| boolean | object) => void
 }
 
+export type InteriorProps = {
+    propertyData: PropertyForm;
+    errors: any;
+    setData?: (key: string, value: string | number| boolean | object) => void
+}
+
 export type ImagesProps = {
     images: string[];
     setData: (key: string, value: string[]) => void;
 }
+
+
+export type PropertyAttributeProps = {
+    propertyAttributes: PropertyAttributeForm[];
+    setData: (key: string, value: PropertyAttributeForm[]) => void;
+};
+
+
+export type Auth = {
+    permissions: string[];
+    user: Agent;
+};
+
+export type InertiaPageProps = {
+    auth: Auth;
+};
