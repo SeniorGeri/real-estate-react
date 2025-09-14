@@ -36,7 +36,7 @@ final class PropertyStatusController
     public function show(FilterTableRequest $request): JsonResponse
     {
         
-        $propertyStatus = PropertyStatus::filter($request)->paginate($request->limit);
+        $propertyStatus = PropertyStatus::filter($request)->orderBy('id', 'desc')->paginate($request->limit);
         return response()->json(['data' => $propertyStatus]);
     }
 

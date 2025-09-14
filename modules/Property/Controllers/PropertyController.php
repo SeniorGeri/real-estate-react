@@ -54,6 +54,7 @@ final class PropertyController
             $query->where('user_id', Auth::user()->id);
         })
         ->with(['user'])
+        ->orderBy('id', 'desc')
         ->paginate($request->limit);
         return response()->json(['data' => $property]);
     }

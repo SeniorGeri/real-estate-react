@@ -35,7 +35,7 @@ final class CurrencyController
      */
     public function show(FilterTableRequest $request): JsonResponse
     {
-        $currencies = Currency::filter($request)->paginate($request->limit);
+        $currencies = Currency::filter($request)->orderBy('id', 'desc')->paginate($request->limit);
 
         return response()->json(['data' => $currencies]);
     }

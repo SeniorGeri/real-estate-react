@@ -36,7 +36,7 @@ final class PropertyTypeController
     public function show(FilterTableRequest $request): JsonResponse
     {
         
-        $propertyType = PropertyType::filter($request)->paginate($request->limit);
+        $propertyType = PropertyType::filter($request)->orderBy('id', 'desc')->paginate($request->limit);
         return response()->json(['data' => $propertyType]);
     }
 

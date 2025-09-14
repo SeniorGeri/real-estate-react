@@ -39,6 +39,7 @@ final class NotificationController
             'sender:id,name',
             'notificationType:id,type'
         ])
+        ->orderBy('id', 'desc')
         ->paginate($request->limit);
         
         return response()->json(['data' => $notifications]);

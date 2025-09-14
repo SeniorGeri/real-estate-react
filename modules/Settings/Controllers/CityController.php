@@ -37,7 +37,7 @@ final class CityController
      */
     public function show(FilterTableRequest $request): JsonResponse
     {
-        $cities = City::filter($request)->with(['country:id,country'])->paginate($request->limit);
+        $cities = City::filter($request)->with(['country:id,country'])->orderBy('id', 'desc')->paginate($request->limit);
 
         return response()->json(['data' => $cities]);
     }

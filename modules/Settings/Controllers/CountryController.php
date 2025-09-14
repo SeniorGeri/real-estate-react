@@ -35,7 +35,7 @@ final class CountryController
      */
     public function show(FilterTableRequest $request): JsonResponse
     {
-        $countries = Country::filter($request)->paginate($request->limit);
+        $countries = Country::filter($request)->orderBy('id', 'desc')->paginate($request->limit);
 
         return response()->json(['data' => $countries]);
     }

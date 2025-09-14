@@ -34,7 +34,7 @@ final class ContactListController
      */
     public function show(FilterTableRequest $request): JsonResponse
     {
-        $contacts = ContactUs::filter($request)->paginate($request->limit);
+        $contacts = ContactUs::filter($request)->orderBy('id', 'desc')->paginate($request->limit);
 
         return response()->json(['data' => $contacts]);
     }

@@ -48,7 +48,8 @@ final class AgentController
      */
     public function show(FilterTableRequest $request): JsonResponse
     {
-        $agents = User::filter($request)->role(RolesEnum::AGENT->value)->paginate($request->limit);
+        $agents = User::filter($request)->role(RolesEnum::AGENT->value)->orderBy('id', 'desc')
+        ->paginate($request->limit);
 
         return response()->json(['data' => $agents]);
     }

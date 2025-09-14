@@ -35,7 +35,7 @@ final class LanguageController
      */
     public function show(FilterTableRequest $request): JsonResponse
     {
-        $languages = Language::filter($request)->paginate($request->limit);
+        $languages = Language::filter($request)->orderBy('id', 'desc')->paginate($request->limit);
 
         return response()->json(['data' => $languages]);
     }

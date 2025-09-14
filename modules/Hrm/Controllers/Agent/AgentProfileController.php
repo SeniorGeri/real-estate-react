@@ -39,6 +39,7 @@ final class AgentProfileController
         $property = Property::filter($request)
         ->whereUserId($agent->id)
         ->with(['user'])
+        ->orderBy('id', 'desc')
         ->paginate($request->limit);
         return response()->json(['data' => $property]);
     }

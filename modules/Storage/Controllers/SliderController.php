@@ -35,7 +35,7 @@ final class SliderController
      */
     public function show(FilterTableRequest $request): JsonResponse
     {
-        $sliders = Slider::filter($request)->paginate($request->limit);
+        $sliders = Slider::filter($request)->orderBy('id', 'desc')->paginate($request->limit);
 
         return response()->json(['data' => $sliders]);
     }
