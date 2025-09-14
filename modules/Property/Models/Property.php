@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Settings\Models\City;
 use Modules\Settings\Models\Zone;
+use Modules\Settings\Models\Currency;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -30,6 +31,7 @@ final class Property extends Model
         'zone_id',
         'city_id',
         'user_id',
+        'currency_id',
         'title',
         'slug',
         'longitude',
@@ -62,6 +64,10 @@ final class Property extends Model
         'description'
     ];
 
+    public $casts = [
+        'gallery' => 'json',
+    ];
+
     public function propertyType(): BelongsTo
     {
         return $this->belongsTo(PropertyType::class);
@@ -90,6 +96,11 @@ final class Property extends Model
     public function propertyAttributes(): HasMany
     {
         return $this->hasMany(PropertyAttribute::class);
+    }
+
+    public function currency(): BelongsTo
+    {
+        return $this->belongsTo(Currency::class);
     }
 
     public function getSlugOptions() : SlugOptions

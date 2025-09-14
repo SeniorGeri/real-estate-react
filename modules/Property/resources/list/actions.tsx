@@ -4,30 +4,30 @@ import {Button} from '@/components/ui/button';
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger} from '@/components/ui/dropdown-menu';
 import {MoreHorizontal} from 'lucide-react';
 import {useCallback, useState} from 'react';
-import {Country, CountryActionsProps} from "./data.js";
-import {EditCountry} from "./edit.js";
-import {DeleteCountry} from "./delete.js";
+import {PropertyList, PropertyActionsProps} from "./data.js";
 import { useTranslation } from 'react-i18next';
 import { usePermissions } from '@/hooks/use-permissions.js';
+import { Link } from '@inertiajs/react';
+import { DeleteProperty } from './delete.js';
 
-export function CountryActions({country}: CountryActionsProps) {
+export function PropertyActions({property}: PropertyActionsProps) {
 
-    const { t } = useTranslation('Settings');
+    const { t } = useTranslation('Property');
 
     const { hasPermission, hasAnyPermission} = usePermissions();
 
-    const [selectedCountry, setSelectedCountry] = useState<Country| undefined>(undefined);
+    const [selectedProperty, setSelectedProperty] = useState<PropertyList| undefined>(undefined);
 
     const [selectedAction, setSelectedAction] = useState<'edit' | 'delete' | null>(null);
 
-    const handleAction = useCallback((country: Country, action: 'edit' | 'delete') => {
+    const handleAction = useCallback((property: PropertyList, action: 'edit' | 'delete') => {
         setTimeout(() => {
-            setSelectedCountry(country);
+            setSelectedProperty(property);
             setSelectedAction(action);
         }, 10)
     }, []);
 
-    if (!hasAnyPermission(['country.update', 'country.delete'])) {
+    if (!hasAnyPermission(['property.update', 'property.delete'])) {
         return null;
     }
 
@@ -41,26 +41,25 @@ export function CountryActions({country}: CountryActionsProps) {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-[160px]">
-                    {hasPermission('country.update') && (
+                    {hasPermission('property.update') && (
                         <>
-                            <DropdownMenuItem onClick={() => handleAction(country.original, 'edit')}>{t('edit_country')}</DropdownMenuItem>
+                            <Link href={route('property.edit', property.original.id)}>
+                                <DropdownMenuItem>{t('edit_property')}</DropdownMenuItem>
+                            </Link>
                             <DropdownMenuSeparator/>
                         </>
                     )}
-                    {hasPermission('country.delete') && (
-                        <DropdownMenuItem className="text-red-500" onClick={() => handleAction(country.original, 'delete')}>
-                            {t('delete_country')}
+                    {hasPermission('property.delete') && (
+                        <DropdownMenuItem className="text-red-500" onClick={() => handleAction(property.original, 'delete')}>
+                            {t('delete_property')}
                             <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
                         </DropdownMenuItem>
                     )}
                 </DropdownMenuContent>
             </DropdownMenu>
             <div className="flex items-center justify-end">
-                {selectedCountry && selectedAction === 'edit' && (
-                    <EditCountry country={selectedCountry} isOpen={true} closeModal={() => setSelectedCountry(undefined)}/>
-                )}
-                {selectedCountry && selectedAction === 'delete' && (
-                    <DeleteCountry country={selectedCountry} isOpen={true} closeModal={() => setSelectedCountry(undefined)}/>
+                {selectedProperty && selectedAction === 'delete' && (
+                    <DeleteProperty property={selectedProperty} isOpen={true} closeModal={() => setSelectedProperty(undefined)}/>
                 )}
             </div>
         </>

@@ -1,26 +1,26 @@
-'use strict';
+'use client';
 
 import {AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,} from '@/components/ui/alert-dialog';
 import {router} from '@inertiajs/react';
 import {toast} from 'sonner';
 import {route} from "ziggy-js";
-import {DeleteCountryProps} from "./data";
+import {DeletePropertyProps} from "./data";
 import { useTranslation } from 'react-i18next';
 
-export function DeleteCountry({country, isOpen, closeModal}: DeleteCountryProps) {
+export function DeleteProperty({property, isOpen, closeModal}: DeletePropertyProps) {
 
-    const { t } = useTranslation('Settings');
+    const { t } = useTranslation('Property');
 
-    const destroyCountry = () => {
-        router.delete(route('country.destroy', country.id), {
+    const destroyProperty = () => {
+        router.delete(route('property.destroy', property.id), {
             preserveScroll: true,
-            onSuccess: () => countryDeleted(),
+            onSuccess: () => propertyDeleted(),
             onFinish: () => closeModal(),
         });
     };
 
-    const countryDeleted = () => {
-        toast(t('country_delete_succ'), {position: 'top-right', duration: 2000});
+    const propertyDeleted = () => {
+        toast(t('property_delete_succ'), {position: 'top-right', duration: 2000});
         closeModal();
     };
 
@@ -28,14 +28,14 @@ export function DeleteCountry({country, isOpen, closeModal}: DeleteCountryProps)
         <AlertDialog open={isOpen}>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>{t('delete_country')}?</AlertDialogTitle>
+                    <AlertDialogTitle>{t('delete_property')}?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        {t('delete_country_desc')}
+                        {t('delete_property_desc')}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel onClick={closeModal}>{t('close')}</AlertDialogCancel>
-                    <AlertDialogAction onClick={destroyCountry}>{t('delete')}</AlertDialogAction>
+                    <AlertDialogAction onClick={destroyProperty}>{t('delete')}</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

@@ -46,7 +46,7 @@ final class UpdatePropertyRequest extends FormRequest
             'logo' => ['nullable', 'string'],
             'image' => ['nullable', 'string'],
             'hover_image' => ['nullable', 'string'],
-            'gallery' => ['nullable', 'string'],
+            'gallery' => ['nullable', 'array'],
         ];
     }
 

@@ -16,6 +16,7 @@ final class PropertyAttribute extends Model
     use HasTranslationsTrait;
 
     protected $fillable = [
+        'property_id',
         'attribute',
         'value',
         'logo',

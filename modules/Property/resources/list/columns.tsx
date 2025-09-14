@@ -2,15 +2,15 @@
 
 import {DataTableColumnHeader} from '@/components/data-table/data-table-column-header';
 import {ColumnDef} from '@tanstack/react-table';
-import {Country} from "./data";
+import {PropertyList} from "./data";
 import { useTranslation } from 'react-i18next';
 import { TranslatableField } from '@/types/helpers';
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
 
 
 
-export const CountryColumns = (currentLocale :string): ColumnDef<Country>[] => {
-    const { t } = useTranslation('Settings');
+export const PropertyColumns = (currentLocale :string): ColumnDef<PropertyList>[] => {
+    const { t } = useTranslation('Property');
 
 
     return [
@@ -28,12 +28,12 @@ export const CountryColumns = (currentLocale :string): ColumnDef<Country>[] => {
             },
         },
         {
-            accessorKey: 'flag',
-            header: ({column}) => <DataTableColumnHeader column={column} title={t('flag')}/>,
+            accessorKey: 'image',
+            header: ({column}) => <DataTableColumnHeader column={column} title={t('image')}/>,
             cell: ({row}) => {
                 return (
                     <Avatar>
-                        <AvatarImage className="h-12 w-12" src={row.getValue('flag')} alt={(row.getValue('country') as Record<string, string>)[currentLocale]} />
+                        <AvatarImage className="h-12 w-12" src={row.getValue('image')} alt={(row.getValue('title') as Record<string, string>)[currentLocale]} />
                     </Avatar>
                 )
             },
@@ -41,13 +41,13 @@ export const CountryColumns = (currentLocale :string): ColumnDef<Country>[] => {
             enableSorting: false,
         },
         {
-            accessorKey: 'country',
-            header: ({column}) => <DataTableColumnHeader column={column} title={t('country')}/>,
+            accessorKey: 'title',
+            header: ({column}) => <DataTableColumnHeader column={column} title={t('title')}/>,
             cell: ({row}) => {
-                const country : TranslatableField = row.getValue('country')
+                const title : TranslatableField = row.getValue('title')
                 return (
                     <div className="flex space-x-2">
-                        <span className="max-w-[500px] truncate font-light">{country[currentLocale] || t('not_translated')}</span>
+                        <span className="max-w-[500px] truncate font-light">{title[currentLocale] || t('not_translated')}</span>
                     </div>
                 );
             },
@@ -55,17 +55,17 @@ export const CountryColumns = (currentLocale :string): ColumnDef<Country>[] => {
             enableSorting: true,
         },
         {
-            accessorKey: 'description',
-            header: ({column}) => <DataTableColumnHeader column={column} title={t('description')}/>,
+            accessorKey: 'agent',
+            header: ({column}) => <DataTableColumnHeader column={column} title={t('agent')}/>,
             cell: ({row}) => {
                 return (
                     <div className="flex space-x-2">
-                        <span className="max-w-[500px] truncate font-light">{row.getValue('description')}</span>
+                        <span className="max-w-[500px] truncate font-light">{row.original?.user?.name}</span>
                     </div>
                 );
             },
             enableColumnFilter: true,
-            enableSorting: false,
+            enableSorting: true,
         },
     ];
 }

@@ -9,6 +9,13 @@ use Illuminate\Foundation\Http\FormRequest;
 
 final class StorePropertyRequest extends FormRequest
 {
+
+    public function prepareForValidation():void 
+    {
+        $this->merge([
+            'gallery' => [$this->input('image')]
+        ]);
+    }
     /**
      * Get the validation rules that apply to the request.
      *
@@ -17,34 +24,34 @@ final class StorePropertyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'property_type_id' => ['required', 'integer'],
-            'property_status_id' => ['required', 'integer'],
-            'zone_id' => ['required', 'integer'],
-            'city_id' => ['required', 'integer'],
-            'user_id' => ['required', 'integer'],
+            'property_type_id' => ['nullable', 'integer'],
+            'property_status_id' => ['nullable', 'integer'],
+            'zone_id' => ['nullable', 'integer'],
+            'city_id' => ['nullable', 'integer'],
+            'user_id' => ['nullable', 'integer'],
             'title' => ['required', 'string', 'max:255'],
-W            'longitude' => ['required', 'string'],
-            'latitude' => ['required', 'string'],
-            'address' => ['required', 'string'],
-            'for_sale' => ['required', 'boolean'],
-            'price' => ['required', 'numeric'],
-            'price_per_month' => ['required', 'numeric'],
-            'for_rent' => ['required', 'boolean'],
-            'views' => ['required', 'integer'],
-            'is_featured' => ['required', 'boolean'],
-            'is_active' => ['required', 'boolean'],
-            'bedrooms' => ['required', 'integer'],
-            'bathrooms' => ['required', 'integer'],
-            'floor' => ['required', 'integer'],
-            'garages' => ['required', 'integer'],
-            'area' => ['required', 'integer'],
-            'total_area' => ['required', 'integer'],
-            'net_area' => ['required', 'integer'],
-            'elevator' => ['required', 'boolean'],
+            'longitude' => ['nullable', 'string'],
+            'latitude' => ['nullable', 'string'],
+            'address' => ['nullable', 'string'],
+            'for_sale' => ['nullable', 'boolean'],
+            'price' => ['nullable', 'numeric'],
+            'price_per_month' => ['nullable', 'numeric'],
+            'for_rent' => ['nullable', 'boolean'],
+            'views' => ['nullable', 'integer'],
+            'is_featured' => ['nullable', 'boolean'],
+            'is_active' => ['nullable', 'boolean'],
+            'bedrooms' => ['nullable', 'integer'],
+            'bathrooms' => ['nullable', 'integer'],
+            'floor' => ['nullable', 'integer'],
+            'garages' => ['nullable', 'integer'],
+            'area' => ['nullable', 'integer'],
+            'total_area' => ['nullable', 'integer'],
+            'net_area' => ['nullable', 'integer'],
+            'elevator' => ['nullable', 'boolean'],
             'logo' => ['nullable', 'string'],
             'image' => ['nullable', 'string'],
             'hover_image' => ['nullable', 'string'],
-            'gallery' => ['nullable', 'string'],
+            'gallery' => ['nullable', 'array'],
             'description' => ['nullable', 'string'],
         ];
     }

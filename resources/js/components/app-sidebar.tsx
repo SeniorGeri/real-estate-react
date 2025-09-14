@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { Bell, BellRing, CircleGauge, Cog, Images, Megaphone, Sliders, User, UserCheck, UsersRound,Languages, Euro, ReceiptEuro, LogOut, Map } from 'lucide-react';
+import { Bell, BellRing, CircleGauge, Cog, Images, Megaphone, Sliders, User, UserCheck, UsersRound,Languages, Euro, ReceiptEuro, LogOut, Map, Building, Building2 } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -17,21 +17,28 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Property',
         href: 'property',
-        icon: UsersRound,
+        icon: Building,
         type: 'dropdown',
-        permissions: ['property_type.read', 'property_status.read', 'property.read'],
+        permissions: ['property_type.read', 'property_status.read', 'property.read', 'property.create'],
         subItems: [
+            {
+                title: 'List',
+                href: route('property.list'),
+                icon: Building,
+                type: 'standalone',
+                permission: 'property.read',
+            },
             {
                 title: 'Type',
                 href: route('property.type.list'),
-                icon: UserCheck,
+                icon: Building2,
                 type: 'standalone',
                 permission: 'property_type.read',
             },
             {
                 title: 'Status',
                 href: route('property.status.list'),
-                icon: UserCheck,
+                icon: Building,
                 type: 'standalone',
                 permission: 'property_status.read',
             }

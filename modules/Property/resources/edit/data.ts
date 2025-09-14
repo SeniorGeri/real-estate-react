@@ -1,6 +1,6 @@
 import type {BreadcrumbItem} from '@/types';
 
-export const createBreadcrumbs: BreadcrumbItem[] = [
+export const updateBreadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Dashboard',
         href: route('dashboard'),
@@ -8,9 +8,6 @@ export const createBreadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Property List',
         href: route('property.list'),
-    },
-    {
-        title: 'Property Create',
-        href: route('property.create'),
-    },
+    }
+
 ];

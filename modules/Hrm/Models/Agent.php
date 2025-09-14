@@ -47,18 +47,4 @@ final class Agent extends User
 
     protected $translatable = ['bio'];
 
-    public function courses(): HasMany
-    {
-        return $this->hasMany(CourseAgent::class, 'agent_id');
-    }
-
-    public function activeCourses(): HasMany
-    {
-        return $this->hasMany(ActiveCourse::class, 'agent_id');
-    }
-    
-    public function liquidations(): HasMany
-    {
-        return $this->hasMany(Liquidation::class, 'winner_id');
-    }
 }

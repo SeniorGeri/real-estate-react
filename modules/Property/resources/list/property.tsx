@@ -5,17 +5,17 @@ import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from '@/components/data-table/data-table';
 import { route } from 'ziggy-js';
 import { PropertyColumns } from './columns';
-import { Property } from './data';
+import { PropertyList } from './data';
 import { PropertyActions } from './actions';
-import { CreateProperty } from './create';
 import { useLocale } from '@/contexts/locale';
+import { CreateProperty } from './create';
 
 export default function PropertyTable() {
 
     const { hasPermission } = usePermissions();
     const { currentLocale } = useLocale();
 
-    const columns: ColumnDef<Property>[] = [
+    const columns: ColumnDef<PropertyList>[] = [
         ...PropertyColumns(currentLocale),
         {
             id: 'actions',
