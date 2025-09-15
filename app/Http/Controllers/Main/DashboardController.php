@@ -26,14 +26,12 @@ final class DashboardController
     {
         $user = Auth::user();
 
-        return Inertia::render('dashboard');
-
-        // if ($user->hasRole(RolesEnum::ADMIN->value)) {
-        //    return $this->dashboardService->getAdminView();
-        // }
-        // if($user->hasRole(RolesEnum::AGENT->value)) {
-        //     return $this->dashboardService->getAgentView($user);
-        // }
-        // return $this->dashboardService->getStudentView($user);
+        if ($user->hasRole(RolesEnum::ADMIN->value)) {
+           return $this->dashboardService->getAdminView();
+        }
+        if($user->hasRole(RolesEnum::AGENT->value)) {
+            return $this->dashboardService->getAgentView($user);
+        }
+        return $this->dashboardService->getEmptyView();
     }
 }

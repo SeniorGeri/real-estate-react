@@ -1,15 +1,19 @@
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
-import { Award, UserPen, Users, ContactRound, GraduationCap, BookOpenCheck } from 'lucide-react';
-import { ActiveCourseDashboardData, UserDashboardData } from './data';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { AvatarImage } from '@radix-ui/react-avatar';
-import { Avatar } from '@/components/ui/avatar';
-import { Agent } from '@/modules/Hrm/resources/agents/data';
-import { Student } from '@/modules/Hrm/resources/students/profile/data';
+import { UserDashboardData } from './data';
 import { useTranslation } from 'react-i18next';
+import DashboardCard from './dashboard-card';
+import { House, MapPinHouse, User, UserCheck } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { DataTable } from '@/components/data-table/data-table';
+import { ColumnDef } from '@tanstack/react-table';
+import { AgentColumns } from '@/modules/Hrm/resources/agents/columns';
+import { Agent } from '@/modules/Hrm/resources/agents/data';
+import { PropertyColumns } from '@/modules/Property/resources/list/columns';
+import { PropertyList } from '@/modules/Property/resources/list/data';
+
+
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Dashboard',
@@ -17,141 +21,54 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Dashboard({ agents, students, courses, activeCourses, agentList   , studentList }: { agents: UserDashboardData, students: UserDashboardData, courses: number, activeCourses: ActiveCourseDashboardData, agentList: Agent[], studentList: Student[] }) {
+export default function Dashboard({agents, properties}: { agents: UserDashboardData, properties: UserDashboardData }) {
     const {t} = useTranslation('Main');
+
+    
+        const agentColumns: ColumnDef<Agent>[] = AgentColumns();
+        const propertyColumns: ColumnDef<PropertyList>[] = PropertyColumns('en');
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AppLayout breadcrumbs={breadcrumbs}>   
             <Head title="Dashboard" />
-            <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-4">
-                    <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border">
-                        <div className="flex h-full items-center justify-around gap-4">
-                            <ContactRound className="h-20 w-20" />
-                            <div className="flex flex-col gap-2">
-                                <p className="text-center text-lg font-semibold">{t('agents')}</p>
-                                <p className="text-center text-lg">{t('total')}: {agents.total}</p>
-                                <p className="text-center text-lg">{t('active')}: {agents.total_active}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border">
-                        <div className="flex h-full items-center justify-around gap-4">
-                            <UserPen className="h-20 w-20" />
-                            <div className="flex flex-col gap-2">
-                                <p className="text-center text-lg font-semibold">{t('students')}</p>
-                                <p className="text-center text-lg">{t('total')}: {students.total}</p>
-                                <p className="text-center text-lg">{t('active')}: {students.total_active}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border">
-                        <div className="flex h-full items-center justify-around gap-4">
-                            <GraduationCap className="h-20 w-20" />
-                            <div className="flex flex-col gap-2">
-                                <p className="text-center text-lg font-semibold">{t('courses')}</p>
-                                <p className="text-center text-lg">{t('total')}: {courses}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border">
-                        <div className="flex h-full items-center justify-around gap-4">
-                            <BookOpenCheck className="h-20 w-20" />
-                            <div className="flex flex-col">
-                                <p className="text-center text-lg font-semibold">{t('active_courses')}</p>
-                                <p className="text-center text-sm">{t('total')}: {activeCourses.total}</p>
-                                <p className="text-center text-sm">{t('active')}: {activeCourses.total_active}</p>
-                                <p className="text-center text-sm">{t('rejected')}: {activeCourses.total_rejected}</p>
-                                <p className="text-center text-sm">{t('finished')}: {activeCourses.total_finished}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="grid auto-rows-min gap-4 md:grid-cols-2">
-                    <Card className="w-full max-w-2xl mx-auto col-span-1">
-                        <CardHeader className="text-center">
-                            <div className="flex items-center justify-center gap-1">
-                                <Award className="h-6 w-6 text-yellow-500" />
-                                <CardTitle className="text-2xl font-bold">{t('top_5_agents')}</CardTitle>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                            {agentList.map((agent, index) => (
-                                <div
-                                    key={agent.id}
-                                    className="flex items-center gap-4 p-1 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
-                                >
-                                    <div className="flex items-center gap-3 flex-1">
-                                        <div className="relative">
-                                            <Avatar className="h-12 w-12">
-                                                <AvatarImage src={agent.profile_pic || "/placeholder.svg"} alt={agent.name} />
-                                            </Avatar>
-                                        </div>
-
-                                        <div className="flex-1 min-w-0">
-                                            <div className="flex items-center gap-2">
-                                                <h3 className="font-semibold text-lg truncate">{agent.name}</h3>
-                                                <Badge variant="secondary" className="text-xs">
-                                                    {agent.specialization}
-                                                </Badge>
-                                            </div>
-                                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                                <div className="flex items-center gap-1">
-                                                    <Users className="h-4 w-4" />
-                                                    <span>{agent.active_courses_count} {t('courses')}</span>
-                                                </div>
-                                                <div className="hidden sm:block">
-                                                    <span> {t('joined')} {new Date(agent.created_at).toLocaleDateString()}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </CardContent>
-                    </Card>
-                    <Card className="w-full max-w-2xl mx-auto col-span-1">
-                        <CardHeader className="text-center">
-                            <div className="flex items-center justify-center gap-1">
-                                <Award className="h-6 w-6 text-yellow-500" />
-                                <CardTitle className="text-2xl font-bold">{t('top_5_students')}</CardTitle>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                            {studentList.map((student, index) => (
-                                <div
-                                    key={student.id}
-                                    className="flex items-center gap-4 p-1 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
-                                >
-                                    <div className="flex items-center gap-3 flex-1">
-                                        <div className="relative">
-                                            <Avatar className="h-12 w-12">
-                                                <AvatarImage src={student.profile_pic || "/placeholder.svg"} alt={student.name} />
-                                            </Avatar>
-                                        </div>
-
-                                        <div className="flex-1 min-w-0">
-                                            <div className="flex items-center gap-2">
-                                                <h3 className="font-semibold text-lg truncate">{student.name}</h3>
-                                            </div>
-                                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                                <div className="flex items-center gap-1">
-                                                    <Users className="h-4 w-4" />
-                                                    <span>{student.active_courses_count} {t('courses')}</span>
-                                                </div>
-                                                <div className="hidden sm:block">
-                                                    <span>{t('joined')} {new Date(student.created_at).toLocaleDateString()}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </CardContent>
-                    </Card>
-                </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 rounded-xl p-4">
+               <DashboardCard IconNode={User} number={agents.total.toString()} title={t('total_agents')} />
+               <DashboardCard IconNode={UserCheck} number={agents.total_active.toString()} title={t('active_agents')} />
+               <DashboardCard IconNode={MapPinHouse} number={properties.total.toString()} title={t('total_properties')} />
+               <DashboardCard IconNode={House} number={properties.total_active.toString()} title={t('active_properties')} />
             </div>
 
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 rounded-xl p-4">
+                <Card>
+                    <CardHeader>
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <CardTitle>{t('properties')}</CardTitle>
+                            </div>
+                        </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        
+                    <DataTable urlPath={route('property.load')} columns={propertyColumns}>
+                                  <></>
+                          </DataTable>
+                    </CardContent>
+                </Card>
+
+                <Card>
+                    <CardHeader>
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <CardTitle>{t('agents')}</CardTitle>
+                            </div>
+                        </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                          <DataTable urlPath={route('agent.load')} columns={agentColumns}>
+                                  <></>
+                          </DataTable>
+                    </CardContent>
+                </Card>
+            </div>
         </AppLayout >
     );
 }

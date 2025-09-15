@@ -30,7 +30,7 @@ final class AgentProfileController
         ])->loadCount([
             'properties',
             'properties as active_properties' => function ($query) {
-                $query->where(DB::raw('active'), true);
+                $query->where('is_active', true);
             }
         ]);
         // ->loadSum('transactions','amount');

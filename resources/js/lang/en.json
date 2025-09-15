@@ -1,19 +1,9 @@
 {
-    "top_5_agents": "Top 5 Agents",
-    "top_5_students": "Top 5 Students",
-    "students": "Students",
-    "agents": "Agents",
-    "courses": "Courses",
-    "active_courses": "Active Courses",
-    "agent_list": "Agent List",
-    "student_list": "Student List",
-    "total": "Total",
-    "total_active": "Total Active",
-    "total_requested": "Total Requested",
-    "total_rejected": "Total Rejected",
-    "total_approved": "Total Approved",
-    "total_finished": "Total Finished",
-    "total_invested": "Total Invested",
-    "total_courses": "Total Courses"
+   "total_properties": "Total Properties",
+   "active_properties": "Active Properties",
+   "total_agents": "Total Agents",
+   "active_agents": "Active Agents",
+   "properties": "Properties",
+   "agents": "Agents"
 
 }
