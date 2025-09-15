@@ -19,5 +19,8 @@ class AgentPermissionsSeeder extends Seeder
         $role->givePermissionTo("notification.delete");
         $role->givePermissionTo("notification.update");
 
+        $role->givePermissionTo("contact.read");
+
+
     }
 }

@@ -88,5 +88,14 @@
     "lessonsLeft": "Lessons Left",
     "ongoingCourses": "Ongoing Courses",
     "profile_agent": "Agent Profile",
-    "profile_student": "Student Profile"
+    "profile_student": "Student Profile",
+
+    "properties": "Properties",
+    "active_properties": "Active Properties",
+    "agent": "Agent",
+    "phone": "Phone",
+    "change_password": "Change Password",
+    "change_password_desc": "The form below allows you to change the password of the selected agent",
+    "password_confirmation": "Password Confirmation",
+    "agent_change_password_succ": "The password has been changed successfully"
 }

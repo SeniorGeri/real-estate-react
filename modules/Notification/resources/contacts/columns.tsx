@@ -4,10 +4,11 @@ import {DataTableColumnHeader} from '@/components/data-table/data-table-column-h
 import {ColumnDef} from '@tanstack/react-table';
 import {Contact} from "./data";
 import {useTranslation} from 'react-i18next';
+import { TranslatableField } from '@/types/helpers';
 
 
 
-export const ContactColumns = (): ColumnDef<Contact>[] => {
+export const ContactColumns = (currentLocale :string): ColumnDef<Contact>[] => {
     const { t } = useTranslation('Notification');
 
 
@@ -25,6 +26,22 @@ export const ContactColumns = (): ColumnDef<Contact>[] => {
                 );
             },
         },
+        {
+                accessorKey: 'title',
+                header: ({column}) => <DataTableColumnHeader column={column} title={t('title')}/>,
+                cell: ({row}) => {
+                    console.log(row)
+                    const property : TranslatableField = row.original?.property?.title
+                    if(!property) return '-';
+                    return (
+                        <div className="flex space-x-2">
+                            <span className="max-w-[500px] truncate font-light">{property[currentLocale] || t('not_translated')}</span>
+                        </div>
+                    );
+                },
+                enableColumnFilter: false,
+                enableSorting: false,
+            },
         {
             accessorKey: 'name',
             header: ({column}) => <DataTableColumnHeader column={column} title={t('name')}/>,

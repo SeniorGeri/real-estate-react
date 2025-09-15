@@ -34,6 +34,7 @@ export function EditAgent({ agent, isOpen, closeModal }: EditAgentProps) {
         gender_id: agent?.gender_id,
         active: agent?.active,
         address: agent?.address,
+        phone: agent?.phone,
         bio: agent?.bio[currentLocale] ?? '',
         profile_pic: agent?.profile_pic,
         locale: currentLocale ?? null
@@ -92,14 +93,13 @@ export function EditAgent({ agent, isOpen, closeModal }: EditAgentProps) {
                         />
 
 
-                        <CustomInput
-                            id="address"
-                            value={data.address}
+                        <CustomInput   
+                            id="phone"
+                            value={data.phone}
                             setFormData={setData}
-                            placeholder={t('address')}
-                            errorMessage={errors.address}
+                            placeholder={t('phone')}
+                            errorMessage={errors.phone}
                         />
-
 
                     </div>
 
@@ -153,6 +153,13 @@ export function EditAgent({ agent, isOpen, closeModal }: EditAgentProps) {
                             </>
                         </CustomSelect>
 
+                        <CustomInput
+                            id="address"
+                            value={data.address}
+                            setFormData={setData}
+                            placeholder={t('address')}
+                            errorMessage={errors.address}
+                        />
                         <CustomSwitch
                             id="active"
                             is_checked={data.active}

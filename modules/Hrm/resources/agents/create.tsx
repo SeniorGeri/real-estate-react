@@ -36,6 +36,7 @@ export function CreateAgent() {
         city_id: '',
         gender_id: '',
         active: false,
+        phone: '',
         address: '',
         bio: '',
         profile_pic: '',
@@ -107,12 +108,14 @@ export function CreateAgent() {
                             className='col-span-1'
                         />    
 
-                        <CustomInput   
-                                id="address"
-                                value={data.address}
+                     
+
+                            <CustomInput   
+                                id="phone"
+                                value={data.phone}
                                 setFormData={setData}
-                                placeholder={t('address')}
-                                errorMessage={errors.address}
+                                placeholder={t('phone')}
+                                errorMessage={errors.phone}
                             />
                     </div>
 
@@ -165,7 +168,13 @@ export function CreateAgent() {
                                 ))}
                             </>
                         </CustomSelect>
-
+                        <CustomInput   
+                                id="address"
+                                value={data.address}
+                                setFormData={setData}
+                                placeholder={t('address')}
+                                errorMessage={errors.address}
+                            />
                         <CustomSwitch
                                 id="active"
                                 is_checked={data.active}
@@ -183,7 +192,7 @@ export function CreateAgent() {
                             id="bio"
                             value={data.bio}
                             setFormData={setData}
-                            placeholder={t('bio')}
+                            // placeholder={t('bio')}
                             errorMessage={errors.bio}
                         />
                     </div>

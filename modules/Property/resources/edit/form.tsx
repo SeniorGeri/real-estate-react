@@ -57,7 +57,7 @@ export default function PropertyForm(props: PropertyFormProps) {
         elevator: props.property.elevator,
         logo: props.property.logo,
         hover_image: props.property.hover_image,
-        gallery: props.property.gallery,
+        gallery: props.property.gallery ?? [],
         updated_at: props.property.updated_at,
         propertyAttributes: props.property.property_attributes?.map((attribute: PropertyAttribute) => {
             return {
@@ -66,9 +66,9 @@ export default function PropertyForm(props: PropertyFormProps) {
                 value: attribute.value['en'],
                 image: attribute.image,
             };
-        }),
+        }) ?? [],
     });
-
+    
     const [isLoading, setIsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState('general');
 

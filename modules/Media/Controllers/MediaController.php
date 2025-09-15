@@ -25,7 +25,7 @@ final class MediaController
         ->when(!Auth::user()->hasRole(RolesEnum::ADMIN->value), function ($query) {
             $query->where('user_id', Auth::user()->id);
         })
-        ->simplePaginate(5);
+        ->simplePaginate(30);
 
         return view('storage::media', ['medias' => $medias]);
     }

@@ -1,5 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 import type { Config } from 'ziggy-js';
+import { TranslatableField } from './helpers';
 
 export interface Auth {
     user: User;
@@ -46,5 +47,6 @@ export interface User {
     email_verified_at: string | null;
     created_at: string;
     updated_at: string;
+    bio: TranslatableField;
     [key: string]: unknown; // This allows for additional properties...
 }

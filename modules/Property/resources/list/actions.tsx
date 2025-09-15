@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { usePermissions } from '@/hooks/use-permissions.js';
 import { Link } from '@inertiajs/react';
 import { DeleteProperty } from './delete.js';
+import { TranslateProperty } from './translate.js';
 
 export function PropertyActions({property}: PropertyActionsProps) {
 
@@ -18,9 +19,9 @@ export function PropertyActions({property}: PropertyActionsProps) {
 
     const [selectedProperty, setSelectedProperty] = useState<PropertyList| undefined>(undefined);
 
-    const [selectedAction, setSelectedAction] = useState<'edit' | 'delete' | null>(null);
+    const [selectedAction, setSelectedAction] = useState<'edit' | 'delete' | 'translate' | null>(null);
 
-    const handleAction = useCallback((property: PropertyList, action: 'edit' | 'delete') => {
+    const handleAction = useCallback((property: PropertyList, action: 'edit' | 'delete' | 'translate') => {
         setTimeout(() => {
             setSelectedProperty(property);
             setSelectedAction(action);
@@ -47,6 +48,11 @@ export function PropertyActions({property}: PropertyActionsProps) {
                                 <DropdownMenuItem>{t('edit_property')}</DropdownMenuItem>
                             </Link>
                             <DropdownMenuSeparator/>
+
+                            <DropdownMenuItem onClick={() => handleAction(property.original, 'translate')}>
+                            {t('translate_property')}
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator/>
                         </>
                     )}
                     {hasPermission('property.delete') && (
@@ -60,6 +66,9 @@ export function PropertyActions({property}: PropertyActionsProps) {
             <div className="flex items-center justify-end">
                 {selectedProperty && selectedAction === 'delete' && (
                     <DeleteProperty property={selectedProperty} isOpen={true} closeModal={() => setSelectedProperty(undefined)}/>
+                )}
+                {selectedProperty && selectedAction === 'translate' && (
+                    <TranslateProperty property={selectedProperty} isOpen={true} closeModal={() => setSelectedProperty(undefined)}/>
                 )}
             </div>
         </>

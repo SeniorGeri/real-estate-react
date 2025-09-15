@@ -6,6 +6,7 @@ use Modules\Property\Controllers\PropertyStatusController;
 use Modules\Property\Controllers\PropertyTypeController;
 use Illuminate\Support\Facades\Route;
 use Modules\Property\Controllers\PropertyController;
+use Modules\Property\Controllers\TranslatePropertyController;
 
 Route::prefix('backoffice/')->group(function () {
     
@@ -30,6 +31,9 @@ Route::prefix('backoffice/')->group(function () {
         Route::get('/edit/{property}', [PropertyController::class, 'edit'])->name('edit')->permission('property.update');
         Route::put('/edit/{property}', [PropertyController::class, 'update'])->name('update')->permission('property.update');
         Route::delete('/list/{property}', [PropertyController::class, 'destroy'])->name('destroy')->permission('property.delete');
+
+        Route::put('/translate/{property}', TranslatePropertyController::class)->name('translate')->permission('property.update');
+
     });
 
 });

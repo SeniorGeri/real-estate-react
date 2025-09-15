@@ -28,6 +28,7 @@ export type Agent = {
     name: string;
     email: string;
     password: string;
+    phone: string;
     country_id: number;
     city_id: number;
     gender_id: number;

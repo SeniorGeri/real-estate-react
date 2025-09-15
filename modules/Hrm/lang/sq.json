@@ -82,5 +82,15 @@
     "lessonsLeft": "Mësime të Mbetura",
     "ongoingCourses": "Kurse në Vazhdim",
     "profile_agent": "Profili i Instruktorit",
-    "profile_student": "Profili i Studentit"
+    "profile_student": "Profili i Studentit",
+
+    "properties": "Pronat",
+    "active_properties": "Pronat aktive",
+    "agent": "Agjenti",
+    "phone": "Telefoni",
+
+    "change_password": "Cambia Password",
+    "change_password_desc": "Il modulo sottostante ti permette di cambiare la password dell'agente selezionato",
+    "password_confirmation": "Conferma Password",
+    "agent_change_password_succ": "La password è stata cambiata con successo"
 }

@@ -111,5 +111,9 @@
     "zone": "Zona",
     "select_zone": "Zgjidh zonën",
     "address": "Adresa",
-    "property_updated_successfully": "Prona u përditësua me sukses"
+    "property_updated_successfully": "Prona u përditësua me sukses",
+
+    "translate_property": "Perkthe pronën",
+    "translate_property_desc": "Formulari më poshtë ju lejon të përktheni pronën e zgjedhur",
+    "property_trans_succ": "Prona u perkthye me sukses"
 }

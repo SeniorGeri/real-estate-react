@@ -29,6 +29,14 @@ class DatabaseSeeder extends Seeder
 
             $user->assignRole(RolesEnum::ADMIN->value);
 
+            $user = User::create([
+                'name' => 'agent',
+                'email' => 'agent@real-estate.com',
+                'password' => '12345678',
+            ]);
+
+            $user->assignRole(RolesEnum::AGENT->value);
+
             $this->call(SettingsSeeder::class);
             $this->call(HrmSeeder::class);
             $this->call(NotificationSeeder::class);

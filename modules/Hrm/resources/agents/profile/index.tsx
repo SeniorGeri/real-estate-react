@@ -18,7 +18,6 @@ import PropertiesTab from './properties-tab';
 export default function AgentProfile({ agent }:   { agent: Agent }) {
 
   const {t} = useTranslation('Hrm');
-
   return (
     <AppLayout breadcrumbs={agentBreadcrumbs}>
       <Head title="Agents" />

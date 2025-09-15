@@ -32,9 +32,10 @@ final class PasswordController
         ]);
 
         $request->user()->update([
-            'password' => Hash::make($validated['password']),
+            'password' => $validated['password'],
         ]);
 
+        
         return back();
     }
 }

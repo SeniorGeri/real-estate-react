@@ -38,7 +38,7 @@ final class ZoneController
     public function show(FilterTableRequest $request): JsonResponse
     {
         
-        $zones = Zone::filter($request)->with(['city:id,city'])->paginate($request->limit);
+        $zones = Zone::filter($request)->with(['city:id,city'])->orderBy('id', 'desc')->paginate($request->limit);
         return response()->json(['data' => $zones]);
     }
 

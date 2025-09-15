@@ -2,6 +2,7 @@ import { Agent } from '@/modules/Hrm/resources/agents/data';
 import type {BreadcrumbItem} from '@/types';
 import { TranslatableField } from '@/types/helpers';
 import {Row} from '@tanstack/react-table';
+import {PropertyAttribute} from '../edit/props';
 
 export const listBreadcrumbs: BreadcrumbItem[] = [
     {
@@ -21,6 +22,7 @@ export type PropertyList = {
     title: TranslatableField;
     description: TranslatableField;
     user: Agent;
+    property_attributes: PropertyAttribute[];
 }
 
 
@@ -33,3 +35,10 @@ export type DeletePropertyProps = {
     isOpen: boolean;
     closeModal: () => void;
 };
+
+export type TranslatePropertyProps = {
+    property: PropertyList;
+    isOpen: boolean;
+    closeModal: () => void;
+};
+

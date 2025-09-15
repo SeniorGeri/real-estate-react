@@ -108,7 +108,13 @@
     "zone": "Zona",
     "select_zone": "Seleziona la zona",
     "address": "Indirizzo",
-    "property_updated_successfully": "Proprietà aggiornata con successo"
+    "property_updated_successfully": "Proprietà aggiornata con successo",
+
+    "translate_property": "Traduci proprietà",
+    "translate_property_desc": "Il modulo sottostante ti permette di aggiornare le traduzioni della proprietà selezionata",
+    "property_trans_succ": "La proprietà è stata tradotta con successo"
+
+
 
     
 }

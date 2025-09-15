@@ -17,6 +17,8 @@ use Modules\Settings\Models\City;
 use Modules\Settings\Models\Country;
 use Modules\Settings\Models\Gender;
 use App\Enums\RolesEnum;
+use Illuminate\Support\Facades\DB;
+use Modules\Hrm\Requests\Agents\UpdateAgentPasswordRequest;
 
 final class AgentController
 {
@@ -82,6 +84,22 @@ final class AgentController
 
         return to_route('agent.list');
     }
+
+    /**
+     * Update Agent Password
+     *
+     * @param  UpdateAgentPasswordRequest $request
+     * @param  Agent $agent
+     * @return RedirectResponse
+     */
+    public function password(UpdateAgentPasswordRequest $request, Agent $agent): RedirectResponse
+    {
+        $agent->update(['password' => $request->password]);
+        DB::table('sessions')->where('user_id', $agent->id)->delete();
+
+        return to_route('agent.list');
+    }
+    
 
     /**
      * Delete Agent

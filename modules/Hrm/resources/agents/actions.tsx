@@ -10,6 +10,7 @@ import {DeleteAgent} from "./delete.js";
 import { useTranslation } from 'react-i18next';
 import { usePermissions } from '@/hooks/use-permissions.js';
 import { router } from '@inertiajs/react';
+import { ChangePassword } from './change-password.js';
 
 export function AgentActions({agent}: AgentActionsProps) {
 
@@ -19,9 +20,9 @@ export function AgentActions({agent}: AgentActionsProps) {
 
     const [selectedAgent, setSelectedAgent] = useState<Agent| undefined>(undefined);
 
-    const [selectedAction, setSelectedAction] = useState<'edit' | 'delete' | null>(null);
+    const [selectedAction, setSelectedAction] = useState<'edit' | 'delete' | 'change-password' | null>(null);
 
-    const handleAction = useCallback((Agent: Agent, action: 'edit' | 'delete') => {
+    const handleAction = useCallback((Agent: Agent, action: 'edit' | 'delete' | 'change-password') => {
         setTimeout(() => {
             setSelectedAgent(Agent);
             setSelectedAction(action);
@@ -46,6 +47,8 @@ export function AgentActions({agent}: AgentActionsProps) {
                         <>
                             <DropdownMenuItem onClick={() => handleAction(agent.original, 'edit')}>{t('edit_agent')}</DropdownMenuItem>
                             <DropdownMenuSeparator/>
+                            <DropdownMenuItem onClick={() => handleAction(agent.original, 'change-password')}>{t('change_password')}</DropdownMenuItem>
+                            <DropdownMenuSeparator/>
                         </>
                     )}
                     <DropdownMenuItem onClick={() =>  router.visit(route('agent.profile', agent.original.id))}>{t('profile_agent')}</DropdownMenuItem>
@@ -65,6 +68,9 @@ export function AgentActions({agent}: AgentActionsProps) {
                 )}
                 {selectedAgent && selectedAction === 'delete' && (
                     <DeleteAgent agent={selectedAgent} isOpen={true} closeModal={() => setSelectedAgent(undefined)}/>
+                )}
+                {selectedAgent && selectedAction === 'change-password' && (
+                    <ChangePassword agent={selectedAgent} isOpen={true} closeModal={() => setSelectedAgent(undefined)}/>
                 )}
             </div>
         </>

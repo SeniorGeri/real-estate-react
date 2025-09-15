@@ -15,6 +15,7 @@ Route::prefix('backoffice/')->group(function () {
         Route::post('/list', [AgentController::class, 'store'])->name('store')->permission('agent.create');
         Route::put('/list/{agent}', [AgentController::class, 'update'])->name('update')->permission('agent.update');
         Route::delete('/list/{agent}', [AgentController::class, 'destroy'])->name('destroy')->permission('agent.delete');
+        Route::put('/password/{agent}', [AgentController::class, 'password'])->name('password')->permission('agent.update');
         
         Route::get('/profile/{agent}', [AgentProfileController::class, 'index'])->name('profile')->permission('agent.read');
         Route::get('/property/{agent}', [AgentProfileController::class, 'properties'])->name('property')->permission('agent.read');

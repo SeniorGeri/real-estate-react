@@ -29,6 +29,7 @@ final class UpdateAgentRequest extends FormRequest
             'country_id' => ['nullable', 'integer', 'exists:countries,id'],
             'gender_id' => ['nullable', 'integer', 'exists:genders,id'],
             'address' => ['nullable','string'],
+            'phone' => ['nullable','string'],
             'bio' =>  ['nullable', 'string'],
             'locale' => ['required','string'],
         ];

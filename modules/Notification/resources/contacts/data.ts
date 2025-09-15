@@ -23,6 +23,8 @@ export type Contact = {
     is_read: boolean;
     ip: string;
     created_at: string;
+    property_id: string;
+    property: Property;
 };
 
 export type ContactActionsProps = {

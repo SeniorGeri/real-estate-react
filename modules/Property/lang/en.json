@@ -112,6 +112,11 @@
     "select_zone": "Select zone",
     "address": "Address",
     "property_updated_successfully": "Property updated successfully",
-    "agent_desc": "The form below allows you to update the selected property agent"
+    "agent_desc": "The form below allows you to update the selected property agent",
+
+    "translate_property": "Translate property",
+    "translate_property_desc": "The form below allows you to update the selected property translations",
+    "property_trans_succ": "Property translated successfully"
+
 
 }

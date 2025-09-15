@@ -27,4 +27,16 @@ final class PropertyAttributesService
         }
 
     }
+
+    public static function translatePropertyAttributes(array $attributes, string $locale): void
+    {
+
+        foreach ($attributes as $attribute) {
+            $id = $attribute['id'];
+            unset($attribute['id']);
+
+            PropertyAttribute::findOrFail($id)->setMultipleTranslations($attribute, $locale)->save();
+        }
+
+    }
 }

@@ -50,10 +50,10 @@ final class PropertyController
     {
         
         $property = Property::filter($request)
-        ->when(!Auth::user()->role(RolesEnum::ADMIN->value), function ($query) {
+        ->when(!Auth::user()->hasRole(RolesEnum::ADMIN->value), function ($query) {
             $query->where('user_id', Auth::user()->id);
         })
-        ->with(['user'])
+        ->with(['user', 'propertyAttributes'])
         ->orderBy('id', 'desc')
         ->paginate($request->limit);
         return response()->json(['data' => $property]);
@@ -80,6 +80,11 @@ final class PropertyController
      */
     public function edit(Property $property): Response
     {   
+
+        if (!Auth::user()->hasRole(RolesEnum::ADMIN->value) && $property->user_id !== Auth::user()->id) {
+            abort(403);
+        }
+
         $propertyTypes = PropertyType::all();
         $propertyStatuses = PropertyStatus::all();
         $zones = Zone::all();
@@ -114,7 +119,9 @@ final class PropertyController
      */
     public function update(UpdatePropertyRequest $request, Property $property): RedirectResponse
     {
-        
+        if (!Auth::user()->role(RolesEnum::ADMIN->value) && $property->user_id !== Auth::user()->id) {
+            abort(403);
+        }
         DB::beginTransaction();
         
         PropertyAttributesService::storePropertyAttributes($property, $request->propertyAttributes);
@@ -135,6 +142,9 @@ final class PropertyController
      */
     public function destroy(Property $property): RedirectResponse
     {
+        if (!Auth::user()->hasRole(RolesEnum::ADMIN->value) && $property->user_id !== Auth::user()->id) {
+            abort(403);
+        }
         $property->delete();
 
         return to_route('property.list');

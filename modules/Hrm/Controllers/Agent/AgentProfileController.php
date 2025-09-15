@@ -7,6 +7,7 @@ namespace Modules\Hrm\Controllers\Agent;
 use App\Http\Requests\Main\FilterTableRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Inertia\Response;
 use Modules\Hrm\Models\Agent;
@@ -26,6 +27,11 @@ final class AgentProfileController
             'country:id,country',
             'city:id,city',
             'gender:id,gender',
+        ])->loadCount([
+            'properties',
+            'properties as active_properties' => function ($query) {
+                $query->where(DB::raw('active'), true);
+            }
         ]);
         // ->loadSum('transactions','amount');
         return Inertia::render('Hrm::agents/profile/index',[

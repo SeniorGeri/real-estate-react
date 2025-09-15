@@ -82,5 +82,15 @@
     "lessonsLeft": "Lezioni rimanenti",
     "ongoingCourses": "Corsi in corso",
     "profile_agent": "Profilo istruttore",
-    "profile_student": "Profilo studente"
+    "profile_student": "Profilo studente",
+
+    "properties": "Proprietà",
+    "active_properties": "Proprietà attive",
+    "agent": "Agente",
+    "phone": "Telefono",
+
+    "change_password": "Cambia Password",
+    "change_password_desc": "Il modulo sottostante ti permette di cambiare la password dell'agente selezionato",
+    "password_confirmation": "Conferma Password",
+    "agent_change_password_succ": "La password è stata cambiata con successo"
 }

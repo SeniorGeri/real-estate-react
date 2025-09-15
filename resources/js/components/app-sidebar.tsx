@@ -50,7 +50,7 @@ const mainNavItems: NavItem[] = [
         href: 'hrm',
         icon: UsersRound,
         type: 'dropdown',
-        permissions: ['agent.read', 'student.read'],
+        permissions: ['agent.read'],
         subItems: [
             {
                 title: 'Agent',

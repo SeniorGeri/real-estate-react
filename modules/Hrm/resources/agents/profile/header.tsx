@@ -3,11 +3,11 @@
 import { Card } from "@/components/ui/card";
 import { CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Mail, MapPin, Calendar, Edit3 } from "lucide-react"
+import { Mail, MapPin, Calendar } from "lucide-react"
 import { useTranslation } from "react-i18next";
 import { Agent } from "./data";
 import { useLocale } from "@/contexts/locale";
+import { Badge } from "@/components/ui/badge";
 
 export default function Header({ agent }: { agent: Agent }) {
     const {t} = useTranslation('Hrm');
@@ -15,8 +15,7 @@ export default function Header({ agent }: { agent: Agent }) {
 
     return (
         <Card className="mb-8 overflow-hidden border shadow-sm dark:bg-stone-950 dark:border-green-900">
-            <div className="h-24 bg-gray-100 dark:bg-green-900"></div>
-            <CardContent className="relative px-8 pb-8">
+            <CardContent className="relative p-4">
                 <div className="flex flex-col items-center sm:flex-row sm:items-end sm:space-x-6">
                     <Avatar className="h-28 w-28 -mt-14 border-4 border-white shadow-lg">
                         <AvatarImage src={agent.profile_pic || "/placeholder.svg"} alt={agent.name} />
@@ -41,15 +40,14 @@ export default function Header({ agent }: { agent: Agent }) {
                             </div>
                             <div className="flex items-center gap-1">
                                 <Calendar className="h-4 w-4" />
-                                {t('joined')} {Date.parse(agent.created_at)}
+                                {t('joined')} {new Date(agent.created_at).toLocaleDateString()}
                             </div>
                         </div>
                     </div>
                     <div className="flex gap-2 mt-4 sm:mt-0">
-                        <Button variant="outline" size="sm">
-                            <Edit3 className="h-4 w-4 mr-2" />
-                            {t('editProfile')}
-                        </Button>
+                        <Badge variant={agent.active === true ? 'default' : 'secondary'}>
+                            {agent.active === true ? 'Active' : 'Inactive'}
+                        </Badge>
                     </div>
                 </div>
             </CardContent>

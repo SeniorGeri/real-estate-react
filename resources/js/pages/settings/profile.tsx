@@ -1,9 +1,8 @@
 import { type BreadcrumbItem, type SharedData } from '@/types';
 import { Transition } from '@headlessui/react';
-import { Head, Link, useForm, usePage } from '@inertiajs/react';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 
-import DeleteUser from '@/components/delete-user';
 import HeadingSmall from '@/components/heading-small';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
@@ -24,11 +23,10 @@ type ProfileForm = {
     name: string;
     phone: string;
     address: string;
-    specialization: string;
     profile_pic: string;
 }
 
-export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: boolean; status?: string }) {
+export default function Profile() {
     const { auth } = usePage<SharedData>().props;
     const { languages } = usePage<InertiaLangPageProps>().props;
 
@@ -36,7 +34,6 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
         name: auth.user.name,
         phone: auth.user.phone,
         address: auth.user.address,
-        specialization: auth.user.specialization,
         profile_pic: auth.user.profile_pic,
     });
 
@@ -53,12 +50,22 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
             <Head title="Profile settings" />
 
             <SettingsLayout>
-                <div className="space-y-6">
+                <div className="space-y-2">
                     <HeadingSmall title="Profile information" description="Update your name and email address" />
 
-                    <form onSubmit={submit} className="space-y-6">
+                    <form onSubmit={submit} className="space-y-2">
 
                     <FileInput inputName='profile_pic' setFormData={setData} defaultValue={[data.profile_pic]}/>
+
+                    <div className="grid gap-2">
+                            <CustomInput
+                                id="email"
+                                type="email"
+                                value={auth.user.email}
+                                disabled
+                                placeholder="Email address"
+                            />
+                        </div>
 
                         <div className="grid gap-2">
 
@@ -72,29 +79,9 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                             <InputError className="mt-2" message={errors.name} />
                         </div>
 
-                        <div className="grid gap-2">
-                            <CustomInput
-                                id="email"
-                                type="email"
-                                value={auth.user.email}
-                                disabled
-                                placeholder="Email address"
-                            />
-                        </div>
+                        
 
                         
-                        <div className="grid gap-2">
-
-                            <CustomInput
-                                id="specialization"
-                                type="text"
-                                value={data.specialization}
-                                setFormData={setData}
-                                placeholder="Specialization"
-                            />
-                            <InputError className="mt-2" message={errors.specialization} />
-                        </div>
-
                         <div className="grid gap-2">
 
                             <CustomInput
@@ -119,58 +106,6 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                             <InputError className="mt-2" message={errors.address} />
                         </div>
 
-                        <div className="grid gap-2">
-                            <CustomInput
-                                id="country"
-                                type="text"
-                                value={auth.user.country?.country ? auth.user.country?.country[languages.main] : ''}
-                                disabled
-                                placeholder="Country"
-                            />
-                        </div>
-                        
-                        <div className="grid gap-2">
-                            <CustomInput
-                                id="city"
-                                type="text"
-                                value={auth.user.city?.city ? auth.user.city?.city[languages.main] : ''}
-                                disabled
-                                placeholder="City"
-                            />
-                        </div>
-                        
-                        <div className="grid gap-2">
-                            <CustomInput
-                                id="gender"
-                                type="text"
-                                value={auth.user.gender?.gender ? auth.user.gender?.gender[languages.main] : ''}
-                                disabled
-                                placeholder="Gender"
-                            />
-                        </div>
-                        
-
-                        {mustVerifyEmail && auth.user.email_verified_at === null && (
-                            <div>
-                                <p className="text-muted-foreground -mt-4 text-sm">
-                                    Your email address is unverified.{' '}
-                                    <Link
-                                        href={route('verification.send')}
-                                        method="post"
-                                        as="button"
-                                        className="text-foreground underline decoration-neutral-300 underline-offset-4 transition-colors duration-300 ease-out hover:decoration-current! dark:decoration-neutral-500"
-                                    >
-                                        Click here to resend the verification email.
-                                    </Link>
-                                </p>
-
-                                {status === 'verification-link-sent' && (
-                                    <div className="mt-2 text-sm font-medium text-green-600">
-                                        A new verification link has been sent to your email address.
-                                    </div>
-                                )}
-                            </div>
-                        )}
 
                         <div className="flex items-center gap-4">
                             <Button disabled={processing}>Save</Button>
@@ -188,7 +123,6 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                     </form>
                 </div>
 
-                <DeleteUser />
             </SettingsLayout>
         </AppLayout>
     );

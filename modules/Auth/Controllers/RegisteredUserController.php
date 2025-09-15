@@ -22,6 +22,7 @@ final class RegisteredUserController
      */
     public function create(): Response
     {
+        abort(404);
         return Inertia::render('Auth::register');
     }
 

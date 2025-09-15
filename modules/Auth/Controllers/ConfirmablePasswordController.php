@@ -18,6 +18,8 @@ final class ConfirmablePasswordController
      */
     public function show(): Response
     {
+        abort(404);
+
         return Inertia::render('Auth::confirm-password');
     }
 

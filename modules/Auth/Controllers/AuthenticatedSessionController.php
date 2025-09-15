@@ -47,6 +47,6 @@ final class AuthenticatedSessionController
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect(route('login', absolute: false));
     }
 }
