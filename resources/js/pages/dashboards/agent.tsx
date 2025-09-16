@@ -26,8 +26,8 @@ export default function Dashboard({ properties }: {properties: UserDashboardData
           <AppLayout breadcrumbs={breadcrumbs}>   
                  <Head title="Dashboard" />
                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 rounded-xl p-4">
-                    <DashboardCard IconNode={MapPinHouse} number={properties.total.toString()} title={t('total_properties')} />
-                    <DashboardCard IconNode={House} number={properties.total_active.toString()} title={t('active_properties')} />
+                    <DashboardCard IconNode={MapPinHouse} number={properties.total?.toString() || '0'} title={t('total_properties')} />
+                    <DashboardCard IconNode={House} number={properties.total_active?.toString() || '0'} title={t('active_properties')} />
                  </div>
 
                  <div className="grid grid-cols-1 md:grid-cols-1 gap-4 rounded-xl p-4">

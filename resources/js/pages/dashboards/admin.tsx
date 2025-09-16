@@ -31,10 +31,10 @@ export default function Dashboard({agents, properties}: { agents: UserDashboardD
         <AppLayout breadcrumbs={breadcrumbs}>   
             <Head title="Dashboard" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 rounded-xl p-4">
-               <DashboardCard IconNode={User} number={agents.total.toString()} title={t('total_agents')} />
-               <DashboardCard IconNode={UserCheck} number={agents.total_active.toString()} title={t('active_agents')} />
-               <DashboardCard IconNode={MapPinHouse} number={properties.total.toString()} title={t('total_properties')} />
-               <DashboardCard IconNode={House} number={properties.total_active.toString()} title={t('active_properties')} />
+               <DashboardCard IconNode={User} number={agents.total?.toString() || '0'} title={t('total_agents')} />
+               <DashboardCard IconNode={UserCheck} number={agents.total_active?.toString() || '0'} title={t('active_agents')} />
+               <DashboardCard IconNode={MapPinHouse} number={properties.total?.toString() || '0'} title={t('total_properties')} />
+               <DashboardCard IconNode={House} number={properties.total_active?.toString() || '0'} title={t('active_properties')} />
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 rounded-xl p-4">
