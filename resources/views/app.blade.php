@@ -30,7 +30,7 @@
             }
         </style>
 
-        <title inertia>{{ config('app.name', 'OnlyStudy') }}</title>
+        <title inertia>{{ config('app.name', 'RealEstate') }}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon-no-bg.png') }}">
 
         <link rel="preconnect" href="https://fonts.bunny.net">

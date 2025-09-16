@@ -9,4 +9,5 @@ return [
     Modules\Auth\AuthServiceProvider::class,
     Modules\Storage\StorageServiceProvider::class,
     Modules\Property\PropertyServiceProvider::class,
+    Modules\Frontend\FrontendServiceProvider::class,
 ];
