@@ -13,7 +13,6 @@ class HrmSeeder extends Seeder
     {
         $this->call(PermissionsSeeder::class);
         $this->call(AdminPermissionsSeeder::class);
-        $this->call(AgentPermissionsSeeder::class);
 
     }
 }
