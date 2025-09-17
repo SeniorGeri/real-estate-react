@@ -69,4 +69,41 @@ final class MainController
         return view('frontend::agent');
 
     }
+
+             /**
+     * Return view to create agent
+     *
+     * @return View
+     */
+    public function contact(): View
+    {
+
+        return view('frontend::contact');
+
+    }
+
+             /**
+     * Return view to create agent
+     *
+     * @return View
+     */
+    public function faq(): View
+    {
+
+        return view('frontend::faq');
+
+    }
+
+
+             /**
+     * Return view to create agent
+     *
+     * @return View
+     */
+    public function aboutUs(): View
+    {
+
+        return view('frontend::about-us');
+
+    }
 }

@@ -54,7 +54,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-1.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-1.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/1.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/1.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -88,7 +88,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-2.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-2.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/2.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/2.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -124,7 +124,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-3.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-3.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -142,7 +142,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/3.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/3.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -158,7 +158,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-4.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-4.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -176,7 +176,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/4.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/4.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -194,7 +194,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-7.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-7.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -212,7 +212,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/8.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/8.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -228,7 +228,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-8.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-8.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -246,7 +246,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/4.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/4.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -264,7 +264,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-5.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-5.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -282,7 +282,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/5.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/5.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -298,7 +298,7 @@
                                             <!-- homes img -->
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt featured">3 Listings</div>
-                                                <img src="images/team/a-6.png" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/team/a-6.png') }}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
@@ -316,7 +316,7 @@
                                         </div>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/partners/7.png" alt="" class="mr-2"> Company Name
+                                                <img src="{{ asset('frontend/images/partners/7.png') }}" alt="" class="mr-2"> Company Name
                                             </a>
                                             <span class="view-my-listing">
                                                 <a href="properties-full-grid-2.html">View My Listings</a>
@@ -392,7 +392,7 @@
                                             <div class="recent-post">
                                                 <div class="recent-main">
                                                     <div class="recent-img">
-                                                        <a href="blog-details.html"><img src="images/feature-properties/fp-1.jpg" alt=""></a>
+                                                        <a href="blog-details.html"><img src="{{ asset('frontend/images/feature-properties/fp-1.jpg') }}" alt=""></a>
                                                     </div>
                                                     <div class="info-img">
                                                         <a href="blog-details.html"><h6>Family Home</h6></a>
@@ -401,7 +401,7 @@
                                                 </div>
                                                 <div class="recent-main my-4">
                                                     <div class="recent-img">
-                                                        <a href="blog-details.html"><img src="images/feature-properties/fp-2.jpg" alt=""></a>
+                                                        <a href="blog-details.html"><img src="{{ asset('frontend/images/feature-properties/fp-2.jpg') }}" alt=""></a>
                                                     </div>
                                                     <div class="info-img">
                                                         <a href="blog-details.html"><h6>Family Home</h6></a>
@@ -410,7 +410,7 @@
                                                 </div>
                                                 <div class="recent-main">
                                                     <div class="recent-img">
-                                                        <a href="blog-details.html"><img src="images/feature-properties/fp-3.jpg" alt=""></a>
+                                                        <a href="blog-details.html"><img src="{{ asset('frontend/images/feature-properties/fp-3.jpg') }}" alt=""></a>
                                                     </div>
                                                     <div class="info-img">
                                                         <a href="blog-details.html"><h6>Family Home</h6></a>
@@ -442,7 +442,7 @@
                                                                     <li>Baths <span>3</span></li>
                                                                 </ul>
                                                             </div>
-                                                            <img src="images/feature-properties/fp-1.jpg" alt="">
+                                                            <img src="{{ asset('frontend/images/feature-properties/fp-1.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -462,7 +462,7 @@
                                                                     <li>Baths <span>3</span></li>
                                                                 </ul>
                                                             </div>
-                                                            <img src="images/feature-properties/fp-2.jpg" alt="">
+                                                            <img src="{{ asset('frontend/images/feature-properties/fp-2.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -482,7 +482,7 @@
                                                                     <li>Baths <span>3</span></li>
                                                                 </ul>
                                                             </div>
-                                                            <img src="images/feature-properties/fp-3.jpg" alt="">
+                                                            <img src="{{ asset('frontend/images/feature-properties/fp-3.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -502,7 +502,7 @@
                                                                     <li>Baths <span>3</span></li>
                                                                 </ul>
                                                             </div>
-                                                            <img src="images/feature-properties/fp-4.jpg" alt="">
+                                                            <img src="{{ asset('frontend/images/feature-properties/fp-4.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -522,7 +522,7 @@
                                                                     <li>Baths <span>3</span></li>
                                                                 </ul>
                                                             </div>
-                                                            <img src="images/feature-properties/fp-5.jpg" alt="">
+                                                            <img src="{{ asset('frontend/images/feature-properties/fp-5.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -542,7 +542,7 @@
                                                                     <li>Baths <span>3</span></li>
                                                                 </ul>
                                                             </div>
-                                                            <img src="images/feature-properties/fp-6.jpg" alt="">
+                                                            <img src="{{ asset('frontend/images/feature-properties/fp-6.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -555,7 +555,7 @@
                                             <h4>Specials of the day</h4>
                                         </div>
                                         <div class="widget-boxed-body">
-                                            <div class="banner"><img src="images/single-property/banner.jpg" alt=""></div>
+                                            <div class="banner"><img src="{{ asset('frontend/images/single-property/banner.jpg') }}" alt=""></div>
                                         </div>
                                     </div>
                                     <!-- End: Specials offer -->

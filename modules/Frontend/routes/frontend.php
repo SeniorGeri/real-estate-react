@@ -9,4 +9,7 @@ Route::middleware(['web','guest'])->group(function () {
     Route::get('/agents', [MainController::class, 'agents'])->name('agents');
     Route::get('/property', [MainController::class, 'property'])->name('property');
     Route::get('/agent', [MainController::class, 'agent'])->name('agent');
+    Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+    Route::get('/faq', [MainController::class, 'faq'])->name('faq');
+    Route::get('/about-us', [MainController::class, 'aboutUs'])->name('about-us');
 });

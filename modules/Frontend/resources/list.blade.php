@@ -56,7 +56,7 @@
                                                 <div class="homes-tag button alt featured">Featured</div>
                                                 <div class="homes-tag button alt sale">For Sale</div>
                                                 <div class="homes-price">$9,000/mo</div>
-                                                <img src="images/blog/b-11.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/blog/b-11.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -95,7 +95,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-1.jpg" alt="" class="mr-2"> Lisa Jhonson
+                                                <img src="{{ asset('frontend/images/testimonials/ts-1.jpg')}}" alt="" class="mr-2"> Lisa Jhonson
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -110,7 +110,7 @@
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button sale rent">For Rent</div>
                                                 <div class="homes-price">$3,000/mo</div>
-                                                <img src="images/blog/b-12.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/blog/b-12.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -149,7 +149,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-2.jpg" alt="" class="mr-2"> Karl Smith
+                                                <img src="{{ asset('frontend/images/testimonials/ts-2.jpg')}}" alt="" class="mr-2"> Karl Smith
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -166,7 +166,7 @@
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt sale">For Sale</div>
                                                 <div class="homes-price">$9,000/mo</div>
-                                                <img src="images/blog/b-1.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/blog/b-1.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -205,7 +205,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-3.jpg" alt="" class="mr-2"> katy Teddy
+                                                <img src="{{ asset('frontend/images/testimonials/ts-3.jpg')}}" alt="" class="mr-2"> katy Teddy
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -221,7 +221,7 @@
                                                 <div class="homes-tag button alt featured">Featured</div>
                                                 <div class="homes-tag button sale rent">For Rent</div>
                                                 <div class="homes-price">$3,000/mo</div>
-                                                <img src="images/feature-properties/fp-10.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/feature-properties/fp-10.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -260,7 +260,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-4.jpg" alt="" class="mr-2"> Jhon Malon
+                                                <img src="{{ asset('frontend/images/testimonials/ts-4.jpg')}}" alt="" class="mr-2"> Jhon Malon
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -277,7 +277,7 @@
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt sale">For Sale</div>
                                                 <div class="homes-price">$9,000/mo</div>
-                                                <img src="images/blog/b-1.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/blog/b-1.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -316,7 +316,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-5.jpg" alt="" class="mr-2"> katy Teddy
+                                                <img src="{{ asset('frontend/images/testimonials/ts-5.jpg')}}" alt="" class="mr-2"> katy Teddy
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -332,7 +332,7 @@
                                                 <div class="homes-tag button alt featured">Featured</div>
                                                 <div class="homes-tag button sale rent">For Rent</div>
                                                 <div class="homes-price">$3,000/mo</div>
-                                                <img src="images/feature-properties/fp-10.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/feature-properties/fp-10.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -371,7 +371,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-6.jpg" alt="" class="mr-2"> Jhon Malon
+                                                <img src="{{ asset('frontend/images/testimonials/ts-6.jpg')}}" alt="" class="mr-2"> Jhon Malon
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -388,7 +388,7 @@
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button alt sale">For Sale</div>
                                                 <div class="homes-price">$9,000/mo</div>
-                                                <img src="images/feature-properties/fp-11.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/feature-properties/fp-11.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -427,7 +427,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-1.jpg" alt="" class="mr-2"> Susan Delman
+                                                <img src="{{ asset('frontend/images/testimonials/ts-1.jpg')}}" alt="" class="mr-2"> Susan Delman
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -442,7 +442,7 @@
                                             <a href="single-property-1.html" class="homes-img">
                                                 <div class="homes-tag button sale rent">For Rent</div>
                                                 <div class="homes-price">$3,000/mo</div>
-                                                <img src="images/feature-properties/fp-12.jpg" alt="home-1" class="img-responsive">
+                                                <img src="{{ asset('frontend/images/feature-properties/fp-12.jpg')}}" alt="home-1" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="button-effect">
@@ -481,7 +481,7 @@
                                         </ul>
                                         <div class="footer">
                                             <a href="agent-details.html">
-                                                <img src="images/testimonials/ts-2.jpg" alt="" class="mr-2"> Chan Lee
+                                                <img src="{{ asset('frontend/images/testimonials/ts-2.jpg')}}" alt="" class="mr-2"> Chan Lee
                                             </a>
                                             <span>2 months ago</span>
                                         </div>
@@ -669,7 +669,7 @@
                                                             <li>Baths <span>3</span></li>
                                                         </ul>
                                                     </div>
-                                                    <img src="images/feature-properties/fp-1.jpg" alt="">
+                                                    <img src="{{ asset('frontend/images/feature-properties/fp-1.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -689,7 +689,7 @@
                                                             <li>Baths <span>3</span></li>
                                                         </ul>
                                                     </div>
-                                                    <img src="images/feature-properties/fp-2.jpg" alt="">
+                                                    <img src="{{ asset('frontend/images/feature-properties/fp-2.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -709,7 +709,7 @@
                                                             <li>Baths <span>3</span></li>
                                                         </ul>
                                                     </div>
-                                                    <img src="images/feature-properties/fp-3.jpg" alt="">
+                                                    <img src="{{ asset('frontend/images/feature-properties/fp-3.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -729,7 +729,7 @@
                                                             <li>Baths <span>3</span></li>
                                                         </ul>
                                                     </div>
-                                                    <img src="images/feature-properties/fp-4.jpg" alt="">
+                                                    <img src="{{ asset('frontend/images/feature-properties/fp-4.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -749,7 +749,7 @@
                                                             <li>Baths <span>3</span></li>
                                                         </ul>
                                                     </div>
-                                                    <img src="images/feature-properties/fp-5.jpg" alt="">
+                                                    <img src="{{ asset('frontend/images/feature-properties/fp-5.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -769,7 +769,7 @@
                                                             <li>Baths <span>3</span></li>
                                                         </ul>
                                                     </div>
-                                                    <img src="images/feature-properties/fp-6.jpg" alt="">
+                                                    <img src="{{ asset('frontend/images/feature-properties/fp-6.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -784,7 +784,7 @@
                                     <div class="recent-post">
                                         <div class="recent-main">
                                             <div class="recent-img">
-                                                <a href="blog-details.html"><img src="images/feature-properties/fp-1.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="{{ asset('frontend/images/feature-properties/fp-1.jpg')}}" alt=""></a>
                                             </div>
                                             <div class="info-img">
                                                 <a href="blog-details.html"><h6>Family Modern Home</h6></a>
@@ -793,7 +793,7 @@
                                         </div>
                                         <div class="recent-main my-4">
                                             <div class="recent-img">
-                                                <a href="blog-details.html"><img src="images/feature-properties/fp-2.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="{{ asset('frontend/images/feature-properties/fp-2.jpg')}}" alt=""></a>
                                             </div>
                                             <div class="info-img">
                                                 <a href="blog-details.html"><h6>Luxury Villa House</h6></a>
@@ -802,7 +802,7 @@
                                         </div>
                                         <div class="recent-main">
                                             <div class="recent-img">
-                                                <a href="blog-details.html"><img src="images/feature-properties/fp-3.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="{{ asset('frontend/images/feature-properties/fp-3.jpg')}}" alt=""></a>
                                             </div>
                                             <div class="info-img">
                                                 <a href="blog-details.html"><h6>Luxury Family Home</h6></a>
