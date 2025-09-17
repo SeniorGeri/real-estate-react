@@ -3,7 +3,7 @@
                 <div class="container container-header">
                     <div class="left-side">
                         <div id="logo">
-                            <a href="index.html"><img src="images/logo-red.svg" alt=""></a>
+                            <a href="{{ route('index') }}"><img src="{{ asset('frontend/images/logo-red.svg') }}" alt=""></a>
                         </div>
                         <div class="mmenu-trigger">
                             <button class="hamburger hamburger--collapse" type="button">
@@ -15,10 +15,10 @@
                         <nav id="navigation" class="style-1">
                             <ul id="responsive">
                                 <li><a href="{{ route('index') }}">@lang('frontend.home')</a></li>
-                                <li><a href="{{ route('list') }}">@lang('frontend.list')</a></li>
+                                <li><a href="{{ route('properties') }}">@lang('frontend.properties')</a></li>
                                 <li><a href="{{ route('agents') }}">@lang('frontend.agents')</a></li>
-                                <li><a href="{{ route('property') }}">@lang('frontend.property')</a></li>
-                                <li><a href="{{ route('agent') }}">@lang('frontend.agent')</a></li>
+                                <li><a href="{{ route('property', 'property') }}">@lang('frontend.property')</a></li>
+                                <li><a href="{{ route('agent', 'agent') }}">@lang('frontend.agent')</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="netabout">
-                        <a href="index.html" class="logo">
-                            <img src="images/logo-footer.svg" alt="netcom">
+                        <a href="{{ route('index') }}" class="logo">
+                            <img src="{{ asset('frontend/images/logo-footer.svg') }}" alt="netcom">
                         </a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
                     </div>
@@ -41,12 +41,12 @@
                         <div class="nav-footer">
                             <ul>
                                 <li><a href="{{ route('index') }}">@lang('frontend.home')</a></li>
-                                <li><a href="{{ route('list') }}">@lang('frontend.list')</a></li>
+                                <li><a href="{{ route('properties') }}">@lang('frontend.properties')</a></li>
                                 <li  class="no-mgb"><a href="{{ route('agents') }}">@lang('frontend.agents')</a></li>
                             </ul>
                             <ul class="nav-right">
-                                <li><a href="{{ route('property') }}">@lang('frontend.property')</a></li>
-                                <li class="no-mgb"><a href="{{ route('agent') }}">@lang('frontend.agent')</a></li>
+                                <li><a href="{{ route('property', 'property') }}">@lang('frontend.property')</a></li>
+                                <li class="no-mgb"><a href="{{ route('agent', 'agent') }}">@lang('frontend.agent')</a></li>
                             </ul>
                         </div>
                     </div>
