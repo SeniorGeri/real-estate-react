@@ -1,5 +1,7 @@
 <div class="agents-grid" data-aos="fade-up" data-aos-delay="150">
-    <div class="landscapes">
+    @component('frontend::components.property-card')
+    @endcomponent
+    {{-- <div class="landscapes">
         <div class="project-single">
             <div class="project-inner project-head">
                 <div class="homes">
@@ -63,5 +65,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>

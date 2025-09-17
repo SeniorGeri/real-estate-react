@@ -1,7 +1,7 @@
 <section class="how-it-works bg-white rec-pro">
     <div class="container-fluid">
         <div class="sec-title">
-            <h2><span>@lang('frontend.why') </span>@lang('frontend.choose_us')</h2>
+            <h2><span>@lang('frontend.why')</span>@lang('frontend.choose_us')</h2>
             <p>@lang('frontend.provide_full_service_at_every_step')</p>
         </div>
         <div class="row service-1">

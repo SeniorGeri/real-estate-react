@@ -17,7 +17,7 @@ final class AboutController
     public function index(): View
     {
 
-        return view('frontend::about.index');
+        return view('frontend::about-us.index');
 
     }
 }

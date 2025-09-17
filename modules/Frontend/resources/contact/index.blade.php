@@ -1,47 +1,49 @@
-@extends('frontend::layout.master', ['class' => 'inner-pages listing homepage-4 agents hd-white'])
+@extends('frontend::layout.master', ['class' => 'inner-pages hd-white'])
 
 @section('content')
+    
+    @include('frontend::contact.heading')
+
     <section class="contact-us">
         <div class="container">
             <div class="property-location mb-5">
-                <h3>Our Location</h3>
+                <h3>@lang('frontend.our_location')</h3>
                 <div class="divider-fade"></div>
                 <div id="map-contact" class="contact-map"></div>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-md-12">
-                    <h3 class="mb-4">Contact Us</h3>
+                    <h3 class="mb-4">@lang('frontend.contact_us')</h3>
                     <form id="contactform" class="contact-form" name="contactform" method="post" novalidate>
                         <div id="success" class="successform">
-                            <p class="alert alert-success font-weight-bold" role="alert">Your message was sent
-                                successfully!</p>
+                            <p class="alert alert-success font-weight-bold" role="alert">@lang('frontend.message_sent_successfully')</p>
                         </div>
                         <div id="error" class="errorform">
-                            <p>Something went wrong, try refreshing and submitting the form again.</p>
+                            <p>@lang('frontend.something_went_wrong')</p>
                         </div>
                         <div class="form-group">
                             <input type="text" required class="form-control input-custom input-full" name="name"
-                                placeholder="First Name">
+                                placeholder="@lang('frontend.first_name')">
                         </div>
                         <div class="form-group">
                             <input type="text" required class="form-control input-custom input-full" name="lastname"
-                                placeholder="Last Name">
+                                placeholder="@lang('frontend.last_name')">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control input-custom input-full" name="email"
-                                placeholder="Email">
+                                placeholder="@lang('frontend.email')">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control textarea-custom input-full" id="ccomment" name="message" required rows="8"
-                                placeholder="Message"></textarea>
+                                placeholder="@lang('frontend.message')"></textarea>
                         </div>
-                        <button type="submit" id="submit-contact" class="btn btn-primary btn-lg">Submit</button>
+                        <button type="submit" id="submit-contact" class="btn btn-primary btn-lg">@lang('frontend.submit')</button>
                     </form>
                 </div>
                 <div class="col-lg-4 col-md-12 bgc">
                     <div class="call-info">
-                        <h3>Contact Details</h3>
-                        <p class="mb-5">Please find below contact details and contact us today!</p>
+                        <h3>@lang('frontend.contact_details')</h3>
+                        <p class="mb-5">@lang('frontend.contact_details_text')</p>
                         <ul>
                             <li>
                                 <div class="info">
