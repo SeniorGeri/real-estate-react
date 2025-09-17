@@ -13,6 +13,9 @@ return [
     'properties' => 'Properties',
     'why' => 'Why',
     'choose_us' => 'Choose Us',
+    'contact' => 'Contact',
+    'faq' => 'Faq',
+    'about-us' => 'About Us',
 
     'find_your_dream' => 'Find Your Dream',
     'we_have_over_hundred_properties_for_you' => 'We Have Over Hundred Properties For You',
@@ -70,5 +73,26 @@ return [
     'how_can_i_get_real_estate_aid_to_live_off_campus' => 'How Can I Get Real Estate Aid To Live Off Campus',
     'does_realhome_share_my_information_with_others' => 'Does Realhome Share My Information With Others',
     'questions_about_selling' => 'Questions About Selling',
+
+
+    // Properties 
+    'properties' => 'Properties',
+    'listings' => 'Listings',
+    'property_listings' => 'Property Listings',
+    'search_results' => 'Search Results',
+    'newest' => 'Newest',
+    'most_viewed' => 'Most Viewed',
+    'price_low_to_high' => 'Price (Low to High)',
+    'price_high_to_low' => 'Price (High to Low)',
+    'sort_by' => 'Sort By',
+
+    //Agents
+    'alphabet' => 'Alphabet',
+    'rating' => 'Rating',
+    'number_of_property' => 'Number of Property',
+
+    'description' => 'Description',
+    'view_my_listings' => 'View My Listings',
+    'listing_by' => 'Listing By',
     
 ];

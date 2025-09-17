@@ -45,11 +45,11 @@
         @include('frontend::includes.footer')
         <a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
         @include('frontend::includes.preloader')
-    
+
         <!-- START SECTION HEADINGS -->
         <!-- Header Container
         ================================================== -->
-      
+
         <!-- ARCHIVES JS -->
         <script src="{{ asset('frontend/js/jquery-3.5.1.min.js') }}"></script>
         <script src="{{ asset('frontend/js/rangeSlider.js') }}"></script>
@@ -80,42 +80,43 @@
         <script src="{{ asset('frontend/js/range.js') }}"></script>
         <script src="{{ asset('frontend/js/color-switcher.js') }}"></script>
 
-        <script>
-            $('.slick-lancers').slick({
-                infinite: false,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                dots: true,
-                arrows: false,
-                adaptiveHeight: true,
-                responsive: [{
-                    breakpoint: 1292,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        dots: true,
-                        arrows: false
-                    }
-                }, {
-                    breakpoint: 993,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: true,
-                        arrows: false
-                    }
-                }, {
-                    breakpoint: 769,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: true,
-                        arrows: false
-                    }
-                }]
-            });
-
-        </script>
+        @if (!isset($lancer))
+            <script>
+                $('.slick-lancers').slick({
+                    infinite: false,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false,
+                    adaptiveHeight: true,
+                    responsive: [{
+                        breakpoint: 1292,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: true,
+                            arrows: false
+                        }
+                    }, {
+                        breakpoint: 993,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: true,
+                            arrows: false
+                        }
+                    }, {
+                        breakpoint: 769,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: true,
+                            arrows: false
+                        }
+                    }]
+                });
+            </script>
+        @endif
 
         <script>
             $(".dropdown-filter").on('click', function() {
@@ -123,9 +124,8 @@
                 $(".explore__form-checkbox-list").toggleClass("filter-block");
 
             });
-
         </script>
-        
+
         <!-- Slider Revolution scripts -->
         <script src="{{ asset('frontend/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
         <script src="{{ asset('frontend/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>

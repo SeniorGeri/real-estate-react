@@ -17,8 +17,9 @@
                                 <li><a href="{{ route('index') }}">@lang('frontend.home')</a></li>
                                 <li><a href="{{ route('properties') }}">@lang('frontend.properties')</a></li>
                                 <li><a href="{{ route('agents') }}">@lang('frontend.agents')</a></li>
-                                <li><a href="{{ route('property', 'property') }}">@lang('frontend.property')</a></li>
-                                <li><a href="{{ route('agent', 'agent') }}">@lang('frontend.agent')</a></li>
+                                <li><a href="{{ route('contact') }}">@lang('frontend.contact')</a></li>
+                                <li><a href="{{ route('faq') }}">@lang('frontend.faq')</a></li>
+                                <li><a href="{{ route('about-us') }}">@lang('frontend.about')</a></li>
                             </ul>
                         </nav>
                     </div>
