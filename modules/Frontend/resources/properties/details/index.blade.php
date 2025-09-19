@@ -57,11 +57,17 @@
                                 <div class="pro-wrapper">
                                     <div class="detail-wrapper-body">
                                         <div class="listing-title-bar">
-                                            <h3>Luxury Villa House <span class="mrg-l-5 category-tag">For Sale</span></h3>
+                                            <h3>{{ $property->title }}</h3>
+                                     
                                             <div class="mt-0">
+                                                @if($property->for_sale)
+                                                    <span class="category-tag">@lang('frontend.for_sale')</span>
+                                                @endif
+                                                @if ($property->for_rent)
+                                                    <span class="category-tag">@lang('frontend.for_rent')</span>
+                                                @endif
                                                 <a href="#listing-location" class="listing-address">
-                                                    <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>77 -
-                                                    Central Park South, NYC
+                                                    <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>{{ $property->address }}
                                                 </a>
                                             </div>
                                         </div>
@@ -69,10 +75,10 @@
                                     <div class="single detail-wrapper mr-2">
                                         <div class="detail-wrapper-body">
                                             <div class="listing-title-bar">
-                                                <h4>$ 230,000</h4>
+                                                <h4>{{ number_format($property->price, 2) }}{{ $property->currency?->symbol }}</h4>
                                                 <div class="mt-0">
                                                     <a href="#listing-location" class="listing-address">
-                                                        <p>$ 1,200 / sq ft</p>
+                                                        <p>{{ $property->area }} @lang('frontend.m2')</p>
                                                     </a>
                                                 </div>
                                             </div>
@@ -82,19 +88,8 @@
                             </section>
                             <!-- Star Description -->
                             <div class="blog-info details mb-30">
-                                <h5 class="mb-4">Description</h5>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae
-                                    consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas!
-                                    Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae
-                                    consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas!
-                                    Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae
-                                    consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas!
-                                    Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
+                                <h5 class="mb-4">@lang('frontend.description')</h5>
+                               {!! $property->description !!}
                             </div>
                             <!-- End Description -->
                         </div>
@@ -102,293 +97,94 @@
                     <!-- Star Property Details -->
                     <div class="single homes-content details mb-30">
                         <!-- title -->
-                        <h5 class="mb-4">Property Details</h5>
+                        <h5 class="mb-4">@lang('frontend.property_details')</h5>
                         <ul class="homes-list clearfix">
                             <li>
-                                <span class="font-weight-bold mr-1">Property ID:</span>
-                                <span class="det">V254680</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.property_id'):</span>
+                                <span class="det">{{ $property->id }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Property Type:</span>
-                                <span class="det">House</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.property_type'):</span>
+                                <span class="det">{{ $property->propertyType?->type }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Property status:</span>
-                                <span class="det">For Sale</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.property_status'):</span>
+                                <span class="det">{{ $property->propertyStatus?->status }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Property Price:</span>
-                                <span class="det">$230,000</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.property_price'):</span>
+                                <span class="det">{{ number_format($property->price, 2) }}{{ $property->currency?->symbol }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Rooms:</span>
-                                <span class="det">6</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.floor'):</span>
+                                <span class="det">{{ $property->floor }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Bedrooms:</span>
-                                <span class="det">7</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.bedrooms'):</span>
+                                <span class="det">{{ $property->bedrooms }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Bath:</span>
-                                <span class="det">4</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.bathrooms'):</span>
+                                <span class="det">{{ $property->bathrooms }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Garages:</span>
-                                <span class="det">2</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.garages'):</span>
+                                <span class="det">{{ $property->garages }}</span>
                             </li>
                             <li>
-                                <span class="font-weight-bold mr-1">Year Built:</span>
-                                <span class="det">10/6/2020</span>
+                                <span class="font-weight-bold mr-1">@lang('frontend.year_built'):</span>
+                                <span class="det">{{ $property->year_built }}</span>
                             </li>
                         </ul>
                         <!-- title -->
-                        <h5 class="mt-5">Amenities</h5>
+                        <h5 class="mt-5">@lang('frontend.amenities')</h5>
                         <!-- cars List -->
                         <ul class="homes-list clearfix">
+                            @if ($property->elevator)
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>@lang('frontend.elevator')</span>
+                                </li>
+                            @endif
+                       
                             <li>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Air Cond</span>
+                                <span>@lang('frontend.internet')</span>
                             </li>
                             <li>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Balcony</span>
+                                <span>@lang('frontend.dishwasher')</span>
                             </li>
                             <li>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Internet</span>
+                                <span>@lang('frontend.bedding')</span>
                             </li>
                             <li>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Dishwasher</span>
+                                <span>@lang('frontend.cable_tv')</span>
                             </li>
                             <li>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Bedding</span>
+                                <span>@lang('frontend.parking')</span>
                             </li>
                             <li>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Cable TV</span>
+                                <span>@lang('frontend.pool')</span>
                             </li>
                             <li>
                                 <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Parking</span>
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Pool</span>
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square" aria-hidden="true"></i>
-                                <span>Fridge</span>
+                                <span>@lang('frontend.fridge')</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="floor-plan property wprt-image-video w50 pro">
-                        <h5>Floor Plans</h5>
-                        <img alt="image" src="{{ asset('frontend/images/bg/floor-plan-1.png') }}">
-                    </div>
-                    <div class="floor-plan property wprt-image-video w50 pro">
-                        <h5>What's Nearby</h5>
-                        <div class="property-nearby">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="nearby-info mb-4">
-                                        <span class="nearby-title mb-3 d-block text-info">
-                                            <i class="fas fa-graduation-cap mr-2"></i><b class="title">Education</b>
-                                        </span>
-                                        <div class="nearby-list">
-                                            <ul class="property-list list-unstyled mb-0">
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">Education Mandarin</h6>
-                                                    <span>(15.61 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">Marry's Education</h6>
-                                                    <span>(15.23 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">The Kaplan</h6>
-                                                    <span>(15.16 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="nearby-info mb-4">
-                                        <span class="nearby-title mb-3 d-block text-success">
-                                            <i class="fas fa-user-md mr-2"></i><b class="title">Health & Medical</b>
-                                        </span>
-                                        <div class="nearby-list">
-                                            <ul class="property-list list-unstyled mb-0">
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">Natural Market</h6>
-                                                    <span>(13.20 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">Food For Health</h6>
-                                                    <span>(13.22 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">A Matter of Health</h6>
-                                                    <span>(13.34 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="nearby-info">
-                                        <span class="nearby-title mb-3 d-block text-danger">
-                                            <i class="fas fa-car mr-2"></i><b class="title">Transportation</b>
-                                        </span>
-                                        <div class="nearby-list">
-                                            <ul class="property-list list-unstyled mb-0">
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">Airport Transportation</h6>
-                                                    <span>(11.36 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">NYC Executive Limo</h6>
-                                                    <span>(11.87 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="d-flex">
-                                                    <h6 class="mb-3 mr-2">Empire Limousine</h6>
-                                                    <span>(11.52 miles)</span>
-                                                    <ul class="list-unstyled list-inline ml-auto">
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="fas fa-star-half fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                        <li class="list-inline-item m-0 text-warning"><i
-                                                                class="far fa-star fa-xs"></i></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="property wprt-image-video w50 pro vid-si2">
-                        <h5>Property Video</h5>
-                        <img alt="image" src="{{ asset('frontend/images/slider/home-slider-4.jpg') }}">
-                        <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=14semTlwyUY">
-                            <i class="fa fa-play"></i>
-                        </a>
-                        <div class="iq-waves">
-                            <div class="waves wave-1"></div>
-                            <div class="waves wave-2"></div>
-                            <div class="waves wave-3"></div>
-                        </div>
-                    </div>
-                    <div class="property-location map">
-                        <h5>Location</h5>
-                        <div class="divider-fade"></div>
-                        <div id="map-contact" class="contact-map"></div>
-                    </div>
+                    @include('frontend::properties.details.video')
+
                 </div>
                 @include('frontend::properties.details.sidebar')
             </div>
+            @include('frontend::properties.details.map')
            
-            @include('frontend::properties.details.similar')
+            {{-- @include('frontend::properties.details.similar') --}}
         </div>
     </section>
 

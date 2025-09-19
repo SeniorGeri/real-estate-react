@@ -11,7 +11,7 @@
                                 <div class="homes-tag button alt featured">Featured</div>
                                 <div class="homes-tag button alt sale">For Sale</div>
                                 <div class="homes-price">$9,000/mo</div>
-                                <img src="images/blog/b-11.jpg" alt="home-1" class="img-responsive">
+                                <img src="{{ asset('frontend/images/blog/b-11.jpg') }}" alt="home-1" class="img-responsive">
                             </a>
                         </div>
                         <div class="button-effect">
@@ -128,7 +128,7 @@
                         <div class="homes">
                             <!-- homes img -->
                             <a href="single-property-1.html" class="homes-img">
-                                <div class="homes-tag button alt sale">For Sale</div>
+                                <div class="homes-tag button alt sale">@lang('frontend.for_sale')</div>
                                 <div class="homes-price">$9,000/mo</div>
                                 <img src="{{ asset('frontend/images/blog/b-1.jpg') }}" alt="home-1"
                                     class="img-responsive">
@@ -156,19 +156,19 @@
                         <ul class="homes-list clearfix pb-3">
                             <li class="the-icons">
                                 <i class="flaticon-bed mr-2" aria-hidden="true"></i>
-                                <span>6 Bedrooms</span>
+                                <span>6 @lang('frontend.bedrooms')</span>
                             </li>
                             <li class="the-icons">
                                 <i class="flaticon-bathtub mr-2" aria-hidden="true"></i>
-                                <span>3 Bathrooms</span>
+                                <span>3 @lang('frontend.bathrooms')</span>
                             </li>
                             <li class="the-icons">
                                 <i class="flaticon-square mr-2" aria-hidden="true"></i>
-                                <span>720 sq ft</span>
+                                <span>720 @lang('frontend.sq_m')</span>
                             </li>
                             <li class="the-icons">
                                 <i class="flaticon-car mr-2" aria-hidden="true"></i>
-                                <span>2 Garages</span>
+                                <span>2 @lang('frontend.garages')</span>
                             </li>
                         </ul>
                         <div class="footer">

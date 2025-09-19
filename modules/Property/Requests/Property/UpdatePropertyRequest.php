@@ -54,6 +54,7 @@ final class UpdatePropertyRequest extends FormRequest
             'image' => ['nullable', 'string'],
             'hover_image' => ['nullable', 'string'],
             'gallery' => ['nullable', 'array'],
+            'currency_id' => ['nullable', 'integer'],
             'propertyAttributes' => ['nullable', 'array'],
         ];
     }

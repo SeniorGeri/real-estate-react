@@ -15,7 +15,7 @@
                 <div class="detail-wrapper-body">
                     <div class="listing-title-bar">
                         <div class="text-heading text-left">
-                            <p class="font-weight-bold mb-0 mt-3">9 @lang('frontend.search_results')</p>
+                            <p class="font-weight-bold mb-0 mt-3">{{ $properties->total() }} @lang('frontend.search_results')</p>
                         </div>
                     </div>
                 </div>
@@ -37,15 +37,15 @@
             </div>
         </section>
         <div class="row portfolio-items">
-            @for ($i = 0; $i < 12; $i++)
+            @foreach ($properties as $property)
             <div class="item col-lg-4 col-md-6 col-xs-12">
-                @component('frontend::components.property-card')
+                @component('frontend::components.property-card', ['property' => $property])
                 
                 @endcomponent
             </div>
-            @endfor
+            @endforeach
         </div>
-        @component('frontend::components.paginate')
+        @component('frontend::components.paginate', ['paginator' => $properties])
         
         @endcomponent
     </div>

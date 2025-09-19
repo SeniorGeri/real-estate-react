@@ -1,19 +1,19 @@
 <div class="col-lg-12 agent-mb">
     <div class="agent agent-row shadow-hover">
-        <a href="agent-details.html" class="agent-img">
+        <a href="{{ route('agent', $agent->id) }}" class="agent-img">
             <div class="img-fade"></div>
-            <div class="button alt agent-tag">60 Properties</div>
-            <img src="{{asset('frontend/images/team/t-2.jpg')}}" alt="" />
+            <div class="button alt agent-tag">{{ $agent->properties_count }} @lang('frontend.properties')</div>
+            <img src="{{ $agent->profile_pic }}" alt=""/>
         </a>
         <div class="agent-content">
             <div class="agent-details">
-                <h4><a href="agent-details.html">ARLING TRACY</a></h4>
-                <p><i class="fa fa-tag icon"></i>Selling Agent</p>
-                <p><i class="fa fa-envelope icon"></i>arling@realhome.com</p>
-                <p><i class="fa fa-phone icon"></i>(234) 200-7813</p>
+                <h4><a href="{{ route('agent', $agent->id) }}">{{ $agent->name }}</a></h4>
+                <p><i class="fa fa-tag icon"></i>Agent</p>
+                <p><i class="fa fa-envelope icon"></i>{{ $agent->email }}</p>
+                <p><i class="fa fa-phone icon"></i>{{ $agent->phone }}</p>
             </div>
             <div class="agent-text">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...</p>
+                <p>{!! $agent->bio !!}</p>
             </div>
             <div class="agent-footer center">
                 <ul class="netsocials">

@@ -48,7 +48,8 @@ class User extends Authenticatable
         'city_id',
         'gender_id',
         'profile_pic',
-        'bio'
+        'bio',
+        'active'
     ];
 
     protected $translatable = ['bio'];

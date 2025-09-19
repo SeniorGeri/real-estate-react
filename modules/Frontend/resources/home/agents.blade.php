@@ -5,10 +5,10 @@
             <p>@lang('frontend.agents_are_here_to_help_you')</p>
         </div>
         <div class="row team-all">
-            @for ($i = 0; $i < 6; $i++)
-                @component('frontend::home.agent-card')
+            @foreach ($agents as $agent)
+                @component('frontend::home.agent-card', ['agent' => $agent])
                 @endcomponent
-            @endfor
+            @endforeach
         </div>
     </div>
 </section>

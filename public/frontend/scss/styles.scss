@@ -88,7 +88,7 @@ Version      : 1.2
 //------ COLORS SCHEMES ------
 //-----------------------------------//
 $text:#666;
-$firstcolor:#FF385C;
+$firstcolor:#0986ae;
 $secondcolor:#121B22;
 
 /*-----------------------------------*/
@@ -1104,7 +1104,7 @@ section.recently.portfolio {
 }
 .house-details.thehp-1 {
     i {
-        color: #FF385C;
+        color: #0986ae;
         font-size: 18px;
         font-weight: 500;
     }
@@ -1120,7 +1120,7 @@ section.recently.portfolio {
     border-radius: 2px;
     color: #fff;
     border: none;
-    background-color: #FF385C;
+    background-color: #0986ae;
     display: inline-block;
     z-index: 1;
 }
@@ -1271,10 +1271,10 @@ section.recently.portfolio {
 .hp1 .request .btn {
     cursor: pointer;
     margin-top: 1rem;
-    background: #FF385C;
+    background: #0986ae;
 }
 .hp1 .request .btn:hover {
-    background: #FF385C;
+    background: #0986ae;
 }
 .hp1 .request .address-info p:last-child {
     margin-bottom: 0px;
@@ -1307,7 +1307,7 @@ section.recently.portfolio {
 .hp1 .request .contact-form input[type="text"]:focus,
 .hp1 .request .contact-form input[type="email"]:focus,
 .hp1 .request .contact-form textarea:focus {
-    border-color: #FF385C;
+    border-color: #0986ae;
 }
 .hp1 .request .contact-form textarea {
     min-height: 100px;
@@ -1351,7 +1351,7 @@ section.recently.portfolio {
     display: block;
     height: 3px;
     font-weight: bold;
-    background-color: #FF385C;
+    background-color: #0986ae;
     content: " ";
     width: 50px;
     margin-top: .5rem;
@@ -1364,7 +1364,7 @@ section.recently.portfolio {
     display: block;
     height: 3px;
     font-weight: bold;
-    background-color: #FF385C;
+    background-color: #0986ae;
     content: " ";
     width: 50px;
     margin-top: .5rem;
@@ -1398,7 +1398,7 @@ section.recently.portfolio {
 }
 .hp1 .call-info ul li .fa {
     font-size: 1.6rem;
-    color: #FF385C;
+    color: #0986ae;
 }
 .info-help .project-single {
     border: 0px !important;
@@ -4927,7 +4927,7 @@ a.button,
     background: #8731E8 !important;
 }
 .homepage-3 .portfolio .homes-tag.sale {
-    background: #FF385C !important;
+    background: #0986ae !important;
 }
 .homepage-3 .portfolio .homes-tag.rent {
     background: #18ba60 !important;
@@ -5131,7 +5131,7 @@ a.button,
 }
 .homepage-1 .job_clientSlide .owl-nav .owl-prev:hover, 
 .homepage-1 .job_clientSlide .owl-nav .owl-next:hover {
-    background: #FF385C;
+    background: #0986ae;
     color: #fff;
 }
 
@@ -5221,7 +5221,7 @@ a.button,
 }
 .play-icon {
     font-size: 22px;
-    color: #FF385C;
+    color: #0986ae;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -5315,7 +5315,7 @@ a.button,
     background: inherit !important;
 }
 .homepage-4 #navigation.style-1 ul li:hover {
-    background: #FF385C;
+    background: #0986ae;
 }
 .homepage-4 .btn,
 .homepage-4 .btn:active,
@@ -5330,7 +5330,7 @@ a.button,
 }
 .homepage-4 .slick-prev:hover,
 .homepage-4 .slick-next:hover {
-    background: #FF385C;
+    background: #0986ae;
 }
 .homepage-4 .project-single .button-effect {
     opacity: 1;
@@ -5403,20 +5403,20 @@ a.button,
 .homepage-4 a.button.border, a.button,
 .homepage-4 .header-image .left .btn-white {
     background: #fff;
-    color: #FF385C !important;
+    color: #0986ae !important;
     box-shadow: 0px 0px 0px 4px rgba(255,255,255,0.2);
 }
 .homepage-4 .home18 .sec-title h2 {
-    color: #FF385C;
+    color: #0986ae;
 }
 .homepage-4 .home18 .sec-title h2 span::before {
-    background: #FF385C;
+    background: #0986ae;
 }
 .homepage-4 .portfolio .homes-tag.sale {
     background: rgba(74,74,76,0.7) !important;
 }
 .homepage-4 .homes-tag.featured {
-    background: #FF385C !important;
+    background: #0986ae !important;
 }
 .homepage-4 .portfolio .homes-price {
     font-size: 20px !important;
@@ -5493,11 +5493,11 @@ a.button,
 }
 .homepage-4 .portfolio .homes-content h3 a:hover,
 .homepage-4 .blog-section .news-item h3:hover {
-    color: #FF385C;
+    color: #0986ae;
 }
 .homepage-4 .btn:hover,
 .homepage-4 .popular-places .listing-badges .featured {
-    background: #FF385C;
+    background: #0986ae;
 }
 .homepage-4 .popular-places .img-box {
     border-radius: 10px;
@@ -5524,13 +5524,13 @@ a.button,
     margin-top: 120px;
 }
 .homepage-4 .info-help .info-head .info-text .btn-pro {
-    background: #FF385C;
+    background: #0986ae;
 }
 .homepage-4 .testimonials .test-1 h3 {
     color: #666;
 }
 .homepage-4 .starts .fa {
-    color: #FF385C !important;
+    color: #0986ae !important;
 }
 .homepage-4 .testimonials .test-1 p::before {
     content: "\f10d ";
@@ -5539,7 +5539,7 @@ a.button,
     left: 236px;
     top: -24px;
     position: relative;
-    color: #FF385C;
+    color: #0986ae;
 }
 .homepage-4 .owl-dots {
     margin-top: 0px;
@@ -5565,7 +5565,7 @@ a.button,
 .homepage-4 .blog-section .action-list .fa-comment,
 .homepage-4 .blog-section .action-list .fa-share-alt,
 .homepage-4 .blog-section .news-link {
-    color: #FF385C;
+    color: #0986ae;
 }
 .homepage-4 .first-footer .top-footer {
     background: #232733;
@@ -5575,7 +5575,7 @@ a.button,
 .homepage-4 .first-footer .newsletters h3::after,
 .homepage-4 .first-footer .bloq-email .email input[type="submit"],
 .homepage-4 .go-up {
-    background: #FF385C;
+    background: #0986ae;
 }
 .homepage-4 .welcome-area {
     background: rgba(0, 0, 0, 0) url("../images/bg/bg-demo.jpg") no-repeat scroll center center / cover;
@@ -6102,11 +6102,11 @@ html input[disabled] {
 .hp-6 .btn.sApp-btn:before, 
 .hp-6 .bg-overlay::after, 
 .hp-6 .benifits-item:after {
-    background: linear-gradient(-47deg, #FF385C 0%, #FF385C 100%);
+    background: linear-gradient(-47deg, #0986ae 0%, #0986ae 100%);
 }
 .hp-6 a.btn.btn-yellow:hover {
     background: #fff !important;
-    color: #FF385C;
+    color: #0986ae;
 }
 .hp-6 .bg-overlay::after {
     opacity: 0.87;
@@ -6115,13 +6115,13 @@ html input[disabled] {
 .hp-6 .rld-banner-tab .nav-item a.active,
 .hp-6 .rld-banner-tab .nav-item a:hover,
 .hp-6 .rld-banner-tab .nav-item a.active:before {
-    background: #FF385C;
+    background: #0986ae;
 }
 .hp-6 .btn.btn-yellow {
     border: 0px;
     border-radius: 8px;
     font-size: 15px;
-    background-color: #FF385C;
+    background-color: #0986ae;
     box-shadow: 0px 1px 4px 0px rgba(255, 90, 95, 0.3);
     color: #ffffff;
     height: 50px;
@@ -6317,7 +6317,7 @@ html input[disabled] {
     font-size: 20px;
     font-weight: 400;
     margin-left: 15px;
-    color: #FF385C;
+    color: #0986ae;
 }
 .hp-6 .explore__form-checkbox-list.full-filter.filter-block {
     background: #fff;
@@ -6393,7 +6393,7 @@ html input[disabled] {
     margin-top: 10px;
 }
 .homepage-12 .header-image .left .btn-white {
-    background: #FF385C;
+    background: #0986ae;
     display: flex;
     padding: 12px 35px;
     border-radius: 40px;
@@ -6408,7 +6408,7 @@ html input[disabled] {
     display: inline-block;
     height: 100px;
     width: 100px;
-    background-color: #FF385C;
+    background-color: #0986ae;
     border-radius: 50%;
     margin-top: 50px;
 }
@@ -6421,7 +6421,7 @@ html input[disabled] {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    background-color: #FF385C;
+    background-color: #0986ae;
 }
 .homepage-12 .play-icon {
     color: #fff;
@@ -6530,7 +6530,7 @@ html input[disabled] {
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
-	border: 2px solid #FF385C;
+	border: 2px solid #0986ae;
 	cursor: w-resize;
 	background: #fff;
 	outline: none;
@@ -6549,7 +6549,7 @@ html input[disabled] {
 	background-color: #e8e8e8 !important;
 }
 .hp-6 .range-slider .ui-widget-header {
-	background-color: #FF385C;
+	background-color: #0986ae;
 }
 .hp-6 .range-slider .ui-slider.ui-state-disabled .ui-slider-handle,
 .hp-6 .range-slider .ui-slider.ui-state-disabled .ui-slider-range {
@@ -6656,7 +6656,7 @@ html input[disabled] {
 	color: #fff;
 	text-align: center;
 	line-height: 15px;
-	background-color: #FF385C;
+	background-color: #0986ae;
 	border: 2px solid transparent;
 	transition: border-color 0s;
 }
@@ -8057,7 +8057,7 @@ a.int_btn,
     display: inline-block;
     padding: 5px 10px;
     float: right;
-    background-color: #FF385C;
+    background-color: #0986ae;
     border-radius: 3px;
     top: 15px;
     right: 15px;
@@ -8431,14 +8431,14 @@ a.button {
 /*--- 27. TYPED IMAGE HOME 15 ---*/
 /*---------------------------------------*/
 .parallax-searchs.home15 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/bg/bg-15.jpg') no-repeat center top;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../logos/ACE-logo-xham.jpg') no-repeat center top;
     background-size: cover;
     background-attachment: fixed !important;
     width: 100%;
     height: 90vh;
 }
 .parallax-searchs.home15.thome-6 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bg/thome-6.png) no-repeat center top;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../logos/ACE-logo-xham.jpg) no-repeat center top;
     background-size: cover;
     background-attachment: fixed !important;
     width: 100%;
@@ -8447,14 +8447,14 @@ a.button {
     z-index: 99;
 }
 .parallax-searchs.thome-1 {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/bg/bg-h-1.png) no-repeat center top !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../logos/ACE-logo-xham.jpg) no-repeat center top !important;
     background-size: cover;
     background-attachment: fixed !important;
     width: 100%;
     height: 95vh;    
 }
 .parallax-searchs.thome-10 {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/bg/bg-h-10.png) no-repeat center top !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../logos/ACE-logo-xham.jpg) no-repeat center top !important;
     background-size: cover;
     background-attachment: fixed !important;
     width: 100%;
@@ -10410,7 +10410,7 @@ section.team {
 .th-8 .btn:hover, 
 .th-8 .popular-places .listing-badges .featured,
 .th-8 .homes-tag.featured {
-    background: #FF385C !important;
+    background: #0986ae !important;
 }
 .th-8 .filter .button {
     background: #fff;
@@ -10480,7 +10480,7 @@ a.button,
     font-weight: 500;
 }
 .th-8 a.button.border, a.button {
-    background: #FF385C;
+    background: #0986ae;
     color: #fff !important;
 }
 .th-8 .header-image .left h1 {
@@ -10768,7 +10768,7 @@ form label.error {
 .th-8 .parallax-search8 .form-group .btn {
     display: block;
     width: 100%;
-    background: #FF385C;
+    background: #0986ae;
     cursor: pointer;
     color: #fff;
     text-transform: uppercase;
@@ -10787,10 +10787,10 @@ form label.error {
     transition: all .3s ease;
 }
 .th-8 .parallax-search8 .form-group .nice-select i {
-    color: #FF385C;
+    color: #0986ae;
 }
 .th-8 .parallax-search8 .form-group .nice-select:hover {
-    color: #FF385C;
+    color: #0986ae;
 }
 .th-8 .parallax-search8 img {
     height: auto;
@@ -10865,7 +10865,7 @@ form label.error {
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
-	border: 2px solid #FF385C;
+	border: 2px solid #0986ae;
 	cursor: w-resize;
 	background: #fff;
 	outline: none;
@@ -10884,7 +10884,7 @@ form label.error {
 	background-color: #e8e8e8 !important;
 }
 .th-8 .range-slider .ui-widget-header {
-	background-color: #FF385C;
+	background-color: #0986ae;
 }
 .th-8 .range-slider .ui-slider.ui-state-disabled .ui-slider-handle,
 .th-8 .range-slider .ui-slider.ui-state-disabled .ui-slider-range {
@@ -11824,7 +11824,7 @@ a.button {
     margin: 0;
 }
 .homepage-24 .header-image .left .btn-white {
-    background: #FF385C;
+    background: #0986ae;
     display: flex;
     padding: 12px 35px;
     border-radius: 40px;
@@ -11870,7 +11870,7 @@ a.button {
     display: block;
     height: 3px;
     font-weight: bold;
-    background-color: #FF385C;
+    background-color: #0986ae;
     content: " ";
     width: 50px;
     margin-top: .5rem;
@@ -11895,7 +11895,7 @@ a.button {
     cursor: pointer;
     margin-top: 1rem;
     border: 0px;
-    background: #FF385C;
+    background: #0986ae;
 }
 .homepage-24 .bgc {
     background: linear-gradient(rgba(43, 43, 43, 0.8), rgba(43, 43, 43, 0.8)), url(../images/bg/bg-testimonials.jpg) no-repeat center center;
@@ -11919,7 +11919,7 @@ a.button {
 }
 .homepage-24 .call-info ul li .fa {
     font-size: 1.6rem;
-    color: #FF385C;
+    color: #0986ae;
 }
 .homepage-24 .call-info .info p {
     margin: 0px;
@@ -11935,7 +11935,7 @@ a.button {
     display: inline-block;
     height: 100px;
     width: 100px;
-    background-color: #FF385C;
+    background-color: #0986ae;
     border-radius: 50%;
     margin-top: 35px;
 }
@@ -11948,7 +11948,7 @@ a.button {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    background-color: #FF385C;
+    background-color: #0986ae;
 }
 .homepage-24 .teh-left {
     display: flex;
@@ -14884,7 +14884,7 @@ a.button {
     color: #666;
 }
 .inner-pages.sin-1 a.button.border, a.button {
-    background-color: #FF385C;
+    background-color: #0986ae;
     color: #fff !important;
 }
 @media screen and (max-width: 991px) {
@@ -16256,7 +16256,7 @@ header.payment-card-header .pull-right img {
     margin-top: 0px;
 }
 .inner-pages.about .starts .fa {
-    color: #FF385C !important;
+    color: #0986ae !important;
 }
 @media screen and (max-width: 500px) {
     .inner-pages .headings h1 {
@@ -18832,7 +18832,7 @@ section.ui-element {
     display: inline-block;
     overflow: hidden;
     width: 100%;
-    background: #FF385C;
+    background: #0986ae;
     border-radius: 9px;
 }
 .ui-elements .button-tabs .tabs > li {
@@ -18848,7 +18848,7 @@ section.ui-element {
     text-align: center;
     border-radius: 9px;
     width: auto;
-    background: #FF385C;
+    background: #0986ae;
     user-select: none;
     transition: all 0.3s ease;
 }

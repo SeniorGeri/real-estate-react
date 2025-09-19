@@ -6,10 +6,10 @@
         </div>
         <div class="portfolio">
             <div class="slick-lancers">
-                @for ($i = 0; $i < 10; $i++)
-                    @component('frontend::home.featured-card')
+                @foreach ($featuredProperties as $property)
+                    @component('frontend::home.featured-card', ['property' => $property])
                     @endcomponent
-                @endfor
+                @endforeach
             </div>
         </div>
     </div>

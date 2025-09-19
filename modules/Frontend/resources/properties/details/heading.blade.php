@@ -1,35 +1,12 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <a href="{{ asset('frontend/images/single-property/s-1.jpg') }}" class="grid image-link">
-                <img src="{{ asset('frontend/images/single-property/s-1.jpg') }}" class="img-fluid" alt="#">
+        @foreach ($property->gallery as $image)
+            <div class="swiper-slide" >
+                <a href="{{  $image }}" class="grid image-link" >
+                    <img src="{{  $image }}" class="img-fluid" alt="#" style="height: 300px !important; width: 100% !important; object-fit: cover !important;">
             </a>
         </div>
-        <div class="swiper-slide">
-            <a href="{{ asset('frontend/images/single-property/s-2.jpg') }}" class="grid image-link">
-                <img src="{{ asset('frontend/images/single-property/s-2.jpg') }}" class="img-fluid" alt="#">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="{{ asset('frontend/images/single-property/s-3.jpg') }}" class="grid image-link">
-                <img src="{{ asset('frontend/images/single-property/s-3.jpg') }}" class="img-fluid" alt="#">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="{{ asset('frontend/images/single-property/s-4.jpg') }}" class="grid image-link">
-                <img src="{{ asset('frontend/images/single-property/s-4.jpg') }}" class="img-fluid" alt="#">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="{{ asset('frontend/images/single-property/s-5.jpg') }}" class="grid image-link">
-                <img src="{{ asset('frontend/images/single-property/s-5.jpg') }}" class="img-fluid" alt="#">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="{{ asset('frontend/images/single-property/s-6.jpg') }}" class="grid image-link">
-                <img src="{{ asset('frontend/images/single-property/s-6.jpg') }}" class="img-fluid" alt="#">
-            </a>
-        </div>
+        @endforeach
     </div>
 
     <div class="swiper-pagination swiper-pagination-white"></div>

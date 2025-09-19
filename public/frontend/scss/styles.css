@@ -5422,7 +5422,7 @@ a.button,
 
 .play-icon {
   font-size: 22px;
-  color: #FF385C;
+  color: #0986ae;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -5503,7 +5503,7 @@ a.button,
 }
 
 .overlay-dark::after {
-  background-color: #ff385c;
+  background-color: #0986ae;
   opacity: 0.80;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
   z-index: -1;
@@ -5519,7 +5519,7 @@ a.button,
 }
 
 .homepage-4 #navigation.style-1 ul li:hover {
-  background: #FF385C;
+  background: #0986ae;
 }
 
 .homepage-4 .btn,
@@ -5538,15 +5538,15 @@ a.button,
 .homepage-4 a.button.border, a.button,
 .homepage-4 .header-image .left .btn-white {
   background: #fff;
-  color: #FF385C !important;
+  color: #0986ae !important;
 }
 
 .homepage-4 .home18 .sec-title h2 {
-  color: #FF385C;
+  color: #0986ae;
 }
 
 .homepage-4 .home18 .sec-title h2 span::before {
-  background: #FF385C;
+  background: #0986ae;
 }
 
 .homepage-4 .portfolio .homes-tag.sale {
@@ -5554,7 +5554,7 @@ a.button,
 }
 
 .homepage-4 .homes-tag.featured {
-  background: #FF385C !important;
+  background: #0986ae !important;
 }
 
 .homepage-4 .portfolio .homes-price {
@@ -5649,12 +5649,12 @@ a.button,
 
 .homepage-4 .portfolio .homes-content h3 a:hover,
 .homepage-4 .blog-section .news-item h3:hover {
-  color: #FF385C;
+  color: #0986ae;
 }
 
 .homepage-4 .btn:hover,
 .homepage-4 .popular-places .listing-badges .featured {
-  background: #FF385C;
+  background: #0986ae;
 }
 
 .homepage-4 .popular-places .img-box {
@@ -5689,7 +5689,7 @@ a.button,
 }
 
 .homepage-4 .info-help .info-head .info-text .btn-pro {
-  background: #FF385C;
+  background: #0986ae;
 }
 
 .homepage-4 .testimonials .test-1 h3 {
@@ -5697,7 +5697,7 @@ a.button,
 }
 
 .homepage-4 .starts .fa {
-  color: #FF385C !important;
+  color: #0986ae !important;
 }
 
 .homepage-4 .testimonials .test-1 p::before {
@@ -5707,7 +5707,7 @@ a.button,
   left: 236px;
   top: -24px;
   position: relative;
-  color: #FF385C;
+  color: #0986ae;
 }
 
 .homepage-4 .owl-dots {
@@ -5740,7 +5740,7 @@ a.button,
 .homepage-4 .blog-section .action-list .fa-comment,
 .homepage-4 .blog-section .action-list .fa-share-alt,
 .homepage-4 .blog-section .news-link {
-  color: #FF385C;
+  color: #0986ae;
 }
 
 .homepage-4 .first-footer .top-footer {
@@ -5752,7 +5752,7 @@ a.button,
 .homepage-4 .first-footer .newsletters h3::after,
 .homepage-4 .first-footer .bloq-email .email input[type="submit"],
 .homepage-4 .go-up {
-  background: #FF385C;
+  background: #0986ae;
 }
 
 .homepage-4 .welcome-area {
@@ -18629,7 +18629,7 @@ section.ui-element {
   display: inline-block;
   overflow: hidden;
   width: 100%;
-  background: #FF385C;
+  background: #0986ae;
   border-radius: 9px;
 }
 
@@ -18648,7 +18648,7 @@ section.ui-element {
   text-align: center;
   border-radius: 9px;
   width: auto;
-  background: #FF385C;
+  background: #0986ae;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

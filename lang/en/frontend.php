@@ -94,5 +94,54 @@ return [
     'description' => 'Description',
     'view_my_listings' => 'View My Listings',
     'listing_by' => 'Listing By',
-    
+
+
+    'air_cond' => 'Air Conditioning',
+    'balcony' => 'Balcony',
+    'internet' => 'Internet',
+    'dishwasher' => 'Dishwasher',
+    'bedding' => 'Bedding',
+    'cable_tv' => 'Cable TV',
+    'parking' => 'Parking',
+    'pool' => 'Pool',
+    'fridge' => 'Fridge',
+
+    'property_video' => 'Property Video',
+    'property_map' => 'Property Map',
+    'similar_properties' => 'Similar Properties',
+    'agent_information' => 'Agent Information',
+    'full_name' => 'Full Name',
+    'phone_number' => 'Phone',
+    'email_address' => 'Email',
+    'message' => 'Message',
+    'submit_request' => 'Submit Request',
+    'recent_properties' => 'Recent Properties',
+    'featured_properties' => 'Featured Properties',
+    'request_inquiry' => 'Request Inquiry',
+    'property_details' => 'Property Details',
+    'property_id' => 'Property ID',
+    'property_status' => 'Property Status',
+    'property_price' => 'Property Price',
+    'rooms' => 'Rooms',
+    'bathrooms' => 'Bathrooms',
+    'bedrooms' => 'Bedrooms',
+    'garages' => 'Garages',
+    'year_built' => 'Year Built',
+    'amenities' => 'Amenities',
+    'location' => 'Location',
+
+    'grid_view' => 'Grid View',
+    'list_view' => 'List View',
+    'latest' => 'Latest',
+    'view_details' => 'View Details',
+
+    'm2' => 'm²',
+
+    'previous' => 'Previous',
+    'next' => 'Next',
+
+    'view_property' => 'View Property',
+    'real_estate' => 'Real Estate',
+    'area' => 'Area',
+    'elevator' => 'Elevator'
 ];

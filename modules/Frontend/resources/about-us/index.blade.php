@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-xs-12">
                     <div class="wprt-image-video w50">
-                        <img alt="image" src="{{asset('frontend/images/bg/bg-video.jpg')}}">
+                        <img alt="image" src="{{asset('logos/office.jpeg')}}">
                         <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=2xHQqYRcrx4">
                             <i class="fa fa-play"></i>
                         </a>

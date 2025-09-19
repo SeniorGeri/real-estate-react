@@ -1,5 +1,5 @@
 <div class="agents-grid" data-aos="fade-up" data-aos-delay="150">
-    @component('frontend::components.property-card')
+    @component('frontend::components.property-card', ['property' => $property])
     @endcomponent
     {{-- <div class="landscapes">
         <div class="project-single">

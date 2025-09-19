@@ -5,11 +5,10 @@
         @include('frontend::home.hero')
         
 
-        @include('frontend::home.featured')
+        @include('frontend::home.featured', ['featuredProperties' => $featuredProperties])
 
         @include('frontend::home.choose-us')
 
-
-        @include('frontend::home.agents')
+        @include('frontend::home.agents', ['agents' => $agents])
 
 @endsection

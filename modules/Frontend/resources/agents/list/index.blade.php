@@ -13,7 +13,7 @@
                         <div class="detail-wrapper-body">
                             <div class="listing-title-bar">
                                 <div class="text-heading text-left">
-                                    <p class="font-weight-bold mb-0 mt-3">4 @lang('frontend.search_results')</p>
+                                    <p class="font-weight-bold mb-0 mt-3">{{ $agents->total() }} @lang('frontend.search_results')</p>
                                 </div>
                             </div>
                         </div>
@@ -34,12 +34,12 @@
                     </div>
                 </section>
             </div>
-            @for ($i = 0 ; $i < 6 ; $i++)
-                @component('frontend::agents.list.agent-row')
+            @foreach ($agents as $agent)
+                @component('frontend::agents.list.agent-row', ['agent' => $agent])
                 @endcomponent
-            @endfor
+            @endforeach
         </div>
-        @component('frontend::components.paginate')
+        @component('frontend::components.paginate', ['paginator' => $agents])
         @endcomponent
     </div>
 </section>
