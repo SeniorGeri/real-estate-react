@@ -1,9 +1,9 @@
     <header id="header-container">
             <div id="header">
                 <div class="container container-header">
-                    <div class="left-side">
+                    <div class="left-side d-flex flex-row align-items-center">
                         <div id="logo">
-                            <a href="{{ route('index') }}"><img src="{{ asset('frontend/images/logo-red.svg') }}" alt=""></a>
+                            <a href="{{ route('index') }}"><img src="{{ asset('logos/logo-text-vertical.png') }}" alt="" style="width: 100%; max-width: 200px;"></a>
                         </div>
                         <div class="mmenu-trigger">
                             <button class="hamburger hamburger--collapse" type="button">
@@ -14,7 +14,6 @@
                         </div>
                         <nav id="navigation" class="style-1">
                             <ul id="responsive">
-                                <li><a href="{{ route('index') }}">@lang('frontend.home')</a></li>
                                 <li><a href="{{ route('properties') }}">@lang('frontend.properties')</a></li>
                                 <li><a href="{{ route('agents') }}">@lang('frontend.agents')</a></li>
                                 <li><a href="{{ route('contact') }}">@lang('frontend.contact')</a></li>
