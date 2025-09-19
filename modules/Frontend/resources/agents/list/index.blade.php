@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12 agent-mb">
                <section class="headings-2 pt-0">
-                    <div class="pro-wrapper">
+                    <div class="pro-wrapper float-right">
                         <div class="detail-wrapper-body">
                             <div class="listing-title-bar">
                                 <div class="text-heading text-left">
@@ -17,7 +17,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="cod-pad single detail-wrapper mr-2 mt-0 d-flex justify-content-md-end align-items-center grid">
+                        {{-- <div class="cod-pad single detail-wrapper mr-2 mt-0 d-flex justify-content-md-end align-items-center grid">
                             <div class="input-group border rounded input-group-lg w-auto mr-4">
                                 <label class="input-group-text bg-transparent border-0 text-uppercase letter-spacing-093 pr-1 pl-3" for="inputGroupSelect01"><i class="fas fa-align-left fs-16 pr-2"></i>@lang('frontend.sort_by')</label>
                                 <select class="form-control border-0 bg-transparent shadow-none p-0 selectpicker sortby" data-style="bg-transparent border-0 font-weight-600 btn-lg pl-0 pr-3" id="inputGroupSelect01" name="sortby">
@@ -30,7 +30,7 @@
                                 <a href="#" class="change-view-btn active-view-btn"><i class="fa fa-th-list"></i></a>
                                 <a href="agents-listing-grid.html" class="change-view-btn lde"><i class="fa fa-th-large"></i></a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </section>
             </div>

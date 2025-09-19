@@ -12,7 +12,7 @@
                             <p class="mt-4">@lang('frontend.we_have_over_hundred_properties_for_you')</p>
                         </div>
                         <div class="col-12">
-                            @include('frontend::components.search-form')
+                            @include('frontend::components.search-form', ['filters' => $filters])
                         </div>
                     </div>
                 </div>

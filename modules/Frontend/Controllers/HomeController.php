@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Cache;
 use Modules\Property\Models\Property;
 use App\Enums\RolesEnum;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Modules\Property\Models\PropertyAttribute;
+use Modules\Property\Models\PropertyStatus;
+use Modules\Property\Models\PropertyType;
+use Modules\Settings\Models\City;
+use Modules\Settings\Models\Zone;
 
 final class HomeController
 {
@@ -43,9 +49,26 @@ final class HomeController
         ->take(6)
         ->get();
         
+        $filters = Cache::remember('property_filters', 3600, function () {
+            return [
+                'types' => PropertyType::all(),
+                'statuses' => PropertyStatus::all(),
+                'attributes' => PropertyAttribute::all(),
+                'zones' => Zone::all(),
+                'cities' => City::all(),
+                'propertyProportions' => Property::query()->whereIsActive(true)->select([
+                    DB::raw('MAX(price) as max_price'),
+                    DB::raw('MIN(price) as min_price'),
+                    DB::raw('MAX(area) as max_area'),
+                    DB::raw('MIN(area) as min_area')
+                ])->first(), 
+            ];
+        });
+        
         return view('frontend::home.index', [
             'featuredProperties' => $featuredProperties,
-            'agents' => $agents
+            'agents' => $agents,
+            'filters' => $filters
         ]);
 
     }

@@ -10,7 +10,8 @@
                                 <div class="listing-title-bar">
                                     <div class="text-heading text-left">
                                         <p>
-                                            <a href="index.html"></a> <span>{{ $properties->total() }} @lang('frontend.search_results')</span>
+                                            <a href="index.html"></a> <span>{{ $properties->total() }}
+                                                @lang('frontend.search_results')</span>
                                         </p>
                                     </div>
                                     <h3>@lang('frontend.properties')</h3>
@@ -27,9 +28,10 @@
                                         data-style="bg-transparent border-0 font-weight-600 btn-lg pl-0 pr-3"
                                         id="inputGroupSelect01" name="sortby">
                                         <option selected>@lang('frontend.latest')</option>
-                                        <option value="1">@lang('frontend.most_viewed')</option>
-                                        <option value="2">@lang('frontend.price_low_to_high')</option>
-                                        <option value="3">@lang('frontend.price_high_to_low')</option>
+                                        <option value="price_asc" onclick="window.location = '?sortby=price_asc'"
+                                            @if (isset($request) && $request->sortby == 'price_asc') selected @endif> @lang('frontend.price_low_to_high')</option>
+                                        <option value="price_desc" onclick="window.location = '?sortby=price_desc'"
+                                            @if (isset($request) && $request->sortby == 'price_desc') selected @endif> @lang('frontend.price_high_to_low')</option>
                                     </select>
                                 </div>
                                 {{-- <div class="sorting-options">
@@ -44,7 +46,11 @@
 
                     <div class="row">
                         <div class="col-12">
-                            @include('frontend::components.search-form')
+                            @include('frontend::components.search-form', [
+                                'filters' => $filters,
+                                'request' => $request ?? null,
+                                'map' => true,
+                            ])
                         </div>
                     </div>
 
@@ -62,4 +68,12 @@
             @include('frontend::components.paginate', ['paginator' => $properties])
         </div>
     </section>
+    @push('scripts')
+        <script>
+            $('#inputGroupSelect01').on('change', function() {
+                $('#sort_by_input').val($(this).val());
+                $('#search-form').submit();
+            });
+        </script>
+    @endpush
 @endsection

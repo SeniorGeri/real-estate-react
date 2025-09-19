@@ -14,7 +14,8 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <h3 class="mb-4">@lang('frontend.contact_us')</h3>
-                    <form id="contactform" class="contact-form" name="contactform" method="post" novalidate>
+                    <form action="{{ route('contact.store') }}" class="contact-form" method="post">
+                        @csrf
                         <div id="success" class="successform">
                             <p class="alert alert-success font-weight-bold" role="alert">@lang('frontend.message_sent_successfully')</p>
                         </div>
@@ -26,18 +27,22 @@
                                 placeholder="@lang('frontend.first_name')">
                         </div>
                         <div class="form-group">
-                            <input type="text" required class="form-control input-custom input-full" name="lastname"
-                                placeholder="@lang('frontend.last_name')">
+                            <input type="text" required class="form-control input-custom input-full" name="phone"
+                                placeholder="@lang('frontend.phone')">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control input-custom input-full" name="email"
                                 placeholder="@lang('frontend.email')">
                         </div>
                         <div class="form-group">
+                            <input type="text" class="form-control input-custom input-full" name="subject"
+                                placeholder="@lang('frontend.subject')">
+                        </div>
+                        <div class="form-group">
                             <textarea class="form-control textarea-custom input-full" id="ccomment" name="message" required rows="8"
                                 placeholder="@lang('frontend.message')"></textarea>
                         </div>
-                        <button type="submit" id="submit-contact" class="btn btn-primary btn-lg">@lang('frontend.submit')</button>
+                        <button type="submit" class="btn btn-primary btn-lg">@lang('frontend.submit')</button>
                     </form>
                 </div>
                 <div class="col-lg-4 col-md-12 bgc">

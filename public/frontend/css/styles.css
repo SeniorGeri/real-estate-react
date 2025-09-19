@@ -19947,15 +19947,15 @@ header.payment-card-header .pull-right img {
 }
 
 .inner-pages .headings {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(18, 27, 34, 0.6)), to(rgba(18, 27, 34, 0.6))), url(../images/bg/bg-details.jpg) no-repeat center center;
-  background: linear-gradient(rgba(18, 27, 34, 0.6), rgba(18, 27, 34, 0.6)), url(../images/bg/bg-details.jpg) no-repeat center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(18, 27, 34, 0.6)), to(rgba(18, 27, 34, 0.6))), url(../../logos/office.jpeg) no-repeat center center;
+  background: linear-gradient(rgba(18, 27, 34, 0.6), rgba(18, 27, 34, 0.6)), url(../../logos/office.jpeg) no-repeat center center;
   width: 100%;
   height: 30vh;
 }
 
 .inner-pages.about .headings {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(18, 27, 34, 0.6)), to(rgba(18, 27, 34, 0.6))), url(../images/bg/bg-testimonials.jpg) no-repeat center center;
-  background: linear-gradient(rgba(18, 27, 34, 0.6), rgba(18, 27, 34, 0.6)), url(../images/bg/bg-testimonials.jpg) no-repeat center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(18, 27, 34, 0.6)), to(rgba(18, 27, 34, 0.6))), url(../../logos/office.jpeg) no-repeat center center;
+  background: linear-gradient(rgba(18, 27, 34, 0.6), rgba(18, 27, 34, 0.6)), url(../../logos/office.jpeg) no-repeat center center;
 }
 
 .inner-pages .headings h1 {
@@ -22018,8 +22018,8 @@ form label.error {
 
 /*---- CONTACT INFO ----*/
 .inner-pages .bgc {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 51, 100, 0.8)), to(rgba(32, 51, 100, 0.8))), url(../images/bg/bg-testimonials.jpg) no-repeat center center;
-  background: linear-gradient(rgba(32, 51, 100, 0.8), rgba(32, 51, 100, 0.8)), url(../images/bg/bg-testimonials.jpg) no-repeat center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 51, 100, 0.8)), to(rgba(32, 51, 100, 0.8))), url(../../logos/office.jpeg) no-repeat center center;
+  background: linear-gradient(rgba(32, 51, 100, 0.8), rgba(32, 51, 100, 0.8)), url(../../logos/office.jpeg) no-repeat center center;
   padding: 2rem;
   background-size: cover;
 }

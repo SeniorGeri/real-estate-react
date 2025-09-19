@@ -4,14 +4,16 @@
         <div class="widget-boxed mt-33 mt-5">
             <div class="sidebar-widget author-widget2">
                 <div class="agent-contact-form-sidebar border-0 pt-0">
-                    <h4>@lang('frontend.contact') Carls Jhons</h4>
-                    <form name="contact_form" method="post" action="functions.php">
-                        <input type="text" id="fname" name="full_name" placeholder="@lang('frontend.full_name')" required />
-                        <input type="number" id="pnumber" name="phone_number" placeholder="@lang('frontend.phone_number')" required />
-                        <input type="email" id="emailid" name="email_address" placeholder="@lang('frontend.email_address')"
-                            required />
+                    <h4>@lang('frontend.contact') {{ $agent->name }}</h4>
+                        <form name="contact_form"  method="post" action="{{ route('contact.store') }}">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ $agent->id }}">
+                        <input type="text" id="fname" name="name" placeholder="@lang('frontend.full_name')" required />
+                        <input type="text" id="pnumber" name="phone" placeholder="@lang('frontend.phone_number')" required />
+                        <input type="email" id="emailid" name="email" placeholder="@lang('frontend.email_address')"required />
+                        <input type="text" id="subject" name="subject" placeholder="@lang('frontend.subject')"required />
                         <textarea placeholder="@lang('frontend.message')" name="message" required></textarea>
-                        <input type="submit" name="sendmessage" class="multiple-send-message" value="@lang('frontend.submit_request')" />
+                        <input type="submit"  class="multiple-send-message" value="@lang('frontend.submit_request')" />
                     </form>
                 </div>
             </div>

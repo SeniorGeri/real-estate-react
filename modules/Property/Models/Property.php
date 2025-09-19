@@ -16,6 +16,9 @@ use Modules\Settings\Models\Zone;
 use Modules\Settings\Models\Currency;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Illuminate\Database\Eloquent\Builder;
+use Modules\Frontend\Requests\PropertyFilterRequest;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 
 final class Property extends Model
 {
@@ -67,6 +70,30 @@ final class Property extends Model
     public $casts = [
         'gallery' => 'json',
     ];
+
+    #[Scope]
+    public function filter(Builder $query, PropertyFilterRequest $request)
+    {
+        return $query->whereIsActive(true)
+            ->when($request->keyword, fn (Builder $query) => $query->where('title', 'like', '%' . $request->keyword . '%'))
+            ->when($request->type, fn (Builder $query) => $query->wherePropertyTypeId($request->type))
+            ->when($request->property_status, fn (Builder $query) => $query->wherePropertyStatusId($request->property_status))
+            ->when($request->zone, fn (Builder $query) => $query->whereZoneId($request->zone))
+            ->when($request->city_id, fn (Builder $query) => $query->whereCityId($request->city_id))
+            ->when($request->bedrooms, fn (Builder $query) => $query->whereBedrooms($request->bedrooms))
+            ->when($request->bathrooms, fn (Builder $query) => $query->whereBathrooms($request->bathrooms))
+            ->when($request->price_range, fn (Builder $query) => $query->whereIn('price', explode(',', $request->price_range)))
+            ->when($request->area_range, fn (Builder $query) => $query->whereIn('area', explode(',', $request->area_range)))
+            ->when($request->sortby, function (Builder $query) use ($request) {
+                if ($request->sortby == 'price_asc') {
+                    return $query->orderBy('price', 'asc');
+                } elseif ($request->sortby == 'price_desc') {
+                    return $query->orderBy('price', 'desc');
+                }else {
+                    return $query->orderBy('id', 'desc');
+                }
+            });
+    }
 
     public function propertyType(): BelongsTo
     {

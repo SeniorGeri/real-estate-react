@@ -18,4 +18,6 @@ Route::middleware(['web'])->group(function () {
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
     Route::get('/faq', [FaqController::class, 'index'])->name('faq');
     Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
+
+    Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 });

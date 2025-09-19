@@ -21,15 +21,19 @@
                         </ul>
                         <div class="agent-contact-form-sidebar">
                             <h4>@lang('frontend.request_inquiry')</h4>
-                            <form name="contact_form" method="post" action="functions.php">
-                                <input type="text" id="fname" name="full_name" placeholder="@lang('frontend.full_name')"
+                            <form method="post" action="{{ route('contact.store') }}">
+                                @csrf
+                                <input type="hidden" name="property_id" value="{{ $property->id }}">
+                                <input type="text" id="fname" name="name" placeholder="@lang('frontend.full_name')"
                                     required />
-                                <input type="number" id="pnumber" name="phone_number" placeholder="@lang('frontend.phone_number')"
+                                <input type="number" id="pnumber" name="phone" placeholder="@lang('frontend.phone_number')"
                                     required />
-                                <input type="email" id="emailid" name="email_address"
+                                <input type="email" id="emailid" name="email"
                                     placeholder="@lang('frontend.email_address')" required />
+                                <input type="text" id="subject" name="subject"
+                                    placeholder="@lang('frontend.subject')" required />
                                 <textarea placeholder="@lang('frontend.message')" name="message" required></textarea>
-                                <input type="submit" name="sendmessage" class="multiple-send-message"
+                                <input type="submit"  class="multiple-send-message"
                                     value="@lang('frontend.submit_request')" />
                             </form>
                         </div>

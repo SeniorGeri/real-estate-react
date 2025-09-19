@@ -16,6 +16,7 @@ final class ContactUs extends Model
 
     protected $fillable = [
         'property_id',
+        'user_id',
         'name',
         'email',
         'phone',

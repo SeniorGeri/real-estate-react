@@ -55,7 +55,9 @@ return [
     'contact_details_text' => 'Please find below contact details and contact us today!',
     'first_name' => 'First Name',
     'last_name' => 'Last Name',
+    'phone' => 'Phone',
     'email' => 'Email',
+    'subject' => 'Subject',
     'message' => 'Message',
     'submit' => 'Submit',
     'something_went_wrong' => 'Something went wrong, try refreshing and submitting the form again.',
@@ -143,5 +145,11 @@ return [
     'view_property' => 'View Property',
     'real_estate' => 'Real Estate',
     'area' => 'Area',
-    'elevator' => 'Elevator'
+    'elevator' => 'Elevator',
+    
+    'all' => 'All',
+    'search_now' => 'Search',
+    'advanced_search' => 'Advanced Search',
+    'area_size' => 'Area Size',
+    'price_range' => 'Price Range',
 ];
