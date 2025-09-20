@@ -1,8 +1,8 @@
 import {    HTMLAttributes } from 'react';
-import { faviconSVG } from '@/assets/images';
+import { vertical } from '@/assets/images';
 
 export default function AppLogoIcon(props: HTMLAttributes<HTMLImageElement>) {
     return (
-        <img {...props} src={faviconSVG} />
+        <img {...props} src={vertical} />
     );
 }

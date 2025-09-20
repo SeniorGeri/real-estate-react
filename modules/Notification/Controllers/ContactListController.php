@@ -38,7 +38,8 @@ final class ContactListController
     {
         $contacts = ContactUs::filter($request)
         ->when(!Auth::user()->hasRole(RolesEnum::ADMIN->value), function ($query) {
-            $query->whereHas('property', fn($query) => $query->where('user_id', Auth::user()->id));
+            $query->whereHas('property', fn($query) => $query->where('user_id', Auth::user()->id))
+                ->orWhere('user_id', Auth::user()->id);
         })->with('property:id,title')
         ->orderBy('id', 'desc')
         ->paginate($request->limit);

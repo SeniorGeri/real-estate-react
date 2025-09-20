@@ -13,10 +13,8 @@
                 </div>
                 <div class="rld-single-select ml-22">
                     <select class="select single-select" name="type">
-                        <option value="0" selected disabled>@lang('frontend.property_type') <i
-                                class="fa fa-bed"aria-hidden="true"></i></option>
-
-                        <option value="0"> @lang('frontend.all') <i class="fa fa-bed" aria-hidden="true"></i></option>
+                        <option value="0" selected disabled>@lang('frontend.property_type')</option>
+                        <option value="0"> @lang('frontend.all')</option>
                         @foreach ($filters['types'] as $type)
                             <option value="{{ $type->id }}" @if (isset($request) && $request->type == $type->id) selected @endif>{{ $type->type }}</option>
                         @endforeach
@@ -24,6 +22,8 @@
                 </div>
                 <div class="rld-single-select">
                     <select class="select single-select mr-0" name="zone">
+                        <option value="0" selected disabled>@lang('frontend.zone')</option>
+
                         <option value="0">@lang('frontend.all')</option>
                         @foreach ($filters['zones'] as $zone)
                             <option value="{{ $zone->id }}" @if (isset($request) && $request->zone == $zone->id) selected @endif>{{ $zone->name }}</option>
@@ -31,7 +31,7 @@
                     </select>
                 </div>
                 <div class="dropdown-filter"><span>@lang('frontend.advanced_search')</span></div>
-                <div class="col-xl-2 col-lg-2 col-md-4 pl-0">
+                <div class="px-0 mx-0">
                     <button class="btn btn-yellow" type="submit">@lang('frontend.search_now')</button>
                 </div>
                 <div class="explore__form-checkbox-list full-filter">

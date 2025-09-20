@@ -1,27 +1,8 @@
+
 <style>
-    .image {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .image1 {
-        background-image: url("image1.jpg");
-        z-index: 1; 
-    }
-
-    .image2 {
-        background-image: url("image2.jpg");
-        z-index: 2;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .image2 {
-        opacity: 1;
-        /* when scrolled down */
+    .sticky .logoImage {
+        /* This is the new logo image */
+        content: url('{{ asset('logos/logo-text-vertical.png') }}') !important;
     }
 </style>
 <header id="header-container" class="header head-tr">
@@ -30,8 +11,9 @@
             <div class="left-side d-flex flex-row align-items-center">
                 <div id="logo">
                     <a href="{{ route('index') }}">
-                        <img src="{{ asset('logos/ACE PROPERTIES Logo 3 White.png') }}"
-                            data-sticky-logo="{{ asset('logos/logo-text-vertical.png') }}" alt=""
+                        <img src="{{ asset('logos/ACE-PROPERTIES-Logo-3-White.png') }}"
+                            class="logoImage"
+                            data-sticky-logo="{{ asset('logos/logo-text-vertical.png') }}" alt="Ace Properties"
                             style="width: 100%; max-width: 200px;">
                     </a>
                 </div>
@@ -55,16 +37,7 @@
         </div>
 
         <div class="header-user-menu user-menu add d-none d-lg-none d-xl-flex">
-            <div class="lang-wrap">
-                <div class="show-lang"><span><i class="fas fa-globe-americas"></i><strong>ENG</strong></span><i
-                        class="fa fa-caret-down arrlan"></i></div>
-                <ul class="lang-tooltip lang-action no-list-style">
-                    <li><a href="#" class="current-lan" data-lantext="En">English</a></li>
-                    <li><a href="#" data-lantext="Fr">Francais</a></li>
-                    <li><a href="#" data-lantext="Es">Espanol</a></li>
-                    <li><a href="#" data-lantext="De">Deutsch</a></li>
-                </ul>
-            </div>
+           <x-language-switcher />
         </div>
 
     </div>

@@ -72,7 +72,7 @@ final class Property extends Model
     ];
 
     #[Scope]
-    public function filter(Builder $query, PropertyFilterRequest $request)
+    public function filterRequest(Builder $query, PropertyFilterRequest $request)
     {
         return $query->whereIsActive(true)
             ->when($request->keyword, fn (Builder $query) => $query->where('title', 'like', '%' . $request->keyword . '%'))

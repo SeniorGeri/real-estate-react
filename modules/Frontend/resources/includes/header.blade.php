@@ -23,15 +23,8 @@
                         </nav>
                     </div>
                     <div class="header-user-menu user-menu add d-none d-lg-none d-xl-flex">
-                        <div class="lang-wrap">
-                            <div class="show-lang"><span><i class="fas fa-globe-americas"></i><strong>ENG</strong></span><i class="fa fa-caret-down arrlan"></i></div>
-                            <ul class="lang-tooltip lang-action no-list-style">
-                                <li><a href="#" class="current-lan" data-lantext="En">English</a></li>
-                                <li><a href="#" data-lantext="Fr">Francais</a></li>
-                                <li><a href="#" data-lantext="Es">Espanol</a></li>
-                                <li><a href="#" data-lantext="De">Deutsch</a></li>
-                            </ul>
-                        </div>
+                        <x-language-switcher />
+
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <title>{{ config('app.name', 'RealEstate') }}</title>
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ asset('logos/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/jquery-ui.css') }}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i%7CMontserrat:600,800" rel="stylesheet">

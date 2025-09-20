@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
+    <link rel="icon" type="image/x-icon" href="{{ asset('logos/favicon.png') }}">
+
     <meta name="author" content="">
     <title>{{ config('app.name', 'RealEstate') }}</title>
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="{{ asset('frontend/css/jquery-ui.css') }}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i%7CMontserrat:600,800" rel="stylesheet">
@@ -34,7 +35,7 @@
     <link rel="stylesheet" id="color" href="{{ asset('frontend/css/colors/pink.css') }}">
 </head>
 
-<body class="{{ $class ?? '' }}">
+<body class="homepage-9 hp-6 homepage-1 mh">
     <!-- Wrapper -->
     <div id="wrapper">
 

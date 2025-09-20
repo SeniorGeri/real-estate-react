@@ -1,0 +1,153 @@
+<?php 
+
+declare(strict_types=1);
+
+return [
+    'home' => 'Home',
+    'list' => 'Lista',
+    'agents' => 'Agenti',
+    'property' => 'Proprietà',
+    'agent' => 'Agente',
+    'navigation' => 'Navigazione',
+    'properties' => 'Proprietà',
+    'why' => 'Perché',
+    'choose_us' => 'Scegli Noi',
+    'contact' => 'Contatto',
+    'faq' => 'FAQ',
+    'about-us' => 'Chi Siamo',
+
+    'find_your_dream' => 'Trova la tua casa dei sogni',
+    'we_have_over_hundred_properties_for_you' => 'Abbiamo oltre cento proprietà per te',
+    'for_sale' => 'In Vendita',
+    'for_rent' => 'In Affitto',
+    'enter_keyword' => 'Inserisci parola chiave',
+    'property_type' => 'Tipo di Proprietà',
+
+    'our_agents' => 'I Nostri Agenti',
+    'wide_range_of_properties' => 'Ampia Gamma di Proprietà',
+    'trusted_by_thousands' => 'Scelti da Migliaia',
+    'financing_made_easy' => 'Finanziamento Reso Facile',
+    'we_are_here_near_you' => 'Siamo qui vicino a te',
+    'provide_full_service_at_every_step' => 'Offriamo un servizio completo in ogni fase',
+
+    'discover' => 'Scopri',
+    'popular_properties' => 'Proprietà Popolari',
+    'we_provide_full_service_at_every_step' => 'Forniamo un servizio completo in ogni fase',
+    'featured' => 'In Evidenza',
+
+    'meet_our' => 'Incontra i nostri',
+    'agents_are_here_to_help_you' => 'Gli agenti sono qui per aiutarti',
+
+    //About
+    'about' => 'Chi Siamo',
+    'ace_properties' => 'Ace Properties',
+    'about_us' => 'Chi Siamo',
+    'home' => 'Home',
+    'about_our_company' => 'Riguardo la Nostra Azienda',
+    'read_more' => 'Leggi di più',
+
+    //Contact
+    'contact_us' => 'Contattaci',
+    'our_location' => 'La Nostra Sede',
+    'contact_details' => 'Dettagli di Contatto',
+    'contact_details_text' => 'Trova qui sotto i nostri dettagli di contatto e scrivici oggi stesso!',
+    'first_name' => 'Nome',
+    'last_name' => 'Cognome',
+    'phone' => 'Telefono',
+    'email' => 'Email',
+    'subject' => 'Oggetto',
+    'message' => 'Messaggio',
+    'submit' => 'Invia',
+    'something_went_wrong' => 'Qualcosa è andato storto, aggiorna la pagina e riprova.',
+    'message_sent_successfully' => 'Messaggio inviato con successo',
+
+    //Faqs
+    'faqs' => 'FAQ',
+    'frequently_asked_questions' => 'Domande Frequenti',
+    'what_payment_methods_are_available' => 'Quali metodi di pagamento sono disponibili?',
+    'how_can_i_get_findhouses_aid_to_live_off_campus' => 'Come posso ottenere aiuto da Findhouses per vivere fuori dal campus?',
+    'does_findhouses_share_my_information_with_others' => 'Findhouses condivide le mie informazioni con altri?',
+    'what_kind_of_real_estate_advice_do_you_give' => 'Che tipo di consulenza immobiliare fornite?',
+    'how_do_i_link_multiple_accounts_with_my_profile' => 'Come collego più account al mio profilo?',
+    'is_your_advice_really_be_helf_full' => 'I vostri consigli sono davvero utili?',
+    'how_can_i_get_real_estate_aid_to_live_off_campus' => 'Come posso ottenere aiuto immobiliare per vivere fuori dal campus?',
+    'does_realhome_share_my_information_with_others' => 'Realhome condivide le mie informazioni con altri?',
+    'questions_about_selling' => 'Domande sulla Vendita',
+
+    // Properties 
+    'properties' => 'Proprietà',
+    'listings' => 'Annunci',
+    'property_listings' => 'Annunci Immobiliari',
+    'search_results' => 'Risultati di Ricerca',
+    'newest' => 'Più Recenti',
+    'most_viewed' => 'Più Visti',
+    'price_low_to_high' => 'Prezzo (dal più Basso al più Alto)',
+    'price_high_to_low' => 'Prezzo (dal più Alto al più Basso)',
+    'sort_by' => 'Ordina per',
+
+    //Agents
+    'alphabet' => 'Alfabetico',
+    'rating' => 'Valutazione',
+    'number_of_property' => 'Numero di Proprietà',
+
+    'description' => 'Descrizione',
+    'view_my_listings' => 'Vedi i miei annunci',
+    'listing_by' => 'Annunci di',
+
+    'air_cond' => 'Aria Condizionata',
+    'balcony' => 'Balcone',
+    'internet' => 'Internet',
+    'dishwasher' => 'Lavastoviglie',
+    'bedding' => 'Letto',
+    'cable_tv' => 'TV via Cavo',
+    'parking' => 'Parcheggio',
+    'pool' => 'Piscina',
+    'fridge' => 'Frigorifero',
+
+    'property_video' => 'Video della Proprietà',
+    'property_map' => 'Mappa della Proprietà',
+    'similar_properties' => 'Proprietà Simili',
+    'agent_information' => 'Informazioni sull’Agente',
+    'full_name' => 'Nome Completo',
+    'phone_number' => 'Telefono',
+    'email_address' => 'Email',
+    'message' => 'Messaggio',
+    'submit_request' => 'Invia Richiesta',
+    'recent_properties' => 'Proprietà Recenti',
+    'featured_properties' => 'Proprietà in Evidenza',
+    'request_inquiry' => 'Richiedi Informazioni',
+    'property_details' => 'Dettagli della Proprietà',
+    'property_id' => 'ID della Proprietà',
+    'property_status' => 'Stato della Proprietà',
+    'property_price' => 'Prezzo della Proprietà',
+    'rooms' => 'Stanze',
+    'bathrooms' => 'Bagni',
+    'bedrooms' => 'Camere da Letto',
+    'garages' => 'Garage',
+    'year_built' => 'Anno di Costruzione',
+    'amenities' => 'Servizi',
+    'location' => 'Posizione',
+
+    'grid_view' => 'Vista Griglia',
+    'list_view' => 'Vista Lista',
+    'latest' => 'Ultimi',
+    'view_details' => 'Vedi Dettagli',
+
+    'm2' => 'm²',
+
+    'previous' => 'Precedente',
+    'next' => 'Successivo',
+
+    'view_property' => 'Vedi Proprietà',
+    'real_estate' => 'Immobiliare',
+    'area' => 'Superficie',
+    'elevator' => 'Ascensore',
+    
+    'all' => 'Tutti',
+    'search_now' => 'Cerca',
+    'advanced_search' => 'Ricerca Avanzata',
+    'area_size' => 'Dimensione Superficie',
+    'price_range' => 'Fascia di Prezzo',
+    'zone' => 'Zona',
+
+];

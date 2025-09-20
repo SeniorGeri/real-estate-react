@@ -6,6 +6,7 @@ use Modules\Frontend\Controllers\ContactController;
 use Modules\Frontend\Controllers\AboutController;
 use Modules\Frontend\Controllers\AgentController;
 use Modules\Frontend\Controllers\FaqController;
+use Modules\Frontend\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web'])->group(function () {
@@ -20,4 +21,6 @@ Route::middleware(['web'])->group(function () {
     Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 
     Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+    Route::get('/set-locale/{locale}', LocaleController::class)->name('set-locale');
 });

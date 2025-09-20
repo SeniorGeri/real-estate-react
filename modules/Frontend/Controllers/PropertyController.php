@@ -26,7 +26,7 @@ final class PropertyController
     public function list(PropertyFilterRequest $request): View
     {
         $properties = Property::query()
-        ->filter($request)
+        ->filterRequest($request)
         ->with([
             'propertyType:id,type,image',
             'propertyStatus:id,status,image',
@@ -73,7 +73,7 @@ final class PropertyController
     public function map(PropertyFilterRequest $request): View
     {
         $properties = Property::query()
-        ->filter($request)
+        ->filterRequest($request)
         ->with([
             'propertyType:id,type,image',
             'propertyStatus:id,status,image',
@@ -102,7 +102,7 @@ final class PropertyController
             ];
         });
         
-        
+
         return view('frontend::properties.map.index', [
             'properties' => $properties,
             'filters' => $filters,

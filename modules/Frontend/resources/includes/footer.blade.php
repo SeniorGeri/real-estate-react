@@ -6,7 +6,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="netabout">
                         <a href="{{ route('index') }}" class="logo">
-                            <img src="{{ asset('frontend/images/logo-footer.svg') }}" alt="netcom">
+                            <img src="{{ asset('logos/logo-horizontal.png') }}" alt="Ace Properties" class="h-100 w-100">
                         </a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
                     </div>

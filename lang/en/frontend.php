@@ -152,4 +152,5 @@ return [
     'advanced_search' => 'Advanced Search',
     'area_size' => 'Area Size',
     'price_range' => 'Price Range',
+    'zone' => 'Zone',
 ];

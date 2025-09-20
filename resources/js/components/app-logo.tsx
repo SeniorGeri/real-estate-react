@@ -1,12 +1,12 @@
-import { faviconSVG } from '@/assets/images';
+import { horizontal } from '@/assets/images';
 
 export default function AppLogo() {
     return (
         <>
-            <img src={faviconSVG} className='h-full object-contain' alt="" />
-            <div className="ml-1 grid flex-1 text-left text-sm">
+            <img src={horizontal} className='h-full object-contain' alt="" />
+            {/* <div className="ml-1 grid flex-1 text-left text-sm">
                 <span className="mb-0.5 truncate text-sidebar-primary leading-none font-semibold">OnlyStudy</span>
-            </div>
+            </div> */}
         </>
     );
 }
